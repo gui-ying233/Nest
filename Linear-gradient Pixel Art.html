@@ -1,1 +1,75 @@
-TEST
+<!DOCTYPE html>
+<html lang="zh-hans">
+	<head>
+		<!-- <meta http-equiv="refresh" content="0" /> -->
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>鬼影233的窝</title>
+		<script src="https://unpkg.com/@highlightjs/cdn-assets@11.7.0/highlight.min.js"></script>
+		<script src="src/base.js"></script>
+		<script
+			src="https://code.jquery.com/jquery-3.6.1.min.js"
+			integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+			crossorigin="anonymous"></script>
+		<link rel="stylesheet" href="src/base.css" />
+	</head>
+	<body>
+		<main>
+			<section>
+				<h1>Linear-gradient像素画</h1>
+				<pre
+					lang="js">/** 代码修改自https://codepen.io/cgreinhold/pen/rNagxoK **/
+const pixels = [
+	["","","","","","#000","#000","#000","#000","#000","#000","","","","",""],
+	["","","","#000","#000","#fff","#fff","#A40D14","#A40D14","#fff","#fff","#000","#000","","",""],
+	["","","#000","#fff","#fff","#fff","#C9101A","#C9101A","#C9101A","#C9101A","#fff","#fff","#fff","#000","",""],
+	["","#000","#A40D14","#A40D14","#C9101A","#C9101A","#EE2832","#EE2832","#EE2832","#EE2832","#C9101A","#C9101A","#A40D14","#A40D14","#000",""],
+	["","#000","#A40D14","#C9101A","#C9101A","#EE2832","#EE2832","#EE2832","#EE2832","#EE2832","#EE2832","#C9101A","#C9101A","#A40D14","#000",""],
+	["#000","#fff","#C9101A","#C9101A","#EE2832","#EE2832","#fff","#fff","#fff","#fff","#EE2832","#EE2832","#C9101A","#C9101A","#fff","#000"],
+	["#000","#fff","#fff","#C9101A","#EE2832","#fff","#fff","#fff","#fff","#fff","#fff","#EE2832","#C9101A","#fff","#fff","#000"],
+	["#000","#fff","#fff","#C9101A","#EE2832","#fff","#fff","#fff","#fff","#fff","#fff","#EE2832","#C9101A","#fff","#fff","#000"],
+	["#000","#fff","#C9101A","#C9101A","#C9101A","#fff","#fff","#fff","#fff","#fff","#fff","#C9101A","#C9101A","#C9101A","#fff","#000"],
+	["#000","#A40D14","#C9101A","#C9101A","#A40D14","#A40D14","#fff","#fff","#fff","#fff","#A40D14","#A40D14","#C9101A","#C9101A","#A40D14","#000"],
+	["#000","#A40D14","#A40D14","#A40D14","#000","#000","#000","#000","#000","#000","#000","#000","#A40D14","#A40D14","#A40D14","#000"],
+	["","#000","#000","#000","#F4CA68","#F4CA68","#000","#F4CA68","#F4CA68","#000","#F4CA68","#F4CA68","#000","#000","#000",""],
+	["","","#000","#F4CA68","#FFF171","#FFF171","#000","#FFF171","#FFF171","#000","#FFF171","#FFF171","#F4CA68","#000","",""],
+	["","","#000","#F4CA68","#FFF171","#FFF171","#FFF171","#FFF171","#FFF171","#FFF171","#FFF171","#FFF171","#F4CA68","#000","",""],
+	["","","","#000","#F4CA68","#FFF171","#FFF171","#FFF171","#FFF171","#FFF171","#FFF171","#F4CA68","#000","","",""],
+	["","","","","#000","#000","#000","#000","#000","#000","#000","#000","","","","",]
+];
+
+const pixelArt = document.getElementById("pixelart");
+const width = 200;
+const height = pixels.length;
+
+const backgroundImage = [];
+const backgroundSize = [];
+for (let i = 0; i < pixels.length; i++) {
+	const pixel = pixels[i];
+	const percent = 100 / pixel.length;
+	let cont = 0;
+	const backgroundParts = [];
+	for (let j = 0; j < pixel.length; j++) {
+		const pixelColor = pixel[j] || "#FFF";
+		let backgroundImagePart = "";
+		backgroundImagePart += `${pixelColor} ${cont}%`;
+		cont += percent;
+		backgroundImagePart += `, ${pixelColor} ${cont}%`;
+		backgroundParts.push(backgroundImagePart);
+	}
+	backgroundImage.push(
+		`linear-gradient(to right, ${backgroundParts.join(", ")})`
+	);
+	backgroundSize.push(`100% ${((i + 1) * 100) / height}%`);
+}
+
+pixelArt.style.width = width + "px";
+pixelArt.style.aspectRatio = width / 10 / pixels.length;
+pixelArt.style.backgroundImage = backgroundImage.join(",");
+pixelArt.style.backgroundRepeat = "repeat-x";
+pixelArt.style.backgroundSize = backgroundSize.join(",");</pre>
+			</section>
+		</main>
+	</body>
+</html>

@@ -1,10 +1,17 @@
+@import url("//fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200");
+@import url("//fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200");
 @import url("//unpkg.com/@highlightjs/cdn-assets@11.7.0/styles/default.min.css");
 @import url("//unpkg.com/nord-highlightjs@0.1.0/dist/nord.css");
 
 pre,
 pre > code {
+	word-wrap: break-word;
+	white-space: pre-wrap;
 	tab-size: 2em;
 	border-radius: 0.5em;
+}
+pre > code > span {
+	display: inline-block;
 }
 
 body {
@@ -80,8 +87,14 @@ a:empty::after {
 .card:focus {
 	border-color: rgba(255, 255, 255, 0.635);
 }
-.card > svg {
+
+[class|="material-symbols"] {
 	display: inline-block;
-	width: 1em;
 	margin-inline: 0.25em;
+	user-select: none;
+	-webkit-user-select: none;
+	font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
+}
+.card > [class|="material-symbols"] {
+	font-variation-settings: "FILL" 0, "wght" 700, "GRAD" 0, "opsz" 48;
 }

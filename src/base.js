@@ -1,4 +1,5 @@
 const jQready = setInterval(() => {
+	console.info("TEST");
 	$(document).ready(() => {
 		clearInterval(jQready);
 		for (var i = 0; i < $("pre").length; i++) {
@@ -10,4 +11,4 @@ const jQready = setInterval(() => {
 		}
 		hljs.highlightAll();
 	});
-}, 500);
+}, 0);

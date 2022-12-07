@@ -1,8 +1,0 @@
-@import url("//unpkg.com/@highlightjs/cdn-assets@11.7.0/styles/default.min.css");
-@import url("//unpkg.com/nord-highlightjs@0.1.0/dist/nord.css");
-
-pre,
-pre>code {
-	tab-size: 2em;
-	border-radius: .5em;
-}

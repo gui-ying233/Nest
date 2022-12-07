@@ -1,0 +1,86 @@
+@import url("//unpkg.com/@highlightjs/cdn-assets@11.7.0/styles/default.min.css");
+@import url("//unpkg.com/nord-highlightjs@0.1.0/dist/nord.css");
+
+pre,
+pre > code {
+	tab-size: 2em;
+	border-radius: 0.5em;
+}
+
+body {
+	background-size: 100vw 100vh;
+	background-image: linear-gradient(
+		-45deg,
+		rgba(47, 110, 211, 0.75) 5%,
+		rgba(79, 148, 227, 0.75) 20%,
+		rgba(80, 149, 228, 0.75) 60%,
+		rgba(47, 110, 211, 0.75) 95%
+	);
+}
+
+h1 {
+	position: relative;
+	padding: 0.5em;
+	margin: 1em;
+	color: #fff;
+	text-shadow: 0 2px 4px rgba(71, 97, 206, 0.27);
+	background: rgba(255, 255, 255, 0.25);
+	box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2775);
+	backdrop-filter: blur(2.5px);
+	-webkit-backdrop-filter: blur(2.5px);
+	border-radius: 0.5em;
+	border: 1px solid rgba(255, 255, 255, 0.135);
+}
+h1, h2::before {
+	content: "";
+	position: absolute;
+	left: -0.625em;
+	top: -0.325em;
+	width: 2em;
+	height: 1em;
+	background: rgba(255, 255, 255, 0.25);
+	box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2775);
+	backdrop-filter: blur(2.5px);
+	-webkit-backdrop-filter: blur(2.5px);
+	border-radius: 0.25em;
+	border: 1px solid rgba(255, 255, 255, 0.135);
+}
+
+a {
+	color: rgb(31, 38, 135);
+}
+a:empty::after {
+	content: attr(href);
+}
+
+#svgDefs {
+	display: none;
+}
+
+.card {
+	display: inline-flex;
+	padding: 0.5em;
+	margin: 1em;
+	color: #fff;
+	text-shadow: 0 2px 4px rgba(71, 97, 206, 0.27);
+	text-decoration: none;
+	text-align: center;
+	font-weight: bolder;
+	background: rgba(255, 255, 255, 0.25);
+	box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2775);
+	backdrop-filter: blur(2.5px);
+	-webkit-backdrop-filter: blur(2.5px);
+	border-radius: 0.5em;
+	border: 1px solid rgba(255, 255, 255, 0.135);
+	transition: border-color 250ms;
+}
+.card:hover,
+.card:active,
+.card:focus {
+	border-color: rgba(255, 255, 255, 0.635);
+}
+.card > svg {
+	display: inline-block;
+	width: 1em;
+	margin-inline: 0.25em;
+}

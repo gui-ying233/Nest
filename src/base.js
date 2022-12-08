@@ -1,5 +1,4 @@
 const jQready = setInterval(() => {
-	console.info("TEST");
 	$(document).ready(() => {
 		clearInterval(jQready);
 		for (var i = 0; i < $("pre").length; i++) {
@@ -10,5 +9,7 @@ const jQready = setInterval(() => {
 			);
 		}
 		hljs.highlightAll();
+
+		$("[class|=material-symbols]").attr("translate", "no");
 	});
 }, 0);

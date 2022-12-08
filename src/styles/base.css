@@ -81,7 +81,7 @@ a[href]:empty::after {
 }
 
 .card {
-	display: inline-flex;
+	display: flex;
 	padding: 0.5em;
 	margin: 1em;
 	color: #fff;
@@ -96,6 +96,9 @@ a[href]:empty::after {
 	border-radius: 0.5em;
 	border: 1px solid rgba(255, 255, 255, 0.135);
 	transition: border-color 250ms;
+}
+a.card {
+	display: inline-flex;
 }
 a.card:hover,
 a.card:active,

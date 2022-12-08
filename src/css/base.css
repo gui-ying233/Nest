@@ -68,9 +68,7 @@ h2::before {
 	border-radius: 0.25em;
 	border: 1px solid hsla(0, 0%, 100%, 0.135);
 }
-h2 {
-	font-size: smaller;
-}
+
 a {
 	color: hsl(calc(var(--theme-hue) + 14deg), 63%, 33%);
 }

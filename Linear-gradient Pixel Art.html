@@ -28,6 +28,7 @@ const pixels = [
 ];
 
 const pixelArt = document.getElementById("pixelart");
+const width = pixels[0].length;
 const height = pixels.length;
 
 const backgroundImage = [];
@@ -50,7 +51,7 @@ for (let i = 0; i < pixels.length; i++) {
 	);
 	backgroundSize.push(`100% ${((i + 1) * 100) / height}%`);
 }
-pixelArt.style.aspectRatio = pixels.length / 10;
+pixelArt.style.aspectRatio = width / height;
 pixelArt.style.backgroundImage = backgroundImage.join(",");
 pixelArt.style.backgroundRepeat = "repeat-x";
 pixelArt.style.backgroundSize = backgroundSize.join(",");

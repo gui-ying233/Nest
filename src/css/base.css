@@ -1,7 +1,7 @@
-@import url("//fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200");
-@import url("//fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200");
 @import url("//unpkg.com/@highlightjs/cdn-assets@11.7.0/styles/default.min.css");
 @import url("//unpkg.com/nord-highlightjs@0.1.0/dist/nord.css");
+@import url("//fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200");
+@import url("//fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200");
 
 pre,
 pre > code {
@@ -25,10 +25,10 @@ pre > code > span {
 body {
 	background-image: linear-gradient(
 		to right,
-		rgba(47, 110, 211, 0.75) 5%,
-		rgba(79, 148, 227, 0.75) 20%,
-		rgba(80, 149, 228, 0.75) 60%,
-		rgba(47, 110, 211, 0.75) 95%
+		hsla(calc(var(--theme-hue) - 5deg), 65%, 51%, 0.75) 5%,
+		hsla(calc(var(--theme-hue) - 10deg), 73%, 60%, 0.75) 20%,
+		hsla(calc(var(--theme-hue) - 10deg), 73%, 60%, 0.75) 60%,
+		hsla(calc(var(--theme-hue) - 5deg), 65%, 51%, 0.75) 95%
 	);
 }
 
@@ -43,9 +43,10 @@ h2 {
 	padding: 0.5em;
 	margin: 1em;
 	color: #fff;
-	text-shadow: 0 2px 4px rgba(71, 97, 206, 0.27);
-	background: rgba(255, 255, 255, 0.25);
-	box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2775);
+	text-shadow: 0 2px 4px hsla(calc(var(--theme-hue) + 6deg), 58%, 54%, 0.27);
+	background: hsla(0, 0%, 100%, 0.25);
+	box-shadow: 0 8px 32px 0
+		hsla(calc(var(--theme-hue) + 14deg), 63%, 33%, 0.278);
 	backdrop-filter: blur(2.5px);
 	-webkit-backdrop-filter: blur(2.5px);
 	border-radius: 0.5em;
@@ -60,17 +61,18 @@ h2::before {
 	width: 2em;
 	height: 1em;
 	background: rgba(255, 255, 255, 0.25);
-	box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2775);
+	box-shadow: 0 8px 32px 0
+		hsla(calc(var(--theme-hue) + 14deg), 63%, 33%, 0.278);
 	backdrop-filter: blur(2.5px);
 	-webkit-backdrop-filter: blur(2.5px);
 	border-radius: 0.25em;
-	border: 1px solid rgba(255, 255, 255, 0.135);
+	border: 1px solid hsla(0, 0%, 100%, 0.135);
 }
 h2 {
 	font-size: smaller;
 }
 a {
-	color: rgb(31, 38, 135);
+	color: hsl(calc(var(--theme-hue) + 14deg), 63%, 33%);
 }
 a[href]:empty::after {
 	content: attr(href);
@@ -85,12 +87,13 @@ a[href]:empty::after {
 	padding: 0.5em;
 	margin: 1em;
 	color: #fff;
-	text-shadow: 0 2px 4px rgba(71, 97, 206, 0.27);
+	text-shadow: 0 2px 4px hsla(calc(var(--theme-hue) + 6deg), 58%, 54%, 0.27);
 	text-decoration: none;
 	text-align: center;
 	font-weight: bolder;
 	background: rgba(255, 255, 255, 0.25);
-	box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2775);
+	box-shadow: 0 8px 32px 0
+		hsla(calc(var(--theme-hue) + 14deg), 63%, 33%, 0.278);
 	backdrop-filter: blur(2.5px);
 	-webkit-backdrop-filter: blur(2.5px);
 	border-radius: 0.5em;
@@ -115,4 +118,8 @@ a.card:focus {
 }
 .card > [class|="material-symbols"] {
 	font-variation-settings: "FILL" 0, "wght" 700, "GRAD" 0, "opsz" 48;
+}
+
+:root {
+	--theme-hue: 222deg;
 }

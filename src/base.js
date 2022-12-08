@@ -9,7 +9,7 @@ const jQready = setInterval(() => {
 			);
 		}
 		hljs.highlightAll();
-
+ 
 		$("[class|=material-symbols]").attr("translate", "no");
 	});
 }, 0);

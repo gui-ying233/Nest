@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-hans">
 	<head>
-		<!-- <meta http-equiv="refresh" content="0" /> -->
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -14,6 +13,27 @@
 			integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
 			crossorigin="anonymous"></script>
 		<link rel="stylesheet" href="src/css/base.css" />
+		<style>
+			@font-face {
+				font-family: minecraft;
+				src: url("src/assets/font/0_Minecraft-Zh.ttf"),
+					url("src/assets/font/1_Minecraft-Regular.otf"),
+					url("src/assets/font/2_Minecraft-Italic.otf"),
+					url("src/assets/font/3_Minecraft-Bold.otf"),
+					url("src/assets/font/4_Minecraft-BoldItalic.otf");
+			}
+			@font-face {
+				font-family: monocraft;
+				src: url("src/assets/font/Monocraft.otf");
+			}
+			* {
+				font-family: minecraft;
+			}
+			pre,
+			pre * {
+				font-family: monocraft, monospace;
+			}
+		</style>
 	</head>
 	<body>
 		<header>
@@ -27,7 +47,9 @@
 				<section>
 					<h2>前言</h2>
 					<p>
-						暴力的 div、table 堆叠不在此进行赘述，image-rendering、svg 与 canvas 不在范围内。
+						暴力的 div、table
+						堆叠不在此进行赘述，image-rendering、svg 与 canvas
+						不在范围内。
 					</p>
 				</section>
 				<section>

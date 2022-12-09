@@ -163,7 +163,3 @@ pre > code:hover {
 pre > code > span {
 	display: inline-block;
 }
-
-:root {
-	--theme-hue: 222deg;
-}

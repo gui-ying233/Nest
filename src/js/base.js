@@ -7,14 +7,10 @@ const jQready = setInterval(() => {
 				"deg;}</style>"
 		);
 
-		for (let i = 0; i < $("h1, h2, h3, h4, h5, h6").length; i++) {
-			$($("h1, h2, h3, h4, h5, h6")[i])
-				.attr("id", encodeURI($($("h1, h2, h3, h4, h5, h6")[i]).text()))
-				.wrapInner(
-					"<a href='#" +
-						encodeURI($($("h1, h2, h3, h4, h5, h6")[i]).text()) +
-						"'></a>"
-				);
+		for (let i = 0; i < $("h2, h3, h4, h5, h6").length; i++) {
+			$($("h2, h3, h4, h5, h6")[i])
+				.attr("id", i)
+				.wrapInner("<a href='#" + i + "'></a>");
 		}
 
 		for (let i = 0; i < $("pre").length; i++) {
@@ -28,4 +24,4 @@ const jQready = setInterval(() => {
 
 		$("[class|=material-symbols]").attr("translate", "no");
 	});
-}, 0);
+}, 50);

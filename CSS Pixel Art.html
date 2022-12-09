@@ -24,10 +24,34 @@
 			<h1>CSS 像素画的 n 种方法</h1>
 			<article>
 				<section>
+					<h2>前言</h2>
+					<p>
+						暴力的div、table堆叠，image-rendering或svg均不在此进行赘述。
+					</p>
+				</section>
+				<section>
 					<h2>Box-shadow</h2>
-					<a class="card" href="https://fjolt.com/article/css-pixel-art-generator" target="_blank"><span class="material-symbols-rounded">Link</span>CSS Pixel Art Generator</a>
+					<a
+						class="card"
+						href="//fjolt.com/article/css-pixel-art-generator"
+						target="_blank"
+						><span class="material-symbols-rounded">Link</span>CSS
+						Pixel Art Generator</a
+					>
+					<a
+						class="card"
+						href="//www.pixelartcss.com/"
+						target="_blank"
+						><span class="material-symbols-rounded">Link</span>PIXEL
+						ART TO CSS</a
+					>
 					<h3>展示柜</h3>
-					<div class="card"><div style="width:calc(12px * 20);height:calc(13px * 20);">
+					<div class="card">
+						<div
+							style="
+								width: calc(12px * 20);
+								height: calc(13px * 20);
+							">
 							<div
 								style="
 									width: 1px;
@@ -93,13 +117,17 @@
 										3px 12px #145e53, 4px 12px #145e53,
 										5px 12px #145e53, 6px 12px #145e53,
 										7px 12px #145e53, 8px 12px #145e53;
-								"></div></div>
+								"></div>
 						</div>
 					</div>
 				</section>
 				<section>
 					<h2>Linear-gradient</h2>
 					<h3>简易生成代码</h3>
+					<a class="card" href="//codepen.io/cgreinhold/pen/rNagxoK"
+						><span class="material-symbols-rounded">Link</span
+						>Mushroom linear-gradient</a
+					>
 					<pre lang="js">
 /** 代码修改自https://codepen.io/cgreinhold/pen/rNagxoK **/
 const pixels = [

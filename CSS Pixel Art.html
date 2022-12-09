@@ -5,7 +5,7 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Linear-gradient 像素画 - 鬼影233</title>
+		<title>CSS 像素画的 n 种方法 - 鬼影233</title>
 		<script src="//unpkg.com/@highlightjs/cdn-assets@11.7.0/highlight.min.js"></script>
 		<script src="src/js/base.js"></script>
 		<script
@@ -21,10 +21,85 @@
 			>
 		</header>
 		<main>
-			<h1>Linear-gradient 像素画</h1>
+			<h1>CSS 像素画的 n 种方法</h1>
 			<article>
 				<section>
-					<h2>简易生成代码</h2>
+					<h2>Box-shadow</h2>
+					<a class="card" href="https://fjolt.com/article/css-pixel-art-generator" target="_blank"><span class="material-symbols-rounded">Link</span>CSS Pixel Art Generator</a>
+					<h3>展示柜</h3>
+					<div class="card"><div style="width:calc(12px * 20);height:calc(13px * 20);">
+							<div
+								style="
+									width: 1px;
+									height: 1px;
+									transform: scale(20) translate(50%, 50%);
+									box-shadow: 4px 0px #11727a, 5px 0px #11727a,
+										6px 0px #11727a, 7px 0px #11727a,
+										3px 1px #11727a, 4px 1px white,
+										5px 1px white, 6px 1px white,
+										7px 1px #d5fff6, 8px 1px #11727a,
+										2px 2px #11727a, 3px 2px white,
+										4px 2px #4aedd9, 5px 2px #4aedd9,
+										6px 2px #a1fbe8, 7px 2px #d5fff6,
+										8px 2px #20c585, 9px 2px #145e53,
+										1px 3px #11727a, 2px 3px white,
+										3px 3px #4aedd9, 4px 3px #a1fbe8,
+										5px 3px #a1fbe8, 6px 3px #d5fff6,
+										7px 3px #a1fbe8, 8px 3px #4aedd9,
+										9px 3px #20c585, 10px 3px #145e53,
+										1px 4px #11727a, 2px 4px white,
+										3px 4px #4aedd9, 4px 4px white,
+										5px 4px #d5fff6, 6px 4px white,
+										7px 4px #d5fff6, 8px 4px #4aedd9,
+										9px 4px #4aedd9, 10px 4px #145e53,
+										0px 5px #11727a, 1px 5px white,
+										2px 5px #4aedd9, 3px 5px white,
+										4px 5px #4aedd9, 5px 5px #4aedd9,
+										6px 5px #a1fbe8, 7px 5px #a1fbe8,
+										8px 5px #1aaaa7, 9px 5px #20c585,
+										10px 5px #1aaaa7, 11px 5px #145e53,
+										0px 6px #11727a, 1px 6px white,
+										2px 6px #4aedd9, 3px 6px #d5fff6,
+										4px 6px #4aedd9, 5px 6px #a1fbe8,
+										6px 6px #a1fbe8, 7px 6px #a1fbe8,
+										8px 6px #1c919a, 9px 6px #20c585,
+										10px 6px #1aaaa7, 11px 6px #145e53,
+										0px 7px #11727a, 1px 7px white,
+										2px 7px white, 3px 7px #20c5b5,
+										4px 7px #a1fbe8, 5px 7px #a1fbe8,
+										6px 7px #a1fbe8, 7px 7px #4aedd9,
+										8px 7px #1c919a, 9px 7px #1aaaa7,
+										10px 7px #1aaaa7, 11px 7px #145e53,
+										0px 8px #11727a, 1px 8px #d5fff6,
+										2px 8px #4aedd9, 3px 8px #4aedd9,
+										4px 8px #1aaaa7, 5px 8px #1aaaa7,
+										6px 8px #1aaaa7, 7px 8px #1aaaa7,
+										8px 8px #20c585, 9px 8px #20c585,
+										10px 8px #1c919a, 11px 8px #145e53,
+										1px 9px #145e53, 2px 9px #4aedd9,
+										3px 9px #1aaaa7, 4px 9px #20c585,
+										5px 9px #20c585, 6px 9px #20c585,
+										7px 9px #20c585, 8px 9px #1aaaa7,
+										9px 9px #20c585, 10px 9px #145e53,
+										1px 10px #145e53, 2px 10px #2ce0d8,
+										3px 10px #1aaaa7, 4px 10px #20c585,
+										5px 10px #20c585, 6px 10px #20c585,
+										7px 10px #20c585, 8px 10px #1aaaa7,
+										9px 10px #a1fbe8, 10px 10px #145e53,
+										2px 11px #145e53, 3px 11px #1c919a,
+										4px 11px #4aedd9, 5px 11px #4aedd9,
+										6px 11px #a1fbe8, 7px 11px #a1fbe8,
+										8px 11px #20c5b5, 9px 11px #145e53,
+										3px 12px #145e53, 4px 12px #145e53,
+										5px 12px #145e53, 6px 12px #145e53,
+										7px 12px #145e53, 8px 12px #145e53;
+								"></div></div>
+						</div>
+					</div>
+				</section>
+				<section>
+					<h2>Linear-gradient</h2>
+					<h3>简易生成代码</h3>
 					<pre lang="js">
 /** 代码修改自https://codepen.io/cgreinhold/pen/rNagxoK **/
 const pixels = [
@@ -62,18 +137,8 @@ pixelArt.style.backgroundRepeat = "repeat-x";
 pixelArt.style.backgroundSize = backgroundSize.join(",");
 pixelArt.removeAttribute("id")</pre
 					>
-				</section>
-				<section>
-					<h2>展示柜</h2>
-					<div
-						class="card"
-						style="
-							display: flex;
-							flex-wrap: wrap;
-							justify-content: center;
-							align-items: center;
-							gap: 1em;
-						">
+					<h3>展示柜</h3>
+					<div class="card">
 						<div
 							style="
 								flex: 1;

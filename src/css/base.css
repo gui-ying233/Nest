@@ -3,6 +3,9 @@
 @import url("//fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200");
 @import url("//fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200");
 
+* {
+	box-sizing: border-box;
+}
 html {
 	scroll-snap-type: y proximity;
 }
@@ -48,9 +51,11 @@ section {
 }
 
 h1,
-h2 {
+h2,
+h3 {
 	position: relative;
-	padding: 0.5em;
+	padding-inline: 0.5em;
+	padding-block: 0.25em;
 	margin: 1em;
 	color: #fff;
 	text-shadow: 0 2px 4px hsla(calc(var(--theme-hue) + 6deg), 58%, 54%, 0.27);
@@ -62,8 +67,12 @@ h2 {
 	border-radius: 0.5em;
 	border: 1px solid rgba(255, 255, 255, 0.135);
 }
+h3 {
+	width: fit-content;
+}
 h1::before,
-h2::before {
+h2::before,
+h3::before {
 	content: "";
 	position: absolute;
 	left: -0.625em;
@@ -77,6 +86,12 @@ h2::before {
 	-webkit-backdrop-filter: blur(2.5px);
 	border-radius: 0.25em;
 	border: 1px solid hsla(0, 0%, 100%, 0.135);
+}
+h3::before {
+	width: 0.5em;
+	height: 50%;
+	left: -0.325em;
+	top: 25%;
 }
 
 a {
@@ -92,13 +107,15 @@ a[href]:empty::after {
 
 .card {
 	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	gap: 1em;
 	padding: 0.5em;
 	margin: 1em;
 	color: #fff;
 	text-shadow: 0 2px 4px hsla(calc(var(--theme-hue) + 6deg), 58%, 54%, 0.27);
-	text-decoration: none;
 	text-align: center;
-	font-weight: bolder;
 	background: rgba(255, 255, 255, 0.25);
 	box-shadow: 0 8px 32px 0
 		hsla(calc(var(--theme-hue) + 14deg), 63%, 33%, 0.278);
@@ -110,6 +127,9 @@ a[href]:empty::after {
 }
 a.card {
 	display: inline-flex;
+	gap: 0.25em;
+	text-decoration: none;
+	font-weight: bolder;
 }
 a.card:hover,
 a.card:active,

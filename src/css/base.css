@@ -127,6 +127,15 @@ a.card:active,
 a.card:focus {
 	border-color: rgba(255, 255, 255, 0.635);
 }
+h1 > a,
+h2 > a,
+h3 > a,
+h4 > a,
+h5 > a,
+h6 > a {
+	color: #fff;
+	text-decoration: none;
+}
 
 [class|="material-symbols"] {
 	display: inline-block;

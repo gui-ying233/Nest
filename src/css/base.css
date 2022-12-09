@@ -17,26 +17,8 @@ section > * {
 	scroll-snap-align: start;
 }
 
-pre,
-pre > code {
-	word-wrap: break-word;
-	white-space: pre-wrap;
-	tab-size: 2em;
-	border-radius: 0.5em;
-}
-pre > code {
-	max-height: 15.25em;
-	transition: max-height 1500ms;
-}
-pre:hover > code,
-pre > code:hover {
-	max-height: 1000em;
-}
-pre > code > span {
-	display: inline-block;
-}
-
 body {
+	background-color: #fff;
 	background-image: linear-gradient(
 		to right,
 		hsla(calc(var(--theme-hue) - 5deg), 65%, 51%, 0.75) 5%,
@@ -44,6 +26,11 @@ body {
 		hsla(calc(var(--theme-hue) - 10deg), 73%, 60%, 0.75) 60%,
 		hsla(calc(var(--theme-hue) - 5deg), 65%, 51%, 0.75) 95%
 	);
+}
+@media (prefers-color-scheme: dark) {
+	body {
+		background-color: #000;
+	}
 }
 
 article,
@@ -147,6 +134,25 @@ a.card:focus {
 }
 .card > [class|="material-symbols"] {
 	font-variation-settings: "FILL" 0, "wght" 700, "GRAD" 0, "opsz" 48;
+}
+
+pre,
+pre > code {
+	word-wrap: break-word;
+	white-space: pre-wrap;
+	tab-size: 2em;
+	border-radius: 0.5em;
+}
+pre > code {
+	max-height: 15.25em;
+	transition: max-height 1500ms;
+}
+pre:hover > code,
+pre > code:hover {
+	max-height: 1000em;
+}
+pre > code > span {
+	display: inline-block;
 }
 
 :root {

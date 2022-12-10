@@ -87,8 +87,18 @@ p {
 }
 
 a {
-	color: hsl(calc(var(--theme-hue) + 14deg), 63%, 33%);
+	color: #fff;
+	font-weight: bolder;
+	background-image: linear-gradient(to right, transparent 50%, hsl(calc(var(--theme-hue) + 14deg), 63%, 33%) 50%);
+	background-position: 0;
+	background-size: 200%;
+	transition: background-position 250ms;
 }
+
+a:hover {
+	background-position: -100%;
+}
+
 a[href]:empty::after {
 	content: attr(href);
 }
@@ -115,9 +125,6 @@ a[href]:empty::after {
 a.card {
 	display: inline-flex;
 	gap: 0.25em;
-	color: #fff;
-	text-decoration: none;
-	font-weight: bolder;
 }
 a.card > [class|="material-symbols"] {
 	font-variation-settings: "FILL" 0, "wght" 700, "GRAD" 0, "opsz" 48;
@@ -126,15 +133,6 @@ a.card:hover,
 a.card:active,
 a.card:focus {
 	border-color: rgba(255, 255, 255, 0.635);
-}
-h1 a,
-h2 a,
-h3 a,
-h4 a,
-h5 a,
-h6 a {
-	color: #fff;
-	text-decoration: none;
 }
 
 [class|="material-symbols"] {
@@ -162,4 +160,8 @@ pre > code:hover {
 }
 pre > code > span {
 	display: inline-block;
+}
+
+footer {
+	text-align: center;
 }

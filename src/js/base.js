@@ -4,6 +4,7 @@ document.head.innerHTML +=
 	"<style type='text/css'>:root {--theme-hue: " +
 	Math.random() * 360 +
 	"deg;}</style>";
+
 document.addEventListener("DOMContentLoaded", () => {
 	const headings = document.body.querySelectorAll("h1, h2, h3, h4, h5, h6");
 	for (let i = 0; i < headings.length; i++) {

@@ -5,11 +5,11 @@ document.head.innerHTML +=
 	Math.random() * 360 +
 	"deg;}</style>";
 
-const headings = document.body.querySelectorAll("h1, h2, h3, h4, h5, h6");
-for (let i = 0; i < headings.length; i++) {
-	headings[i].setAttribute("id", i);
-	headings[i].innerHTML =
-		"<a href='#" + i + "'>" + headings[i].innerHTML + "</a>";
+const _headings = document.body.querySelectorAll("h1, h2, h3, h4, h5, h6");
+for (let i = 0; i < _headings.length; i++) {
+	_headings[i].setAttribute("id", i);
+	_headings[i].innerHTML =
+		"<a href='#" + i + "'>" + _headings[i].innerHTML + "</a>";
 }
 
 const pres = [...document.getElementsByTagName("pre")];

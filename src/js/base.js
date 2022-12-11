@@ -5,7 +5,14 @@ document.head.innerHTML +=
 	Math.random() * 360 +
 	"deg;}</style>";
 
-let headings = document.body.querySelectorAll("h1, h2, h3, h4, h5, h6");
+let headings = [].concat(
+	...document.body.getElementsByTagName("h1"),
+	...document.body.getElementsByTagName("h2"),
+	...document.body.getElementsByTagName("h3"),
+	...document.body.getElementsByTagName("h4"),
+	...document.body.getElementsByTagName("h5"),
+	...document.body.getElementsByTagName("h6")
+);
 for (let i = 0; i < headings.length; i++) {
 	headings[i].setAttribute("id", i);
 	headings[i].innerHTML =

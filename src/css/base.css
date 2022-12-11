@@ -170,3 +170,8 @@ pre > code > span {
 footer {
 	text-align: center;
 }
+
+::selection {
+	background-color: hsl(calc(var(--theme-hue) + 180deg), 63%, 33%);
+	color: #FFF;
+}

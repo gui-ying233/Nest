@@ -1,3 +1,5 @@
+"use strict";
+
 document.head.innerHTML +=
 	"<style type='text/css'>:root {--theme-hue: " +
 	Math.random() * 360 +

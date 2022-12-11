@@ -1,29 +1,29 @@
-const jQready = setInterval(() => {
-	$(document).ready(() => {
-		clearInterval(jQready);
-		if (jQready) {
-			$("head").append(
-				"<style id='theme-hue' type='text/css'>:root {--theme-hue: " +
-					Math.random() * 360 +
-					"deg;}</style>"
-			);
+document.head.innerHTML +=
+	"<style type='text/css'>:root {--theme-hue: " +
+	Math.random() * 360 +
+	"deg;}</style>";
 
-			for (let i = 0; i < $("h1, h2, h3, h4, h5, h6").length; i++) {
-				$($("h1, h2, h3, h4, h5, h6")[i])
-					.attr("id", i)
-					.wrapInner("<a href='#" + i + "'></a>");
-			}
+const headings = document.body.querySelectorAll("h1, h2, h3, h4, h5, h6");
+for (let i = 0; i < headings.length; i++) {
+	headings[i].setAttribute("id", i);
+	headings[i].innerHTML =
+		"<a href='#" + i + "'>" + headings[i].innerHTML + "</a>";
+}
 
-			for (let i = 0; i < $("pre").length; i++) {
-				$($("pre")[i]).wrapInner(
-					"<code class='language-" +
-						$($("pre")[i]).attr("lang") +
-						"'></code>"
-				);
-			}
-			hljs.highlightAll();
+const pres = [...document.getElementsByTagName("pre")];
+for (let i = 0; i < pres.length; i++) {
+	pres[i].innerHTML =
+		"<code class='language-" +
+		pres[0].getAttribute("lang") +
+		"'>" +
+		pres[i].innerHTML +
+		"</code>";
+}
+hljs.highlightAll();
 
-			$("[class|=material-symbols]").attr("translate", "no");
-		}
-	});
-}, 50);
+const materialSymbols = document.body.querySelectorAll(
+	"[class|=material-symbols]"
+);
+for (let i = 0; i < materialSymbols.length; i++) {
+	materialSymbols[i].setAttribute("translate", "no");
+}

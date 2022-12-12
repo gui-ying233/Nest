@@ -24,13 +24,13 @@ document.addEventListener("DOMContentLoaded", () => {
 				"</code>";
 		}
 		const preScript = document.createElement("script");
-		presScript.type = "text/javascript";
-		presScript.addEventListener("load", function (event) {
+		preScript.type = "text/javascript";
+		preScript.addEventListener("load", function (event) {
 			hljs.highlightAll();
 		});
-		presScript.src =
+		preScript.src =
 			"//unpkg.com/@highlightjs/cdn-assets@11.7.0/highlight.min.js";
-		document.getElementsByTagName("head")[0].appendChild(presScript);
+		document.body.appendChild(preScript);
 	}
 
 	const materialSymbols = document.body.querySelectorAll(

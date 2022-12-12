@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		});
 		preScript.src =
 			"//unpkg.com/@highlightjs/cdn-assets@11.7.0/highlight.min.js";
-		document.body.appendChild(preScript);
+		document.head.appendChild(preScript);
 	}
 
 	const materialSymbols = document.body.querySelectorAll(

@@ -27,6 +27,7 @@ body {
 		hsla(calc(var(--theme-hue) - 10deg), 73%, 60%, 0.75) 60%,
 		hsla(calc(var(--theme-hue) - 5deg), 65%, 51%, 0.75) 95%
 	);
+	text-shadow: 0 .125em .25em hsla(calc(var(--theme-hue) + 6deg), 58%, 54%, 0.52);
 }
 @media (prefers-color-scheme: dark) {
 	body {
@@ -46,7 +47,6 @@ h3 {
 	padding-inline: 0.5em;
 	padding-block: 0.25em;
 	margin: 1em;
-	text-shadow: 0 2px 4px hsla(calc(var(--theme-hue) + 6deg), 58%, 54%, 0.27);
 	background-color: hsla(0, 0%, 100%, 0.25);
 	box-shadow: 0 8px 32px 0
 		hsla(calc(var(--theme-hue) + 14deg), 63%, 33%, 0.278);
@@ -116,7 +116,6 @@ a[href]:empty::after {
 	gap: 1em;
 	padding: 0.5em;
 	margin: 1em;
-	text-shadow: 0 2px 4px hsla(calc(var(--theme-hue) + 6deg), 58%, 54%, 0.27);
 	text-align: center;
 	background-color: rgba(255, 255, 255, 0.25);
 	box-shadow: 0 8px 32px 0
@@ -154,6 +153,7 @@ pre > code {
 	white-space: pre-wrap;
 	tab-size: 2em;
 	border-radius: 0.5em;
+	text-shadow: none;
 }
 pre > code {
 	max-height: 15.25em;

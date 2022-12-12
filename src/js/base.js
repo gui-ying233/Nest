@@ -14,15 +14,24 @@ document.addEventListener("DOMContentLoaded", () => {
 	}
 
 	const pres = [...document.getElementsByTagName("pre")];
-	for (let i = 0; i < pres.length; i++) {
-		pres[i].innerHTML =
-			"<code class='language-" +
-			pres[0].getAttribute("lang") +
-			"'>" +
-			pres[i].innerHTML +
-			"</code>";
+	if (pres.length) {
+		for (let i = 0; i < pres.length; i++) {
+			pres[i].innerHTML =
+				"<code class='language-" +
+				pres[0].getAttribute("lang") +
+				"'>" +
+				pres[i].innerHTML +
+				"</code>";
+		}
+		const preScript = document.createElement("script");
+		presScript.type = "text/javascript";
+		presScript.addEventListener("load", function (event) {
+			hljs.highlightAll();
+		});
+		presScript.src =
+			"//unpkg.com/@highlightjs/cdn-assets@11.7.0/highlight.min.js";
+		document.getElementsByTagName("head")[0].appendChild(presScript);
 	}
-	hljs.highlightAll();
 
 	const materialSymbols = document.body.querySelectorAll(
 		"[class|=material-symbols]"

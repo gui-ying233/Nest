@@ -85,9 +85,7 @@ document.addEventListener("DOMContentLoaded", () => {
 					"battery_" +
 					Math.round(battery.level * 7) +
 					"_bar" +
-					battery.charging
-						? "Bolt"
-						: "";
+					(battery.charging ? "Bolt" : "");
 				document.getElementById("battery").title =
 					Math.round(battery.level * 100) + "%";
 				break;

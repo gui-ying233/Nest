@@ -71,7 +71,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	updateConnectionStatus();
 
 	navigator.getBattery().then((battery) => {
-		switch (Math.round(battery.level) * 7) {
+		switch (Math.round(battery.level * 7)) {
 			case 0:
 			case 1:
 			case 2:
@@ -99,7 +99,7 @@ document.addEventListener("DOMContentLoaded", () => {
 				).innerText = "battery_unknown";
 		}
 		battery.onlevelchange = () => {
-			switch (Math.round(battery.level) * 7) {
+			switch (Math.round(battery.level * 7)) {
 				case 0:
 				case 1:
 				case 2:
@@ -128,7 +128,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			}
 		};
 		battery.onchargingchange = () => {
-			switch (Math.round(battery.level) * 7) {
+			switch (Math.round(battery.level * 7)) {
 				case 0:
 				case 1:
 				case 2:

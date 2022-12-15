@@ -57,6 +57,7 @@ document.addEventListener("DOMContentLoaded", () => {
 				break;
 			case "none":
 				connectionType = "wifi_off";
+				break;
 			case "unknown":
 			default:
 				connectionType = "signal_wifi_statusbar_not_connected";

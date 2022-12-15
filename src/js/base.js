@@ -94,7 +94,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			case 7:
 				document.body.querySelector(
 					"header > #battery > .material-symbols-rounded"
-				).innerText = "battery_full" + battery.charging ? "Bolt" : "";
+				).innerText = "battery_full" + (battery.charging ? "Bolt" : "");
 				document.getElementById("battery").title =
 					Math.round(battery.level * 100) + "%";
 				break;
@@ -102,7 +102,7 @@ document.addEventListener("DOMContentLoaded", () => {
 				document.body.querySelector(
 					"header > #battery > .material-symbols-rounded"
 				).innerText =
-					"battery_unknown" + battery.charging ? "Bolt" : "";
+					"battery_unknown" + (battery.charging ? "Bolt" : "");
 		}
 		battery.onlevelchange = () => {
 			switch (Math.round(battery.level * 7)) {
@@ -129,7 +129,7 @@ document.addEventListener("DOMContentLoaded", () => {
 					document.body.querySelector(
 						"header > #battery > .material-symbols-rounded"
 					).innerText =
-						"battery_full" + battery.charging ? "Bolt" : "";
+						"battery_full" + (battery.charging ? "Bolt" : "");
 					document.getElementById("battery").title =
 						Math.round(battery.level * 100) + "%";
 					break;
@@ -137,7 +137,7 @@ document.addEventListener("DOMContentLoaded", () => {
 					document.body.querySelector(
 						"header > #battery > .material-symbols-rounded"
 					).innerText =
-						"battery_unknown" + battery.charging ? "Bolt" : "";
+						"battery_unknown" + (battery.charging ? "Bolt" : "");
 			}
 		};
 		battery.onchargingchange = () => {
@@ -165,7 +165,7 @@ document.addEventListener("DOMContentLoaded", () => {
 					document.body.querySelector(
 						"header > #battery > .material-symbols-rounded"
 					).innerText =
-						"battery_full" + battery.charging ? "Bolt" : "";
+						"battery_full" + (battery.charging ? "Bolt" : "");
 					document.getElementById("battery").title =
 						Math.round(battery.level * 100) + "%";
 					break;
@@ -173,7 +173,7 @@ document.addEventListener("DOMContentLoaded", () => {
 					document.body.querySelector(
 						"header > #battery > .material-symbols-rounded"
 					).innerText =
-						"battery_unknown" + battery.charging ? "Bolt" : "";
+						"battery_unknown" + (battery.charging ? "Bolt" : "");
 			}
 		};
 	});

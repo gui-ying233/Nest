@@ -82,7 +82,7 @@ document.addEventListener("DOMContentLoaded", () => {
 				document.body.querySelector(
 					"header > #battery > .material-symbols-rounded"
 				).innerText =
-					"battery_" + Math.round(battery.level) * 7 + "_bar";
+					"battery_" + Math.round(battery.level * 7) + "_bar";
 				document.getElementById("battery").title =
 					Math.round(battery.level * 100) + "%";
 				break;
@@ -110,7 +110,7 @@ document.addEventListener("DOMContentLoaded", () => {
 					document.body.querySelector(
 						"header > #battery > .material-symbols-rounded"
 					).innerText =
-						"battery_" + Math.round(battery.level) * 7 + "_bar";
+						"battery_" + Math.round(battery.level * 7) + "_bar";
 					document.getElementById("battery").title =
 						Math.round(battery.level * 100) + "%";
 					break;
@@ -139,7 +139,7 @@ document.addEventListener("DOMContentLoaded", () => {
 					document.body.querySelector(
 						"header > #battery > .material-symbols-rounded"
 					).innerText =
-						"battery_" + Math.round(battery.level) * 7 + "_barBolt";
+						"battery_" + Math.round(battery.level * 7) + "_barBolt";
 					document.getElementById("battery").title =
 						Math.round(battery.level * 100) + "%";
 					break;

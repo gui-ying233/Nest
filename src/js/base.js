@@ -128,32 +128,64 @@ document.addEventListener("DOMContentLoaded", () => {
 			}
 		};
 		battery.onchargingchange = () => {
-			switch (Math.round(battery.level * 7)) {
-				case 0:
-				case 1:
-				case 2:
-				case 3:
-				case 4:
-				case 5:
-				case 6:
-					document.body.querySelector(
-						"header > #battery > .material-symbols-rounded"
-					).innerText =
-						"battery_" + Math.round(battery.level * 7) + "_barBolt";
-					document.getElementById("battery").title =
-						Math.round(battery.level * 100) + "%";
-					break;
-				case 7:
-					document.body.querySelector(
-						"header > #battery > .material-symbols-rounded"
-					).innerText = "battery_fullBolt";
-					document.getElementById("battery").title =
-						Math.round(battery.level * 100) + "%";
-					break;
-				default:
-					document.body.querySelector(
-						"header > #battery > .material-symbols-rounded"
-					).innerText = "battery_unknownBolt";
+			if (battery.charging) {
+				switch (Math.round(battery.level * 7)) {
+					case 0:
+					case 1:
+					case 2:
+					case 3:
+					case 4:
+					case 5:
+					case 6:
+						document.body.querySelector(
+							"header > #battery > .material-symbols-rounded"
+						).innerText =
+							"battery_" +
+							Math.round(battery.level * 7) +
+							"_barBolt";
+						document.getElementById("battery").title =
+							Math.round(battery.level * 100) + "%";
+						break;
+					case 7:
+						document.body.querySelector(
+							"header > #battery > .material-symbols-rounded"
+						).innerText = "battery_fullBolt";
+						document.getElementById("battery").title =
+							Math.round(battery.level * 100) + "%";
+						break;
+					default:
+						document.body.querySelector(
+							"header > #battery > .material-symbols-rounded"
+						).innerText = "battery_unknownBolt";
+				}
+			} else {
+				switch (Math.round(battery.level * 7)) {
+					case 0:
+					case 1:
+					case 2:
+					case 3:
+					case 4:
+					case 5:
+					case 6:
+						document.body.querySelector(
+							"header > #battery > .material-symbols-rounded"
+						).innerText =
+							"battery_" + Math.round(battery.level * 7) + "_bar";
+						document.getElementById("battery").title =
+							Math.round(battery.level * 100) + "%";
+						break;
+					case 7:
+						document.body.querySelector(
+							"header > #battery > .material-symbols-rounded"
+						).innerText = "battery_full";
+						document.getElementById("battery").title =
+							Math.round(battery.level * 100) + "%";
+						break;
+					default:
+						document.body.querySelector(
+							"header > #battery > .material-symbols-rounded"
+						).innerText = "battery_unknown";
+				}
 			}
 		};
 	});

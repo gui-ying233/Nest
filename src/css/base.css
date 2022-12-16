@@ -5,13 +5,15 @@
 	font-family: "Material Symbols Rounded";
 	font-style: normal;
 	font-weight: 100 700;
-	src: url("../assets/font/Material_Symbols_Rounded.woff2") format("woff2");
+	src: url("//fonts.gstatic.com/s/materialsymbolsrounded/v75/sykg-zNym6YjUruM-QrEh7-nyTnjDwKNJ_190Fjzag.woff2") format("woff2"), 
+	url("../assets/font/Material_Symbols_Rounded.woff2") format("woff2");
 }
 @font-face {
 	font-family: "Material Symbols Sharp";
 	font-style: normal;
 	font-weight: 100 700;
-	src: url("../assets/font/Material_Symbols_Sharp.woff2") format("woff2");
+	src: url("//fonts.gstatic.com/s/materialsymbolssharp/v74/gNMVW2J8Roq16WD5tFNRaeLQk6-SHQ_R00k4aWE.woff2") format("woff2"),
+	url("../assets/font/Material_Symbols_Sharp.woff2") format("woff2");
 }
 
 *,

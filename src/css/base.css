@@ -49,6 +49,10 @@ body {
 	}
 }
 
+main {
+	clear: both;
+}
+
 article,
 section {
 	margin: 0.25em;
@@ -180,6 +184,15 @@ a.card:focus {
 	user-select: none;
 	-webkit-user-select: none;
 	font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
+}
+
+@keyframes blink {
+	0% {opacity: 1;}
+	50% {opacity: 0;}
+}
+
+#delimiter {
+	animation: 1s blink steps(1) infinite;
 }
 
 pre,

@@ -33,6 +33,15 @@ document.addEventListener("DOMContentLoaded", () => {
 		document.head.appendChild(preScript);
 	}
 
+	setInterval(() => {
+		document.getElementById("hour").innerText = String(
+			new Date().getHours()
+		).padStart(2, 0);
+		document.getElementById("minute").innerText = String(
+			new Date().getMinutes()
+		).padStart(2, 0);
+	}, 1000);
+
 	const connection =
 		navigator.connection ||
 		navigator.mozConnection ||

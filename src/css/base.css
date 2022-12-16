@@ -1,7 +1,18 @@
 @import url("//unpkg.com/@highlightjs/cdn-assets@11.7.0/styles/default.min.css");
 @import url("//unpkg.com/nord-highlightjs@0.1.0/dist/nord.css");
-@import url("//fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200");
-@import url("//fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200");
+
+@font-face {
+	font-family: "Material Symbols Rounded";
+	font-style: normal;
+	font-weight: 100 700;
+	src: url("/src/assets/font/Material Symbols Rounded.woff2") format("woff2");
+}
+@font-face {
+	font-family: "Material Symbols Sharp";
+	font-style: normal;
+	font-weight: 100 700;
+	src: url("/src/assets/font/Material Symbols Sharp.woff2") format("woff2");
+}
 
 *,
 ::before {
@@ -27,7 +38,8 @@ body {
 		hsla(calc(var(--theme-hue) - 10deg), 73%, 60%, 0.75) 60%,
 		hsla(calc(var(--theme-hue) - 5deg), 65%, 51%, 0.75) 95%
 	);
-	text-shadow: 0 .125em .25em hsla(calc(var(--theme-hue) + 6deg), 58%, 54%, 0.52);
+	text-shadow: 0 0.125em 0.25em
+		hsla(calc(var(--theme-hue) + 6deg), 58%, 54%, 0.52);
 }
 @media (prefers-color-scheme: dark) {
 	body {
@@ -88,10 +100,14 @@ a {
 	color: #fff;
 	text-decoration: none;
 	font-weight: bolder;
-	margin-inline: .25em;
+	margin-inline: 0.25em;
 }
 a:not(a.card) {
-	background-image: linear-gradient(to right, transparent 50%, hsl(calc(var(--theme-hue) + 14deg), 63%, 33%) 50%);
+	background-image: linear-gradient(
+		to right,
+		transparent 50%,
+		hsl(calc(var(--theme-hue) + 14deg), 63%, 33%) 50%
+	);
 	background-position: 0;
 	background-size: 200%;
 	transition: background-position 250ms;
@@ -137,7 +153,26 @@ a.card:focus {
 	border-color: rgba(255, 255, 255, 0.635);
 }
 
+.material-symbols-rounded {
+	font-family: "Material Symbols Rounded";
+}
+.material-symbols-sharp {
+	font-family: "Material Symbols Sharp";
+}
 [class|="material-symbols"] {
+	font-weight: normal;
+	font-style: normal;
+	font-size: 24px;
+	line-height: 1;
+	letter-spacing: normal;
+	text-transform: none;
+	display: inline-block;
+	white-space: nowrap;
+	word-wrap: normal;
+	direction: ltr;
+	font-feature-settings: "liga";
+	-webkit-font-feature-settings: "liga";
+	-webkit-font-smoothing: antialiased;
 	display: inline-block;
 	margin-inline: 0.25em;
 	user-select: none;
@@ -171,5 +206,5 @@ footer {
 
 ::selection {
 	background-color: hsl(calc(var(--theme-hue) + 180deg), 63%, 33%);
-	color: #FFF;
+	color: #fff;
 }

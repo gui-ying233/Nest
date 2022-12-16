@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		}
 		const preScript = document.createElement("script");
 		preScript.type = "text/javascript";
-		preScript.addEventListener("load", function (event) {
+		preScript.addEventListener("load", (event) => {
 			hljs.highlightAll();
 		});
 		preScript.src =

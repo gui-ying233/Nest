@@ -5,13 +5,13 @@
 	font-family: "Material Symbols Rounded";
 	font-style: normal;
 	font-weight: 100 700;
-	src: url("/src/assets/font/Material Symbols Rounded.woff2") format("woff2");
+	src: url("src/assets/font/Material_Symbols_Rounded.woff2") format("woff2");
 }
 @font-face {
 	font-family: "Material Symbols Sharp";
 	font-style: normal;
 	font-weight: 100 700;
-	src: url("/src/assets/font/Material Symbols Sharp.woff2") format("woff2");
+	src: url("src/assets/font/Material_Symbols_Sharp.woff2") format("woff2");
 }
 
 *,

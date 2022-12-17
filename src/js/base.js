@@ -51,37 +51,34 @@ document.addEventListener("DOMContentLoaded", () => {
 		switch (connection.type) {
 			case "bluetooth":
 			case "wifi":
+			case "ethernet":
 				connectionType = connection.type;
 				break;
 			case "mixed":
 			case "other":
 			case "wimax":
-				connectionType = "sensors";
+				connectionType = "access-point-network";
 				break;
 			case "cellular":
-				connectionType = "signal_cellular_alt";
-				break;
-			case "ethernet":
-				connectionType = "settings_ethernet";
+				connectionType = "signal-cellular-3";
 				break;
 			case "none":
-				connectionType = "wifi_off";
+				connectionType = "access-point-network-off";
 				break;
 			case "unknown":
 			default:
-				connectionType = "signal_wifi_statusbar_not_connected";
+				connectionType = "wifi-strength-alert-outline";
 				break;
 		}
-		document.body.querySelector(
-			"header > #network > .material-symbols-rounded"
-		).innerText = connectionType;
+		document.getElementById("network").className =
+			"card mdi mdi-" + connectionType;
 		document.getElementById("network").title = connection.type;
 	}
 	connection.addEventListener("change", updateConnectionStatus);
 	updateConnectionStatus();
 
 	navigator.getBattery().then((battery) => {
-		switch (Math.round(battery.level * 7)) {
+		switch (Math.round(battery.level * 10)) {
 			case 0:
 			case 1:
 			case 2:
@@ -89,31 +86,29 @@ document.addEventListener("DOMContentLoaded", () => {
 			case 4:
 			case 5:
 			case 6:
-				document.body.querySelector(
-					"header > #battery > .material-symbols-rounded"
-				).innerText =
-					"battery_" +
-					Math.round(battery.level * 7) +
-					"_bar" +
-					(battery.charging ? "Bolt" : "");
+			case 7:
+			case 8:
+			case 9:
+				document.getElementById("battery").className =
+					"card mdi mdi-battery-" +
+					(battery.charging ? "charging-" : "") +
+					Math.round(battery.level * 10) * 10;
 				document.getElementById("battery").title =
 					Math.round(battery.level * 100) + "%";
 				break;
-			case 7:
-				document.body.querySelector(
-					"header > #battery > .material-symbols-rounded"
-				).innerText = "battery_full" + (battery.charging ? "Bolt" : "");
+			case 10:
+				document.getElementById("battery").className =
+					"card mdi mdi-battery" +
+					(battery.charging ? "-charging-100" : "");
 				document.getElementById("battery").title =
 					Math.round(battery.level * 100) + "%";
 				break;
 			default:
-				document.body.querySelector(
-					"header > #battery > .material-symbols-rounded"
-				).innerText =
-					"battery_unknown" + (battery.charging ? "Bolt" : "");
+				document.getElementById("battery").className =
+					"card mdi mdi-battery-unknown";
 		}
 		battery.onlevelchange = () => {
-			switch (Math.round(battery.level * 7)) {
+			switch (Math.round(battery.level * 10)) {
 				case 0:
 				case 1:
 				case 2:
@@ -121,33 +116,30 @@ document.addEventListener("DOMContentLoaded", () => {
 				case 4:
 				case 5:
 				case 6:
-					document.body.querySelector(
-						"header > #battery > .material-symbols-rounded"
-					).innerText =
-						"battery_" +
-						Math.round(battery.level * 7) +
-						"_bar" +
-						(battery.charging ? "Bolt" : "");
+				case 7:
+				case 8:
+				case 9:
+					document.getElementById("battery").className =
+						"card mdi mdi-battery-" +
+						(battery.charging ? "charging-" : "") +
+						Math.round(battery.level * 10) * 10;
 					document.getElementById("battery").title =
 						Math.round(battery.level * 100) + "%";
 					break;
-				case 7:
-					document.body.querySelector(
-						"header > #battery > .material-symbols-rounded"
-					).innerText =
-						"battery_full" + (battery.charging ? "Bolt" : "");
+				case 10:
+					document.getElementById("battery").className =
+						"card mdi mdi-battery" +
+						(battery.charging ? "-charging-100" : "");
 					document.getElementById("battery").title =
 						Math.round(battery.level * 100) + "%";
 					break;
 				default:
-					document.body.querySelector(
-						"header > #battery > .material-symbols-rounded"
-					).innerText =
-						"battery_unknown" + (battery.charging ? "Bolt" : "");
+					document.getElementById("battery").className =
+						"card mdi mdi-battery-unknown";
 			}
 		};
 		battery.onchargingchange = () => {
-			switch (Math.round(battery.level * 7)) {
+			switch (Math.round(battery.level * 10)) {
 				case 0:
 				case 1:
 				case 2:
@@ -155,37 +147,27 @@ document.addEventListener("DOMContentLoaded", () => {
 				case 4:
 				case 5:
 				case 6:
-					document.body.querySelector(
-						"header > #battery > .material-symbols-rounded"
-					).innerText =
-						"battery_" +
-						Math.round(battery.level * 7) +
-						"_bar" +
-						(battery.charging ? "Bolt" : "");
+				case 7:
+				case 8:
+				case 9:
+					document.getElementById("battery").className =
+						"card mdi mdi-battery-" +
+						(battery.charging ? "charging-" : "") +
+						Math.round(battery.level * 10) * 10;
 					document.getElementById("battery").title =
 						Math.round(battery.level * 100) + "%";
 					break;
-				case 7:
-					document.body.querySelector(
-						"header > #battery > .material-symbols-rounded"
-					).innerText =
-						"battery_full" + (battery.charging ? "Bolt" : "");
+				case 10:
+					document.getElementById("battery").className =
+						"card mdi mdi-battery" +
+						(battery.charging ? "-charging-100" : "");
 					document.getElementById("battery").title =
 						Math.round(battery.level * 100) + "%";
 					break;
 				default:
-					document.body.querySelector(
-						"header > #battery > .material-symbols-rounded"
-					).innerText =
-						"battery_unknown" + (battery.charging ? "Bolt" : "");
+					document.getElementById("battery").className =
+						"card mdi mdi-battery-unknown";
 			}
 		};
 	});
-
-	const materialSymbols = document.body.querySelectorAll(
-		"[class|=material-symbols]"
-	);
-	for (let i = 0; i < materialSymbols.length; i++) {
-		materialSymbols[i].setAttribute("translate", "no");
-	}
 });

@@ -65,6 +65,7 @@ h3 {
 }
 h3 {
 	width: fit-content;
+	will-change: width;
 }
 h1::before,
 h2::before,

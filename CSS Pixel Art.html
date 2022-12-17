@@ -32,22 +32,21 @@
 	</head>
 	<body>
 		<header>
-			<a href="index.html" class="card" style="float:left;"
-				><span class="material-symbols-rounded">home</span></a
-			>
-			<div id="battery" class="card" style="float:right;">
-				<span class="material-symbols-rounded">battery_unknown</span>
-			</div>
-			<div id="network" class="card" style="float:right;">
-				<span class="material-symbols-rounded"
-					>signal_wifi_statusbar_not_connected</span
-				>
-			</div>
-			<div class="card" style="float:right;">
-				<span class="material-symbols-rounded"
-					><span id="hour">00</span><span id="delimiter">:</span
-					><span id="minute">00</span></span
-				>
+			<a
+				href="index.html"
+				class="card mdi mdi-home"
+				style="float:left;"></a>
+			<div
+				id="battery"
+				class="card mdi mdi-battery-unknown"
+				style="float:right;"></div>
+			<div
+				id="network"
+				class="card mdi mdi-wifi-strength-alert-outline"
+				style="float:right;"></div>
+			<div class="card" style="float:right;gap:.25em;">
+				<span id="hour">00</span><span id="delimiter">:</span
+				><span id="minute">00</span>
 			</div>
 		</header>
 		<main>
@@ -67,18 +66,16 @@
 						代码写起来较为简短，也有很多的生成器。但一般需要再套个元素再外以帮助占位，浏览器缩放会影响显示效果（存在缝隙或堆叠），且不太方便自适应。
 					</p>
 					<a
-						class="card"
+						class="card mdi mdi-link"
 						href="//fjolt.com/article/css-pixel-art-generator"
 						target="_blank"
-						><span class="material-symbols-rounded">Link</span>CSS
-						Pixel Art Generator</a
+						>CSS Pixel Art Generator</a
 					>
 					<a
-						class="card"
+						class="card mdi mdi-link"
 						href="//www.pixelartcss.com/"
 						target="_blank"
-						><span class="material-symbols-rounded">Link</span>PIXEL
-						ART TO CSS</a
+						>PIXEL ART TO CSS</a
 					>
 					<h3>展示柜</h3>
 					<div class="card">
@@ -162,8 +159,9 @@
 						只需一个元素，十分方便的自适应，只需宽与高任意指定一个，甚至可以在里面写点字。但代码十分长，也没什么生成器，写起来会不太方便。
 					</p>
 					<h3>简易生成代码</h3>
-					<a class="card" href="//codepen.io/cgreinhold/pen/rNagxoK"
-						><span class="material-symbols-rounded">Link</span
+					<a
+						class="card mdi mdi-link"
+						href="//codepen.io/cgreinhold/pen/rNagxoK"
 						>Mushroom linear-gradient</a
 					>
 					<pre lang="js">

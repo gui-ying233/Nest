@@ -35,8 +35,14 @@ body {
 	}
 }
 
-main {
-	clear: both;
+header {
+	display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    justify-content: center;
+}
+header > * {
+	flex: 1em;
 }
 
 article,

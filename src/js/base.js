@@ -63,7 +63,7 @@ document.addEventListener("DOMContentLoaded", () => {
 				connectionType = "signal-cellular-3";
 				break;
 			case "none":
-				connectionType = "access-point-network-off";
+				connectionType = "wifi-off";
 				break;
 			case "unknown":
 			default:

@@ -89,12 +89,12 @@ h3::before {
 	left: -0.325em;
 	top: 25%;
 }
-h1 > a:hover::after,
-h2 > a:hover::after,
-h3 > a:hover::after,
-h4 > a:hover::after,
-h5 > a:hover::after,
-h6 > a:hover::after {
+h1 > a::after,
+h2 > a::after,
+h3 > a::after,
+h4 > a::after,
+h5 > a::after,
+h6 > a::after {
     content: "\F0337";
     display: inline-block;
     font: normal normal normal 24px/1 "Material Design Icons";
@@ -103,7 +103,20 @@ h6 > a:hover::after {
     line-height: inherit;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+	width: 0;
+	margin-inline-start: 0;
+	opacity: 0;
+    transition: margin-inline-start 75ms, width 75ms, opacity 150ms;
+}
+h1 > a:hover::after,
+h2 > a:hover::after,
+h3 > a:hover::after,
+h4 > a:hover::after,
+h5 > a:hover::after,
+h6 > a:hover::after {
+	width: 0.75em;
     margin-inline-start: 0.25em;
+    opacity: 1;
 }
 
 p {

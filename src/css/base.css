@@ -40,9 +40,26 @@ header {
     flex-wrap: wrap;
     align-items: stretch;
     justify-content: center;
+	margin: 1em;
+	text-align: center;
+	background-color: rgba(255, 255, 255, 0.25);
+	box-shadow: 0 8px 32px 0 hsla(calc(var(--theme-hue) + 14deg), 63%, 33%, 0.278);
+	backdrop-filter: blur(2.5px);
+	-webkit-backdrop-filter: blur(2.5px);
+	border-radius: 0.5em;
+	border: 1px solid rgba(255, 255, 255, 0.135);
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: calc(100% - 2em - 2px);
+	z-index: 1;
 }
 header > * {
 	flex: 1em;
+}
+
+main {
+	margin-top: 7.5em;
 }
 
 article,
@@ -166,14 +183,11 @@ a[href]:not([class*="mdi"]):empty::after {
 	-webkit-backdrop-filter: blur(2.5px);
 	border-radius: 0.5em;
 	border: 1px solid rgba(255, 255, 255, 0.135);
-	transition: border-color 250ms;
 }
 a.card {
 	display: inline-flex;
 	gap: 0.25em;
-}
-a.card > [class|="material-symbols"] {
-	font-variation-settings: "FILL" 0, "wght" 700, "GRAD" 0, "opsz" 48;
+	transition: border-color 250ms;
 }
 a.card:hover,
 a.card:active,

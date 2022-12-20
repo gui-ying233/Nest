@@ -60,7 +60,7 @@ header > * {
 
 main {
 	margin-top: 7.5em;
-	scroll-margin-block-start: 7em;
+	scroll-margin-block-start: -7.5em;
 }
 
 article,

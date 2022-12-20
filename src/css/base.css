@@ -141,6 +141,9 @@ h6 > a:hover::after {
 p {
 	margin-inline: 2.5em;
 }
+p.paragraph {
+	text-indent: 2em;
+}
 
 a {
 	color: #fff;

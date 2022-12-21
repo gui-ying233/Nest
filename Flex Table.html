@@ -1,89 +1,92 @@
 <!DOCTYPE html>
 <html lang="zh-hans">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="icon" type="image/x-icon" href="src/assets/favicon.ico" />
-		<title>CSS 像素画的方法 - 鬼影233</title>
-		<script src="src/js/base.js"></script>
-		<link rel="stylesheet" href="src/css/base.css" />
-		<style>
-			@media (max-width: 576px) {
-				.flextable,
-				.flextable > tbody,
-				.flextable tr {
-					display: block;
-				}
-				.flextable th {
-					display: none;
-				}
-				.flextable tr {
-					margin-block: .5em;
-				}
-				.flextable td {
-					display: list-item;
-					text-align: right;
-					margin-left: 4em;
-				}
-				@counter-style flextable-114514 {
-					system: fixed;
-					suffix: "：";
-					symbols: "标题1" "标题2" "标题3";
-				}
-				.flextable#flextable-114514 {
-					list-style: flextable-114514;
-				}
-				.flextable td::marker {
-					font-weight: bolder;
-				}
-				.flextable td[data-th]::marker {
-					content: attr(data-th) "：";
-				}
-			}
-		</style>
-	</head>
-	<body>
-		<header>
-			<a href="index.html" class="card mdi mdi-home"></a>
-			<div style="flex:16;"></div>
-			<div
-				class="card"
-				style="gap:.25em;flex:5em;user-select:none;-webkit-user-select:none;">
-				<span id="hour">00</span><span id="delimiter">:</span
-				><span id="minute">00</span>
-			</div>
-			<div
-				id="network"
-				class="card mdi mdi-wifi-strength-alert-outline"></div>
-			<div id="battery" class="card mdi mdi-battery-unknown"></div>
-		</header>
-		<main>
-			<h1>CSS 自适应简单 Table</h1>
-			<article>
-				<section>
-					<h2>前言</h2>
-					<p class="paragraph">
-						众所周知，Table
-						由于其不方便换行的固有特性，且常常存在一行大量文本正在逐渐与现代的自适应布局脱节。Grid
-						与 Flex 的效果固然不错，但有没有什么方法能将简单的 Table
-						进行简单的自适应并保持代码（例如 Wikitext）
-						基本格式以对代码力较差的大众也能看懂？
-					</p>
-					<p class="paragraph">
-						答案自然是有的，当你去网上搜索便能发现一些使用
-						<code>attr()</code> 的 CSS 转换，亦或者是用 JS
-						进行更复杂的转换。
-					</p>
-					<p class="pargraph">
-						而本篇介绍的便是
-						<code>attr()</code> 的进阶方法，毕竟每个元素都要设置
-						<code>data-</code> 值也太烦了……
-					</p>
-				</section>
-				<section>
-					<h2>实例</h2>
-					<pre lang="css"><code>@media (max-width: 576px) {
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="src/assets/favicon.ico" />
+    <title>CSS 像素画的方法 - 鬼影233</title>
+    <script src="src/js/base.js"></script>
+    <link rel="stylesheet" href="src/css/base.css" />
+    <style>
+      @media (max-width: 576px) {
+        .flextable,
+        .flextable > tbody,
+        .flextable tr {
+          display: block;
+        }
+        .flextable th {
+          display: none;
+        }
+        .flextable tr {
+          margin-block: 0.5em;
+        }
+        .flextable td {
+          display: list-item;
+          text-align: right;
+          margin-left: 4em;
+        }
+        @counter-style flextable-114514 {
+          system: fixed;
+          suffix: "：";
+          symbols: "标题1" "标题2" "标题3";
+        }
+        .flextable#flextable-114514 {
+          list-style: flextable-114514;
+        }
+        .flextable td::marker {
+          font-weight: bolder;
+        }
+        .flextable td[data-th]::marker {
+          content: attr(data-th) "：";
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <a href="index.html" class="card mdi mdi-home"></a>
+      <div style="flex: 16"></div>
+      <div
+        class="card"
+        style="
+          gap: 0.25em;
+          flex: 5em;
+          user-select: none;
+          -webkit-user-select: none;
+        "
+      >
+        <span id="hour">00</span><span id="delimiter">:</span
+        ><span id="minute">00</span>
+      </div>
+      <div id="network" class="card mdi mdi-wifi-strength-alert-outline"></div>
+      <div id="battery" class="card mdi mdi-battery-unknown"></div>
+    </header>
+    <main>
+      <h1>CSS 自适应简单 Table</h1>
+      <article>
+        <section>
+          <h2>前言</h2>
+          <p class="paragraph">
+            众所周知，Table
+            由于其不方便换行的固有特性，且常常存在一行大量文本正在逐渐与现代的自适应布局脱节。Grid
+            与 Flex 的效果固然不错，但有没有什么方法能将简单的 Table
+            进行简单的自适应并保持代码（例如 Wikitext）
+            基本格式以对代码力较差的大众也能看懂？
+          </p>
+          <p class="paragraph">
+            答案自然是有的，当你去网上搜索便能发现一些使用
+            <code>attr()</code> 的 CSS 转换，亦或者是用 JS 进行更复杂的转换。
+          </p>
+          <p class="pargraph">
+            而本篇介绍的便是
+            <code>attr()</code> 的进阶方法，毕竟每个元素都要设置
+            <code>data-</code> 值也太烦了……
+          </p>
+        </section>
+        <section>
+          <h2>实例</h2>
+          <pre lang="css"><code>@media (max-width: 576px) {
 						.flextable,
 						.flextable > tbody,
 						.flextable tr {
@@ -115,82 +118,78 @@
 							content: attr(data-th) "：";
 						}
 					}</code></pre>
-					<table
-						id="flextable-114514"
-						class="flextable"
-						style="margin: auto;">
-						<tbody>
-							<tr>
-								<th>标题1</th>
-								<th>标题2</th>
-								<th>标题3</th>
-							</tr>
-							<tr>
-								<td>内容1</td>
-								<td>内容2</td>
-								<td>内容3</td>
-							</tr>
-							<tr>
-								<td>内容4</td>
-								<td data-th="特殊0">内容5</td>
-								<td>内容6</td>
-							</tr>
-							<tr>
-								<td>内容7</td>
-								<td>内容8</td>
-								<td>内容9</td>
-							</tr>
-						</tbody>
-					</table>
-				</section>
-				<section>
-					<h2>简介</h2>
-					<p>
-						此方法仅适用于十分基础的表格，但我想这大概也挺有用的。可惜其中主要的参数
-						MediaWiki 的纯 CSS / 已过滤的 CSS 并不支持。
-					</p>
-					<p>
-						思路是将表格转换为有序列表，通过
-						<code>symbols</code> 统一指定标题。<code>data-th</code>
-						值可用于特别指定一个标题，虽然感觉没什么用。
-					</p>
-					<p>
-						这里不对代码进行详细解释，请自行查阅例如 MDN
-						等相关文档，如果还是看不懂，或许你不该在这里。
-					</p>
-				</section>
-			</article>
-		</main>
-		<footer>
-			<div class="card">
-				<script
-					src="//giscus.app/client.js"
-					data-repo="gui-ying233/Nest"
-					data-repo-id="R_kgDOIkmlsQ"
-					data-category="Comments"
-					data-category-id="DIC_kwDOIkmlsc4CS-Ck"
-					data-mapping="pathname"
-					data-strict="0"
-					data-reactions-enabled="1"
-					data-emit-metadata="0"
-					data-input-position="top"
-					data-theme="transparent_light"
-					data-lang="zh-CN"
-					data-loading="lazy"
-					crossorigin="anonymous"
-					async></script>
-			</div>
-			<p>
-				Made with 💢 by
-				<a href="//github.com/gui-ying233" target="_blank">鬼影233</a>
-			</p>
-			<p>
-				<a href="//gui-ying233.github.io/Nest/" target="_blank"
-					>Published</a
-				>
-				with
-				<a href="//pages.github.com/" target="_blank">GitHub Pages</a>
-			</p>
-		</footer>
-	</body>
+          <table id="flextable-114514" class="flextable" style="margin: auto">
+            <tbody>
+              <tr>
+                <th>标题1</th>
+                <th>标题2</th>
+                <th>标题3</th>
+              </tr>
+              <tr>
+                <td>内容1</td>
+                <td>内容2</td>
+                <td>内容3</td>
+              </tr>
+              <tr>
+                <td>内容4</td>
+                <td data-th="特殊0">内容5</td>
+                <td>内容6</td>
+              </tr>
+              <tr>
+                <td>内容7</td>
+                <td>内容8</td>
+                <td>内容9</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+        <section>
+          <h2>简介</h2>
+          <p>
+            此方法仅适用于十分基础的表格，但我想这大概也挺有用的。可惜其中主要的参数
+            MediaWiki 的纯 CSS / 已过滤的 CSS 并不支持。
+          </p>
+          <p>
+            思路是将表格转换为有序列表，通过
+            <code>symbols</code> 统一指定标题。<code>data-th</code>
+            值可用于特别指定一个标题，虽然感觉没什么用。
+          </p>
+          <p>
+            这里不对代码进行详细解释，请自行查阅例如 MDN
+            等相关文档，如果还是看不懂，或许你不该在这里。
+          </p>
+        </section>
+      </article>
+    </main>
+    <footer>
+      <div class="card">
+        <script
+          src="//giscus.app/client.js"
+          data-repo="gui-ying233/Nest"
+          data-repo-id="R_kgDOIkmlsQ"
+          data-category="Comments"
+          data-category-id="DIC_kwDOIkmlsc4CS-Ck"
+          data-mapping="pathname"
+          data-strict="0"
+          data-reactions-enabled="1"
+          data-emit-metadata="0"
+          data-input-position="top"
+          data-theme="transparent_light"
+          data-lang="zh-CN"
+          data-loading="lazy"
+          crossorigin="anonymous"
+          async
+        ></script>
+      </div>
+      <p>
+        Made with 💢 by
+        <a href="//github.com/gui-ying233" target="_blank">鬼影233</a>
+      </p>
+      <p>
+        <a href="//gui-ying233.github.io/Nest/" target="_blank">Published</a>
+        with
+        <a href="//pages.github.com/" target="_blank">GitHub Pages</a>
+      </p>
+    </footer>
+  </body>
 </html>

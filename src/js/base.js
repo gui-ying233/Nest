@@ -46,8 +46,8 @@ document.addEventListener("DOMContentLoaded", () => {
 		navigator.connection ||
 		navigator.mozConnection ||
 		navigator.webkitConnection;
-	let connectionType;
 	function updateConnectionStatus() {
+		let connectionType;
 		switch (connection.type) {
 			case "bluetooth":
 			case "wifi":

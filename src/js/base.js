@@ -13,6 +13,31 @@ document.addEventListener("DOMContentLoaded", () => {
 			"<a href='#" + i + "'>" + headings[i].innerHTML + "</a>";
 	}
 
+	if (
+		document.location.pathname !== "/Nest/index.html" &&
+		document.location.pathname !== "/Nest/"
+	) {
+		const giveYouUp = document.createElement("button");
+		giveYouUp.id = "giveYouUp";
+		giveYouUp.classList.add("card", "mdi", "mdi-arrow-up");
+		giveYouUp.style.cssText =
+			"width:2.5em;height:2.5em;position:fixed;bottom:0;right:0;";
+		giveYouUp.addEventListener("click", () => {
+			scrollTo(pageXOffset, 0);
+		});
+		window.addEventListener("scroll", () => {
+			if (pageYOffset === 0) {
+				document.getElementById("giveYouUp").style.display = "none";
+			} else {
+				document.getElementById("giveYouUp").style.display = "";
+			}
+		});
+		document.body.appendChild(giveYouUp);
+		if (pageYOffset === 0) {
+			document.getElementById("giveYouUp").style.display = "none";
+		}
+	}
+
 	const pres = [...document.getElementsByTagName("pre")];
 	if (pres.length) {
 		for (let i = 0; i < pres.length; i++) {

@@ -1,16 +1,49 @@
 "use strict";
 
+/**
+ *
+ * @param {object} arr
+ * @returns {object}
+ */
+function uniq(arr) {
+	return [...new Set(arr)];
+}
+
 document.head.innerHTML +=
 	"<style type='text/css'>:root {--theme-hue: " +
 	Math.random() * 360 +
 	"deg;}</style>";
 
 document.addEventListener("DOMContentLoaded", () => {
+	const headingsCounter = new Object();
 	const headings = document.body.querySelectorAll("h1, h2, h3, h4, h5, h6");
 	for (let i = 0; i < headings.length; i++) {
-		headings[i].setAttribute("id", i);
-		headings[i].innerHTML =
-			"<a href='#" + i + "'>" + headings[i].innerHTML + "</a>";
+		if (headingsCounter[headings[i].innerText]) {
+			headingsCounter[headings[i].innerText]++;
+			headings[i].setAttribute(
+				"id",
+				encodeURI(headings[i].innerText) +
+					"_" +
+					headingsCounter[headings[i].innerText]
+			);
+			headings[i].innerHTML =
+				"<a href='#" +
+				encodeURI(headings[i].innerText) +
+				"_" +
+				headingsCounter[headings[i].innerText] +
+				"'>" +
+				headings[i].innerHTML +
+				"</a>";
+		} else {
+			headings[i].setAttribute("id", encodeURI(headings[i].innerText));
+			headings[i].innerHTML =
+				"<a href='#" +
+				encodeURI(headings[i].innerText) +
+				"'>" +
+				headings[i].innerHTML +
+				"</a>";
+			headingsCounter[headings[i].innerText] = 1;
+		}
 	}
 
 	if (

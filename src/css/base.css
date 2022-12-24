@@ -7,6 +7,7 @@
 	box-sizing: border-box;
 }
 html {
+	scroll-behavior: smooth;
 	scroll-snap-type: y proximity;
 }
 body > *,
@@ -188,14 +189,18 @@ a[href]:not([class*="mdi"]):empty::after {
 	border-radius: 0.5em;
 	border: 1px solid rgba(255, 255, 255, 0.135);
 }
-a.card {
+a.card, button.card {
 	display: inline-flex;
 	gap: 0.25em;
+	color: currentColor;
 	transition: border-color 250ms;
 }
 a.card:hover,
 a.card:active,
-a.card:focus {
+a.card:focus,
+button.card:hover,
+button.card:active,
+button.card:focus {
 	border-color: rgba(255, 255, 255, 0.635);
 }
 

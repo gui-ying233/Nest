@@ -19,7 +19,7 @@
 					display: none;
 				}
 				.flextable tr {
-					margin-block: .5em;
+					margin-block: 0.5em;
 				}
 				.flextable td {
 					display: list-item;
@@ -46,10 +46,15 @@
 	<body>
 		<header>
 			<a href="index.html" class="card mdi mdi-home"></a>
-			<div style="flex:16;"></div>
+			<div style="flex: 16"></div>
 			<div
 				class="card"
-				style="gap:.25em;flex:5em;user-select:none;-webkit-user-select:none;">
+				style="
+					gap: 0.25em;
+					flex: 5em;
+					user-select: none;
+					-webkit-user-select: none;
+				">
 				<span id="hour">00</span><span id="delimiter">:</span
 				><span id="minute">00</span>
 			</div>
@@ -119,7 +124,7 @@
 					<table
 						id="flextable-114514"
 						class="flextable"
-						style="margin: auto;">
+						style="margin: auto">
 						<tbody>
 							<tr>
 								<th>标题1</th>

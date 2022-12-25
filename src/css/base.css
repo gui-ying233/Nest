@@ -38,13 +38,14 @@ body {
 
 header {
 	display: flex;
-    flex-wrap: wrap;
-    align-items: stretch;
-    justify-content: center;
+	flex-wrap: wrap;
+	align-items: stretch;
+	justify-content: center;
 	margin: 1em;
 	text-align: center;
 	background-color: rgba(255, 255, 255, 0.25);
-	box-shadow: 0 8px 32px 0 hsla(calc(var(--theme-hue) + 14deg), 63%, 33%, 0.278);
+	box-shadow: 0 8px 32px 0
+		hsla(calc(var(--theme-hue) + 14deg), 63%, 33%, 0.278);
 	backdrop-filter: blur(2.5px);
 	-webkit-backdrop-filter: blur(2.5px);
 	border-radius: 0.5em;
@@ -115,18 +116,18 @@ h3 > a::after,
 h4 > a::after,
 h5 > a::after,
 h6 > a::after {
-    content: "\F0337";
-    display: inline-block;
-    font: normal normal normal 24px/1 "Material Design Icons";
-    font-size: inherit;
-    text-rendering: auto;
-    line-height: inherit;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+	content: "\F0337";
+	display: inline-block;
+	font: normal normal normal 24px/1 "Material Design Icons";
+	font-size: inherit;
+	text-rendering: auto;
+	line-height: inherit;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 	width: 0;
 	margin-inline-start: 0;
 	opacity: 0;
-    transition: margin-inline-start 75ms, width 75ms, opacity 150ms;
+	transition: margin-inline-start 75ms, width 75ms, opacity 150ms;
 }
 h1 > a:hover::after,
 h2 > a:hover::after,
@@ -135,8 +136,8 @@ h4 > a:hover::after,
 h5 > a:hover::after,
 h6 > a:hover::after {
 	width: 0.75em;
-    margin-inline-start: 0.25em;
-    opacity: 1;
+	margin-inline-start: 0.25em;
+	opacity: 1;
 }
 
 p {
@@ -189,7 +190,8 @@ a[href]:not([class*="mdi"]):empty::after {
 	border-radius: 0.5em;
 	border: 1px solid rgba(255, 255, 255, 0.135);
 }
-a.card, button.card {
+a.card,
+button.card {
 	display: inline-flex;
 	gap: 0.25em;
 	color: currentColor;
@@ -209,8 +211,12 @@ button.card:focus {
 }
 
 @keyframes blink {
-	0% {opacity: 1;}
-	50% {opacity: 0;}
+	0% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0;
+	}
 }
 
 #delimiter {

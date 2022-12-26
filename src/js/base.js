@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		giveYouUp.id = "giveYouUp";
 		giveYouUp.classList.add("card", "mdi", "mdi-arrow-up");
 		giveYouUp.style.cssText =
-			"width:2.5em;height:2.5em;position:fixed;bottom:0;right:0;";
+			"width:2.5em;height:2.5em;position:fixed;bottom:0;right:0;font-size:unset;";
 		giveYouUp.addEventListener("click", () => {
 			scrollTo(pageXOffset, 0);
 		});

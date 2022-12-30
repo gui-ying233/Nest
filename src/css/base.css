@@ -59,6 +59,16 @@ header {
 header > * {
 	flex: 1em;
 }
+@media print {
+	.noprint,
+	.noprint *,
+	header,
+	header *,
+	.giscus,
+	.giscus * {
+		display: none !important;
+	}
+}
 
 main {
 	margin-top: 7.5em;

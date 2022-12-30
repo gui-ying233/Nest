@@ -231,9 +231,16 @@ pre > code {
 	border-radius: 0.5em;
 	text-shadow: none;
 }
+pre::before {
+	content: attr(lang);
+	position: absolute;
+	right: 0;
+	transform: translateX(-100%);
+}
 pre > code {
 	max-height: 15.25em;
 	transition: max-height 1500ms;
+	padding-top: 1.5em !important;
 }
 pre:hover > code,
 pre > code:hover {

@@ -56,17 +56,17 @@ document.addEventListener("DOMContentLoaded", () => {
 		giveYouUp.style.cssText =
 			"width:2.5em;height:2.5em;position:fixed;bottom:0;right:0;cursor:pointer;font-size:unset;";
 		giveYouUp.addEventListener("click", () => {
-			scrollTo(pageXOffset, 0);
+			scrollTo(scrollX, 0);
 		});
 		window.addEventListener("scroll", () => {
-			if (pageYOffset === 0) {
+			if (scrollY === 0) {
 				document.getElementById("giveYouUp").style.display = "none";
 			} else {
 				document.getElementById("giveYouUp").style.display = "";
 			}
 		});
 		document.body.appendChild(giveYouUp);
-		if (pageYOffset === 0) {
+		if (scrollY === 0) {
 			document.getElementById("giveYouUp").style.display = "none";
 		}
 	}

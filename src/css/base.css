@@ -59,16 +59,6 @@ header {
 header > * {
 	flex: 1em;
 }
-@media print {
-	.noprint,
-	.noprint *,
-	header,
-	header *,
-	.giscus,
-	.giscus * {
-		display: none !important;
-	}
-}
 
 main {
 	margin-top: 7.5em;
@@ -267,4 +257,15 @@ footer {
 ::selection {
 	background-color: hsl(calc(var(--theme-hue) + 180deg), 63%, 33%);
 	color: #fff;
+}
+
+@media print {
+	.noprint,
+	.noprint *,
+	header,
+	header *,
+	.giscus,
+	.giscus * {
+		display: none !important;
+	}
 }

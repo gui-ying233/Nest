@@ -65,9 +65,12 @@ main {
 	scroll-margin-block-start: -7.5em;
 }
 
-article,
-section {
+article {
 	margin: 0.25em;
+}
+article > section {
+	max-width: 37.5em;
+	margin: auto;
 }
 
 h1,
@@ -223,6 +226,9 @@ button.card:focus {
 	animation: 1s blink steps(1) infinite;
 }
 
+pre {
+	position: relative;
+}
 pre,
 pre > code {
 	word-wrap: break-word;
@@ -234,8 +240,8 @@ pre > code {
 pre::before {
 	content: attr(lang);
 	position: absolute;
-	right: 0;
-	transform: translateX(-100%);
+	right: 0.25em;
+	top: 0.25em;
 }
 pre > code {
 	max-height: 15.25em;

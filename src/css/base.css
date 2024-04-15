@@ -75,3 +75,7 @@ footer::before {
 		--foreground-color-titles: hsl(0, 0%, 100%);
 	}
 }
+::selection {
+	background-color: var(--foreground-color--1);
+	color: var(--background-color--1);
+}

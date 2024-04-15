@@ -32,6 +32,9 @@ a[target="_blank"] {
 ol {
 	list-style-type: simp-chinese-informal;
 }
+li + li {
+	margin-top: 0.5em;
+}
 img,
 [role="img"] {
 	max-width: calc(100% - 2px);

@@ -1,3 +1,10 @@
+body > div,
+body > img,
+body > [role="img"],
+body > pre,
+body > footer {
+	content-visibility: auto;
+}
 html {
 	background-color: var(--background-color--1);
 	font-family: system-ui, ui-sans-serif, sans-serif;
@@ -41,6 +48,11 @@ img,
 	margin: 1.5em auto;
 	outline: 1px solid var(--background-color--2);
 	background-color: var(--background-color--2);
+}
+img {
+	font-style: italic;
+	vertical-align: middle;
+	height: auto;
 }
 pre {
 	font-family: ui-monospace, monospace;

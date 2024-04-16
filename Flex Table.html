@@ -20,7 +20,20 @@
 				y.parentNode.insertBefore(t, y);
 			})(window, document, "clarity", "script", "hvommjqwte");
 		</script>
+		<script
+			async
+			src="https://www.googletagmanager.com/gtag/js?id=G-ZMHY61ZCQE"
+		></script>
 		<link rel="stylesheet" href="src/css/base.css" />
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag() {
+				dataLayer.push(arguments);
+			}
+			gtag("js", new Date());
+
+			gtag("config", "G-ZMHY61ZCQE");
+		</script>
 	</head>
 	<body>
 		<h1>CSS 自适应简单 Table</h1>
@@ -76,38 +89,36 @@
 	}
 }</pre
 		>
-		<style>
-			@media (max-width: 576px) {
-				.flextable,
-				.flextable > tbody,
-				.flextable tr {
-					display: block;
-				}
-				.flextable th {
-					display: none;
-				}
-				.flextable tr {
-					margin-block: 0.5em;
-				}
-				.flextable td {
-					display: list-item;
-					text-align: right;
-					margin-left: 4em;
-				}
-				@counter-style flextable-114514 {
-					system: fixed;
-					suffix: "：";
-					symbols: "标题1" "标题2" "标题3";
-				}
-				.flextable#flextable-114514 {
-					list-style: flextable-114514;
-				}
-				.flextable td::marker {
-					font-weight: bolder;
-				}
-				.flextable td[data-th]::marker {
-					content: attr(data-th) "：";
-				}
+		<style media="(max-width: 576px)">
+			.flextable,
+			.flextable > tbody,
+			.flextable tr {
+				display: block;
+			}
+			.flextable th {
+				display: none;
+			}
+			.flextable tr {
+				margin-block: 0.5em;
+			}
+			.flextable td {
+				display: list-item;
+				text-align: right;
+				margin-left: 4em;
+			}
+			@counter-style flextable-114514 {
+				system: fixed;
+				suffix: "：";
+				symbols: "标题1" "标题2" "标题3";
+			}
+			.flextable#flextable-114514 {
+				list-style: flextable-114514;
+			}
+			.flextable td::marker {
+				font-weight: bolder;
+			}
+			.flextable td[data-th]::marker {
+				content: attr(data-th) "：";
 			}
 		</style>
 		<table id="flextable-114514" class="flextable" style="margin: auto">

@@ -1,11 +1,11 @@
 html {
+	background-color: var(--background-color--1);
 	font-family: system-ui, ui-sans-serif, sans-serif;
 	font-weight: 400;
 	font-size: 18px;
 	color: var(--foreground-color--1);
 }
 body {
-	background-color: var(--background-color--1);
 	max-width: var(--body-max-width);
 	margin: 7.5vh auto;
 	line-height: 1.4;

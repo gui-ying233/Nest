@@ -5,18 +5,18 @@
   xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
   <url>
     <loc>https://gui-ying233.github.io/Nest/</loc>
-    <priority>1.00</priority>
+    <priority>1.0</priority>
   </url>
   <url>
     <loc>https://gui-ying233.github.io/Nest/index.html</loc>
-    <priority>0.00</priority>
+    <priority>0.0</priority>
   </url>
   <url>
     <loc>https://gui-ying233.github.io/Nest/CSS%20Pixel%20Art.html</loc>
-    <priority>0.80</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://gui-ying233.github.io/Nest/Flex%20Table.html</loc>
-    <priority>0.80</priority>
+    <priority>0.7</priority>
   </url>
 </urlset>

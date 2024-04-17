@@ -14,8 +14,8 @@ html {
 }
 body {
 	max-width: var(--body-max-width);
-	margin: 7.5vh auto;
-	line-height: 1.4;
+	margin: 10vh auto;
+	line-height: 1.5;
 }
 h1,
 h2,
@@ -24,9 +24,21 @@ h4,
 h5,
 h6 {
 	color: var(--foreground-color-titles);
-	font-weight: 600;
-	margin-top: 3em;
-	line-height: 1;
+}
+h1 {
+	margin-block: 2.4em 0;
+	font-size: 2.5em;
+	line-height: 1.2;
+	font-weight: 700;
+}
+h2 {
+	margin-block: 1.8em 0;
+	font-size: 2em;
+	line-height: 1.25;
+	font-weight: 500;
+}
+p {
+	margin-block: 1em;
 }
 a {
 	color: var(--foreground-color--1);
@@ -46,7 +58,7 @@ img,
 [role="img"] {
 	max-width: calc(100% - 2px);
 	margin: 1.5em auto;
-	outline: 1px solid var(--background-color--2);
+	outline: 1px solid var(--background-color--3);
 	background-color: var(--background-color--2);
 }
 img {
@@ -81,8 +93,8 @@ footer::before {
 @media (prefers-color-scheme: dark) {
 	:root {
 		--background-color--1: hsl(0, 0%, 8%);
-		--background-color--2: hsl(0, 0%, 10%);
-		--background-color--3: hsl(0, 0%, 12%);
+		--background-color--2: hsl(0, 0%, 12%);
+		--background-color--3: hsl(0, 0%, 16%);
 		--foreground-color--1: hsl(0, 0%, 95%);
 		--foreground-color-titles: hsl(0, 0%, 100%);
 	}

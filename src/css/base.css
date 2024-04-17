@@ -78,7 +78,7 @@ pre {
 	tab-size: 4;
 }
 pre::before {
-	content: attr(lang);
+	content: attr(data-lang);
 	float: right;
 	padding: 0.5em 1em;
 	padding-inline-end: 0.875em;

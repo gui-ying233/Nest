@@ -8,15 +8,11 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://gui-ying233.github.io/Nest/index.html</loc>
-    <priority>0.0</priority>
-  </url>
-  <url>
-    <loc>https://gui-ying233.github.io/Nest/CSS%20Pixel%20Art.html</loc>
+    <loc>https://gui-ying233.github.io/Nest/CSS%20Pixel%20Art</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://gui-ying233.github.io/Nest/Flex%20Table.html</loc>
+    <loc>https://gui-ying233.github.io/Nest/Flex%20Table</loc>
     <priority>0.7</priority>
   </url>
 </urlset>

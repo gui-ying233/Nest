@@ -21,9 +21,11 @@ body > * * {
 html {
 	background-color: var(--background-color--1);
 	font-family: system-ui, ui-sans-serif, sans-serif;
-	font-weight: 400;
+	font-weight: var(--font-weight--4);
 	font-size: 18px;
 	color: var(--foreground-color--1);
+	transition: var(--transition--background-color),
+		var(--transition--font-weight), var(--transition--color);
 }
 body {
 	max-width: var(--body-max-width);
@@ -37,18 +39,19 @@ h4,
 h5,
 h6 {
 	color: var(--foreground-color-titles);
+	transition: var(--transition--color), var(--transition--font-weight);
 }
 h1 {
 	margin-block: 2.4em 0;
 	font-size: 2.5rem;
 	line-height: 1.2;
-	font-weight: 700;
+	font-weight: var(--font-weight--2);
 }
 h2 {
 	margin-block: 1.8em 0;
 	font-size: 2rem;
 	line-height: 1.25;
-	font-weight: 500;
+	font-weight: var(--font-weight--3);
 }
 p {
 	margin-block: 1em;
@@ -62,7 +65,8 @@ a {
 	text-decoration: none;
 	border-bottom: 1px solid;
 	margin-bottom: 1px;
-	transition: border-bottom-width 0.2s linear, margin-bottom 0.2s linear;
+	transition: var(--transition--color), border-bottom-width 0.2s linear,
+		margin-bottom 0.2s linear;
 }
 a[target="_blank"] {
 	border-bottom-style: dashed;
@@ -83,6 +87,8 @@ img,
 	margin: 1.5em auto;
 	outline: 1px solid var(--background-color--3);
 	background-color: var(--background-color--2);
+	transition: var(--transition--outline-color),
+		var(--transition--background-color);
 }
 img {
 	font-style: italic;
@@ -99,6 +105,8 @@ pre {
 	max-height: 75vh;
 	overflow: auto;
 	tab-size: 4;
+	transition: var(--transition--outline-color),
+		var(--transition--background-color);
 }
 pre::before {
 	content: attr(data-lang);
@@ -111,6 +119,7 @@ pre::before {
 	letter-spacing: 0.125em;
 	line-height: 1;
 	text-transform: uppercase;
+	transition: var(--transition--background-color);
 }
 footer {
 	margin-top: 3em;
@@ -119,12 +128,21 @@ footer::before {
 	content: "← ";
 }
 :root {
+	--body-max-width: min(calc(100vw - 2em), 35em);
+	--transition--background-color: background-color 350ms;
+	--transition--font-weight: font-weight 350ms;
+	--transition--color: color 350ms;
+	--transition--outline-color: outline-color 350ms;
 	--background-color--1: hsl(0, 0%, 96%);
 	--background-color--2: hsl(0, 0%, 94%);
 	--background-color--3: hsl(0, 0%, 92%);
 	--foreground-color--1: hsl(0, 0%, 26%);
 	--foreground-color-titles: hsl(0, 0%, 0%);
-	--body-max-width: min(calc(100vw - 2em), 35em);
+	--font-weight--1: 1000;
+	--font-weight--2: 800;
+	--font-weight--3: 600;
+	--font-weight--4: 400;
+	--font-weight--5: 200;
 }
 @media (prefers-color-scheme: dark) {
 	:root {
@@ -133,6 +151,11 @@ footer::before {
 		--background-color--3: hsl(0, 0%, 16%);
 		--foreground-color--1: hsl(0, 0%, 95%);
 		--foreground-color-titles: hsl(0, 0%, 100%);
+		--font-weight--1: 900;
+		--font-weight--2: 700;
+		--font-weight--3: 500;
+		--font-weight--4: 300;
+		--font-weight--5: 100;
 	}
 }
 ::selection {

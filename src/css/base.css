@@ -5,6 +5,7 @@ body > pre,
 body > footer {
 	content-visibility: auto;
 }
+
 @keyframes fade-in {
 	to {
 		opacity: 1;
@@ -18,6 +19,7 @@ body > * * {
 	opacity: 0;
 	animation: fade-in 1s ease-out forwards;
 }
+
 html {
 	background-color: var(--background-color--1);
 	font-family: system-ui, ui-sans-serif, sans-serif;
@@ -32,6 +34,7 @@ body {
 	margin: 10vh auto;
 	line-height: 1.5;
 }
+
 h1,
 h2,
 h3,
@@ -53,15 +56,45 @@ h2 {
 	line-height: 1.25;
 	font-weight: var(--font-weight--3);
 }
-p {
+
+p,
+figure {
+	max-width: calc(100% - 2px);
+	margin-inline: 0;
 	margin-block: 1em;
 }
+figcaption {
+	font-size: smaller;
+	line-height: 2;
+	color: var(--foreground-color--3);
+}
+figure > img {
+	max-width: 100%;
+}
+img,
+[role="img"] {
+	max-width: calc(100% - 2px);
+	margin-inline: auto;
+	outline: 1px solid var(--background-color--3);
+	background-color: var(--background-color--2);
+	transition: var(--transition--outline-color),
+		var(--transition--background-color);
+}
+img {
+	font-style: italic;
+	vertical-align: middle;
+	height: auto;
+	background-image: var(--base64);
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
 a {
 	display: inline-block;
 	margin: 0 0.5em;
 	padding: 0.25em 0;
 	line-height: 1;
-	color: var(--foreground-color--1);
+	color: var(--foreground-color--2);
 	text-decoration: none;
 	border-bottom: 1px solid;
 	margin-bottom: 1px;
@@ -75,26 +108,18 @@ a:hover {
 	border-bottom-width: 2px;
 	margin-bottom: 0;
 }
+
+small {
+	color: var(--foreground-color--3);
+}
+
 ol {
 	list-style-type: simp-chinese-informal;
 }
 li + li {
 	margin-top: 0.5em;
 }
-img,
-[role="img"] {
-	max-width: calc(100% - 2px);
-	margin: 1.5em auto;
-	outline: 1px solid var(--background-color--3);
-	background-color: var(--background-color--2);
-	transition: var(--transition--outline-color),
-		var(--transition--background-color);
-}
-img {
-	font-style: italic;
-	vertical-align: middle;
-	height: auto;
-}
+
 pre {
 	font-family: ui-monospace, monospace;
 	background-color: var(--background-color--2);
@@ -121,23 +146,36 @@ pre::before {
 	text-transform: uppercase;
 	transition: var(--transition--background-color);
 }
+
 footer {
 	margin-top: 3em;
 }
 footer::before {
 	content: "← ";
 }
+
 :root {
 	--body-max-width: min(calc(100vw - 2em), 35em);
 	--transition--background-color: background-color 350ms;
 	--transition--font-weight: font-weight 350ms;
 	--transition--color: color 350ms;
 	--transition--outline-color: outline-color 350ms;
-	--background-color--1: hsl(0, 0%, 96%);
-	--background-color--2: hsl(0, 0%, 94%);
-	--background-color--3: hsl(0, 0%, 92%);
-	--foreground-color--1: hsl(0, 0%, 26%);
-	--foreground-color-titles: hsl(0, 0%, 0%);
+	--black--0: hsl(0, 0%, 0%);
+	--black--1: hsl(0, 0%, 8%);
+	--black--2: hsl(0, 0%, 12%);
+	--black--3: hsl(0, 0%, 16%);
+	--white--0: hsl(0, 0%, 100%);
+	--white--1: hsl(0, 0%, 96%);
+	--white--2: hsl(0, 0%, 94%);
+	--white--3: hsl(0, 0%, 92%);
+	--background-color--1: var(--white--1);
+	--background-color--2: var(--white--2);
+	--background-color--3: var(--white--3);
+	--foreground-color--1: var(--black--1);
+	--foreground-color--2: var(--black--2);
+	--foreground-color--3: var(--black--3);
+
+	--foreground-color-titles: var(--black--0);
 	--font-weight--1: 1000;
 	--font-weight--2: 800;
 	--font-weight--3: 600;
@@ -146,11 +184,13 @@ footer::before {
 }
 @media (prefers-color-scheme: dark) {
 	:root {
-		--background-color--1: hsl(0, 0%, 8%);
-		--background-color--2: hsl(0, 0%, 12%);
-		--background-color--3: hsl(0, 0%, 16%);
-		--foreground-color--1: hsl(0, 0%, 95%);
-		--foreground-color-titles: hsl(0, 0%, 100%);
+		--background-color--1: var(--black--1);
+		--background-color--2: var(--black--2);
+		--background-color--3: var(--black--3);
+		--foreground-color--1: var(--white--1);
+		--foreground-color--2: var(--white--2);
+		--foreground-color--3: var(--white--3);
+		--foreground-color-titles: var(--white--0);
 		--font-weight--1: 900;
 		--font-weight--2: 700;
 		--font-weight--3: 500;

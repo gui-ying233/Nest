@@ -99,6 +99,13 @@ ulimit -n 65535</pre
 			macOS 上使用 Docker 需要下载 Docker Desktop，<!--
 		-->下载后打开并登录。
 		</p>
+		<p>
+			右键访达，点击“前往文件夹…”，前往
+			<code>~/.docker/config.json</code>。<!--
+			-->打开 <code>config.json</code>，将 <code>credsStore</code> 的
+			<code>desktop</code> 值改为 <code>osxkeychain</code>。
+		</p>
+		<p>回到终端。</p>
 		<pre data-lang="shell">
 export VIPER_DIR=~/VIPER
 mkdir -p $VIPER_DIR && cd $VIPER_DIR</pre

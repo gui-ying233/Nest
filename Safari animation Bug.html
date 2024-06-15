@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="zh-Hans-CN">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="color-scheme" content="light dark" />
+		<meta
+			name="description"
+			content="Safari 的一个 animation Bug 以及如何解决。"
+		/>
+		<meta property="og:title" content="Safari animation Bug" />
+		<meta property="og:locale" content="zh_CN" />
+		<meta
+			property="og:url"
+			content="https://gui-ying233.github.io/Nest/Safari%20animation%20Bug"
+		/>
+		<meta property="og:site_name" content="鬼影的基地" />
+		<meta
+			property="og:description"
+			content="Safari 的一个 animation Bug 以及如何解决。"
+		/>
+		<meta property="og:type" content="article" />
+		<meta property="article:author" content="鬼影233" />
+		<meta name="twitter:card" content="summary" />
+		<meta property="twitter:title" content="Safari animation Bug" />
+		<meta
+			rel="canonical"
+			href="https://gui-ying233.github.io/Nest/Safari%20animation%20Bug"
+		/>
+		<link rel="icon" type="image/x-icon" href="src/assets/favicon.ico" />
+		<link rel="apple-touch-icon" href="src/assets/favicon.ico" />
+		<title>Safari animation Bug - 鬼影的基地</title>
+		<script type="text/javascript">
+			(function (c, l, a, r, i, t, y) {
+				c[a] =
+					c[a] ||
+					function () {
+						(c[a].q = c[a].q || []).push(arguments);
+					};
+				t = l.createElement(r);
+				t.async = 1;
+				t.src = "https://www.clarity.ms/tag/" + i;
+				y = l.getElementsByTagName(r)[0];
+				y.parentNode.insertBefore(t, y);
+			})(window, document, "clarity", "script", "hvommjqwte");
+		</script>
+		<script
+			async
+			src="https://www.googletagmanager.com/gtag/js?id=G-ZMHY61ZCQE"
+		></script>
+		<link rel="stylesheet" href="src/css/base.css" />
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag() {
+				dataLayer.push(arguments);
+			}
+			gtag("js", new Date());
+
+			gtag("config", "G-ZMHY61ZCQE");
+		</script>
+	</head>
+	<body>
+		<h1>Safari animation Bug</h1>
+		<h2>前言</h2>
+		<p>没啥好说的，众所周知 Safari 作为新时代 IE，Bug 一大堆。</p>
+		<h2>实例</h2>
+		<pre data-lang="css">
+@keyframes spin {
+	to {
+		transform: rotate(360deg);
+	}
+}
+.spin {
+	transform: rotate(0deg);
+	animation: spin 10s linear infinite forwards paused -2s;
+}</pre
+		>
+		<style>
+			@keyframes spin {
+				to {
+					transform: rotate(360deg);
+				}
+			}
+			.spin {
+				width: 100px;
+				height: 100px;
+				background-color: var(--foreground-color--2);
+				transform: rotate(0deg);
+				opacity: 1;
+				animation: spin 10s linear infinite forwards paused -2s;
+			}
+		</style>
+		<div class="spin"></div>
+		<h2>简介</h2>
+		<p>
+			只是一个简单的被暂停的动画，但是在 Safari 上动画不会暂停在 -2s
+			的位置，而是 0s 的位置。
+		</p>
+		<h2>解决方案</h2>
+		<h3>方案一</h3>
+		<pre data-lang="css">
+@keyframes spin {
+	to {
+		transform: rotate(360deg);
+	}
+}
+.spin {
+	animation: spin 10s linear infinite forwards paused -2s;
+}</pre
+		>
+		<p>更加简单但可能不适用一些情况。</p>
+		<h3>方案二</h3>
+		<pre data-lang="css">
+@keyframes spin {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}
+.spin {
+	animation: spin 10s linear infinite forwards paused -2s;
+}</pre
+		>
+		<p>适用于更多情况，但代码可能更多。</p>
+		<h3>方案三</h3>
+		<pre data-lang="css">
+@keyframes spin {
+	to {
+		transform: rotate(360deg);
+	}
+}
+@keyframes fade-in {
+	to {
+		opacity: 1;
+	}
+}
+.spin {
+	transform: rotate(0deg);
+	opacity: 0;
+	animation: spin 10s linear infinite forwards paused -2s,
+		fade-in 1s ease-out forwards;
+}</pre
+		>
+		<p>
+			增加另一个 <code>animation-play-state</code> 为
+			<code>running</code> 的动画。
+		</p>
+		<footer>
+			<a href=".">鬼影的基地</a>
+		</footer>
+	</body>
+</html>

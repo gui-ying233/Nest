@@ -155,7 +155,7 @@ footer::before {
 }
 
 :root {
-	--body-max-width: min(calc(100vw - 2em), 35em);
+	--body-max-width: min(calc(100vw - 2em), 40em);
 	--transition--background-color: background-color 350ms;
 	--transition--font-weight: font-weight 350ms;
 	--transition--color: color 350ms;

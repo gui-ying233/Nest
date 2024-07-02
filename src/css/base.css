@@ -5,6 +5,10 @@ body > pre,
 body > footer {
 	content-visibility: auto;
 }
+body p,
+body li {
+	text-wrap: pretty;
+}
 
 @keyframes fade-in {
 	to {
@@ -56,6 +60,14 @@ h2 {
 	line-height: 1.25;
 	font-weight: var(--font-weight--3);
 }
+h1 > *,
+h2 > *,
+h3 > *,
+h4 > *,
+h5 > *,
+h6 > * {
+	line-height: normal;
+}
 
 p,
 figure {
@@ -68,7 +80,8 @@ figcaption {
 	line-height: 2;
 	color: var(--foreground-color--3);
 }
-figure > img {
+figure > img,
+figure > picture {
 	max-width: 100%;
 }
 img,
@@ -120,20 +133,32 @@ li + li {
 	margin-top: 0.5em;
 }
 
-pre {
+pre,
+code {
 	font-family: ui-monospace, monospace;
-	background-color: var(--background-color--2);
-	outline: 1px solid var(--background-color--3);
-	border: solid transparent;
-	border-width: 0.5em 1em;
-	white-space: pre-wrap;
-	max-height: 75vh;
-	overflow: auto;
+	overflow-wrap: break-word;
 	tab-size: 4;
 	transition: var(--transition--outline-color),
 		var(--transition--background-color);
 }
-pre::before {
+p code,
+pre {
+	background-color: var(--background-color--2);
+	outline: 1px solid var(--background-color--3);
+	border: solid transparent;
+}
+p code {
+	border-width: 0.125em 0.25em;
+}
+pre {
+	border-width: 0.5em 1em;
+	white-space: pre-wrap;
+	max-height: 75vh;
+	overflow: auto;
+	transition: var(--transition--outline-color),
+		var(--transition--background-color);
+}
+pre[data-lang]::before {
 	content: attr(data-lang);
 	float: right;
 	padding: 0.5em 1em;

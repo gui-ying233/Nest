@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="zh-Hans-CN">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="color-scheme" content="light dark" />
+		<meta
+			name="description"
+			content="Chromium 的空 url() Bug 以及如何解决。"
+		/>
+		<meta
+			name="keywords"
+			content="Chromium, url(), Bug, Chrome, Edge, url, content, background-image, @import, CSS, 解决方案, 解决方法"
+		/>
+		<meta property="og:title" content="Chromium url() Bug" />
+		<meta property="og:locale" content="zh_CN" />
+		<meta
+			property="og:url"
+			content="https://gui-ying233.github.io/Nest/Chromium%20url()%20Bug"
+		/>
+		<meta property="og:site_name" content="鬼影的基地" />
+		<meta
+			property="og:description"
+			content="Chromium 的空 url() Bug 以及如何解决。"
+		/>
+		<meta property="og:type" content="article" />
+		<meta property="article:author" content="鬼影233" />
+		<meta name="twitter:card" content="summary" />
+		<meta property="twitter:title" content="Chromium url() Bug" />
+		<meta
+			rel="canonical"
+			href="https://gui-ying233.github.io/Nest/Chromium%20url()%20Bug"
+		/>
+		<link rel="icon" type="image/x-icon" href="src/assets/favicon.ico" />
+		<link rel="apple-touch-icon" href="src/assets/favicon.ico" />
+		<title>Chromium url() Bug - 鬼影的基地</title>
+		<script type="text/javascript">
+			(function (c, l, a, r, i, t, y) {
+				c[a] =
+					c[a] ||
+					function () {
+						(c[a].q = c[a].q || []).push(arguments);
+					};
+				t = l.createElement(r);
+				t.async = 1;
+				t.src = "https://www.clarity.ms/tag/" + i;
+				y = l.getElementsByTagName(r)[0];
+				y.parentNode.insertBefore(t, y);
+			})(window, document, "clarity", "script", "hvommjqwte");
+		</script>
+		<script
+			async
+			src="https://www.googletagmanager.com/gtag/js?id=G-ZMHY61ZCQE"
+		></script>
+		<link rel="stylesheet" href="src/css/base.css" />
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag() {
+				dataLayer.push(arguments);
+			}
+			gtag("js", new Date());
+
+			gtag("config", "G-ZMHY61ZCQE");
+		</script>
+	</head>
+	<body>
+		<h1>Chromium <code>url()</code> Bug</h1>
+		<h2>前言</h2>
+		<p>
+			Chromium 下的 inspector-stylesheet 等地方，如果使用空的
+			<code>url()</code> 值，会导致后续的内容出现高亮异常。
+		</p>
+		<p>
+			曾经在某些未知的情况下会导致后续的代码直接失效的情况，但无法复现。
+		</p>
+		<h2>复现</h2>
+		<pre data-lang="CSS">
+* {
+	background-iamge: url();
+	color: #FF0;
+}</pre
+		>
+		<p>将此段代码放入 inspector-stylesheet 中，即可复现。</p>
+		<figure>
+			<picture>
+				<source
+					srcset="
+						src/asset/image/url()%20highlighting%20error%20in%20light.png
+					"
+					media="(prefers-color-scheme: light)"
+				/>
+				<source
+					srcset="
+						src/asset/image/url()%20highlighting%20error%20in%20dark.png
+					"
+					media="(prefers-color-scheme: dark)"
+				/>
+				<img
+					src="src/asset/image/url()%20highlighting%20error%20in%20light.png"
+				/>
+			</picture>
+			<figcaption>
+				inspector-stylesheet
+				中出现了高亮异常，后续字符变为字符串的高亮颜色。
+			</figcaption>
+		</figure>
+		<h2>解决<code>TEST</code>方案</h2>
+		<pre data-lang="CSS">
+* {
+	background-iamge: url("");
+	color: #FF0;
+}</pre
+		>
+		<footer>
+			<a href=".">鬼影的基地</a>
+		</footer>
+	</body>
+</html>

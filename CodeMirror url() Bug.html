@@ -6,34 +6,34 @@
 		<meta name="color-scheme" content="light dark" />
 		<meta
 			name="description"
-			content="Chromium 的空 url() Bug 以及如何解决。"
+			content="CodeMirror 的空 url() Bug 以及如何解决。"
 		/>
 		<meta
 			name="keywords"
-			content="Chromium, url(), Bug, Chrome, Edge, url, content, background-image, @import, CSS, 解决方案, 解决方法"
+			content="CodeMirror, url(), Bug, url, Chromium, Chrome, Edge, content, background-image, @import, CSS, 解决方案, 解决方法"
 		/>
-		<meta property="og:title" content="Chromium url() Bug" />
+		<meta property="og:title" content="CodeMirror url() Bug" />
 		<meta property="og:locale" content="zh_CN" />
 		<meta
 			property="og:url"
-			content="https://gui-ying233.github.io/Nest/Chromium%20url()%20Bug"
+			content="https://gui-ying233.github.io/Nest/CodeMirror%20url()%20Bug"
 		/>
 		<meta property="og:site_name" content="鬼影的基地" />
 		<meta
 			property="og:description"
-			content="Chromium 的空 url() Bug 以及如何解决。"
+			content="CodeMirror 的空 url() Bug 以及如何解决。"
 		/>
 		<meta property="og:type" content="article" />
 		<meta property="article:author" content="鬼影233" />
 		<meta name="twitter:card" content="summary" />
-		<meta property="twitter:title" content="Chromium url() Bug" />
+		<meta property="twitter:title" content="CodeMirror url() Bug" />
 		<meta
 			rel="canonical"
-			href="https://gui-ying233.github.io/Nest/Chromium%20url()%20Bug"
+			href="https://gui-ying233.github.io/Nest/CodeMirror%20url()%20Bug"
 		/>
 		<link rel="icon" type="image/x-icon" href="src/asset/favicon.ico" />
 		<link rel="apple-touch-icon" href="src/asset/favicon.ico" />
-		<title>Chromium url() Bug - 鬼影的基地</title>
+		<title>CodeMirror url() Bug - 鬼影的基地</title>
 		<script type="text/javascript">
 			(function (c, l, a, r, i, t, y) {
 				c[a] =
@@ -64,14 +64,16 @@
 		</script>
 	</head>
 	<body>
-		<h1>Chromium <code>url()</code> Bug</h1>
+		<h1>CodeMirror <code>url()</code> Bug</h1>
 		<h2>前言</h2>
 		<p>
-			Chromium 下的 inspector-stylesheet 等地方，如果使用空的
+			CodeMirror 等，甚至 Chromium 下的 inspector-stylesheet
+			等地方，如果使用空的
 			<code>url()</code> 值，会导致后续的内容出现高亮异常。
 		</p>
 		<p>
-			曾经在某些未知的情况下会导致后续的代码直接失效的情况，但无法复现。
+			曾经在某些未知的情况下（Chromium
+			中）会导致后续的代码直接失效的情况，但无法复现。
 		</p>
 		<h2>复现</h2>
 		<pre data-lang="CSS">
@@ -111,9 +113,6 @@
 	color: #FF0;
 }</pre
 		>
-		<h2>后记</h2>
-		<p>本 Bug 已由本人在 <a href="https://issues.chromium.org/issues/348675992" target="_blank">Chromium Issue Tracker</a> 上提报。</p>
-		</p>
 		<footer>
 			<a href=".">鬼影的基地</a>
 		</footer>

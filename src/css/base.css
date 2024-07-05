@@ -5,15 +5,14 @@ body > pre,
 body > footer {
 	content-visibility: auto;
 }
-body p,
-body li {
-	text-wrap: pretty;
-}
 
 @keyframes fade-in {
 	to {
 		opacity: 1;
 	}
+}
+body * {
+	text-wrap: pretty;
 }
 body > * {
 	opacity: 0;

@@ -90,11 +90,6 @@
 			</tbody>
 		</table>
 		<h2>安装</h2>
-		<p>一上来就有问题，所以我们选择以下命令来代替</p>
-		<pre data-lang="shell">
-sudo su
-ulimit -n 65535</pre
-		>
 		<p>
 			macOS 上使用 Docker 需要下载 Docker Desktop，<!--
 		-->下载后打开并登录。
@@ -109,6 +104,10 @@ ulimit -n 65535</pre
 		<pre data-lang="shell">
 export VIPER_DIR=~/VIPER
 mkdir -p $VIPER_DIR && cd $VIPER_DIR</pre
+		>
+		<pre data-lang="shell">
+sudo su
+ulimit -n 65535</pre
 		>
 		<pre data-lang="shell">
 tee docker-compose.yml <<-'EOF'

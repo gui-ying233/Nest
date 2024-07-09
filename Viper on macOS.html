@@ -133,12 +133,21 @@ EOF</pre
 sed -i "" "s/VIPER_PASSWORD/$VIPER_PASSWORD/g" docker-compose.yml</pre
 		>
 		<pre data-lang="shell">
+mkdir -p /usr/local/lib/docker
+ln -s /Applications/Docker.app/Contents/Resources/cli-plugins /usr/local/lib/docker/cli-plugins
+		</pre
+		>
+		<p>
+			前往 Docker Desktop 的设置，将 Resources > File sharing > Virtual
+			file shares 下添加路径 <code>/</code>，确定并重启。
+		</p>
+		<pre data-lang="shell">
 cd $VIPER_DIR
 docker compose up -d</pre
 		>
 		<p>
-			然后可以去 Docker Desktop 中的 Images 查看最新出现的
-			Image，点击三角按钮启动。
+			然后可以去 Docker Desktop 中前往 Containers，确保关闭“Only show
+			running containers”，点击最新出现的 viper 以查看启动进度与日志。
 		</p>
 		<p>
 			在启动完成后你可以通过

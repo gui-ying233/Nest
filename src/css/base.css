@@ -185,6 +185,7 @@ footer::before {
 }
 
 :root {
+	color-scheme: light dark;
 	--body-max-width: min(calc(100vw - 2em), 40em);
 	--transition--background-color: background-color 350ms;
 	--transition--font-weight: font-weight 350ms;

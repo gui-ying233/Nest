@@ -33,9 +33,11 @@ html {
 		var(--transition--font-weight), var(--transition--color);
 }
 body {
+	background-color: var(--background-color--1);
 	max-width: var(--body-max-width);
 	margin: 10vh auto;
 	line-height: 1.5;
+	transition: var(--transition--background-color);
 }
 
 h1,

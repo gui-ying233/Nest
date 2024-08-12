@@ -111,7 +111,6 @@ img {
 
 a {
 	display: inline-block;
-	margin: 0 0.5em;
 	padding: 0.25em 0;
 	line-height: 1;
 	color: var(--foreground-color--2);
@@ -120,6 +119,9 @@ a {
 	margin-bottom: 1px;
 	transition: var(--transition--color), border-bottom-width 0.2s linear,
 		margin-bottom 0.2s linear;
+}
+body > a {
+	margin: 0 0.5em;
 }
 a[target="_blank"] {
 	border-bottom-style: dashed;

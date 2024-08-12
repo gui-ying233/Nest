@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-Hans-CN">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="color-scheme" content="light dark" />
+		<meta name="theme-color" content="hsl(0, 0%, 96%);" />
+		<meta
+			name="theme-color"
+			media="(prefers-color-scheme: dark)"
+			content="hsl(0, 0%, 8%);"
+		/>
+		<meta name="description" content="萌娘百科评论区 IP 泄露" />
+		<meta
+			name="keywords"
+			content="萌娘百科, 萌百, 评论区, 评论, IP, 泄露"
+		/>
+		<meta property="og:title" content="萌娘百科评论区 IP 泄露" />
+		<meta property="og:locale" content="zh_CN" />
+		<meta
+			property="og:url"
+			content="https://gui-ying233.github.io/Nest/Moegirlpedia%20Comment%20List%20IP%20Leak"
+		/>
+		<meta property="og:site_name" content="鬼影的基地" />
+		<meta property="og:description" content="萌娘百科评论区 IP 泄露" />
+		<meta property="og:type" content="article" />
+		<meta property="article:author" content="鬼影233" />
+		<meta name="twitter:card" content="summary" />
+		<meta property="twitter:title" content="萌娘百科评论区 IP 泄露" />
+		<meta
+			rel="canonical"
+			href="https://gui-ying233.github.io/Nest/Moegirlpedia%20Comment%20List%20IP%20Leak"
+		/>
+		<link rel="icon" type="image/x-icon" href="src/asset/favicon.ico" />
+		<link rel="apple-touch-icon" href="src/asset/favicon.ico" />
+		<title>萌娘百科评论区 IP 泄露 - 鬼影的基地</title>
+		<script async src="https://www.clarity.ms/tag/hvommjqwte"></script>
+		<script
+			async
+			src="https://www.googletagmanager.com/gtag/js?id=G-ZMHY61ZCQE"
+		></script>
+		<script async src="src/js/gtag.js"></script>
+		<script
+			async
+			src="https://hm.baidu.com/hm.js?abdce5cc5a81bdfb51506edb4641e824"
+		></script>
+		<link rel="stylesheet" href="src/css/base.css" />
+	</head>
+	<body>
+		<h1>萌娘百科评论区 IP 泄露</h1>
+		<h2>前言</h2>
+		<p>
+			于
+			<time datetime="2024-07-18T18:51:15+0800"
+				>2024年7月26日 18:51:15</time
+			>
+			左右，<a
+				href="https://zh.moegirl.org.cn/Mainpage#/flow/details/66a37fa3b2ce412260c0c23a"
+				>评论区现开放了测试</a
+			>，<time datetime="2024-07-18T18:53:11+0800">约两分钟后</time
+			>第一条评论被发布。在测试开始<time
+				datetime="2024-07-18T19:30:00+0800"
+				>半小时后</time
+			>由我发现并提报了漏洞，之后也在技术实现版和评论区处做出了警告（虽然许多人都不听劝）。
+		</p>
+		<h2>漏洞详情</h2>
+		<h3>发生什么事了？</h3>
+		<p>任何人都可以极其简单并匿名地获取所有评论发送时的 IP 地址。</p>
+		<h3>如何复现？</h3>
+		<pre data-lang="shell">
+curl --location 'https://api.moegirl.org.cn/moegirl.moepad.MoepadCommunityService/GetArticleCommentListWithUserInfo' --header 'Content-Type: application/grpc-web-text' --data 'AAAAACUKIwoYNjZhMzdmYTNiMmNlNDEyMjYwYzBjMjNhGAogAygEMgEB'</pre
+		>
+		<p>
+			这就是一个非常简单的
+			<code>POST</code>
+			请求，而返回的数据中我们可以看到用户的账户名和评论、精确至市级的地址、网络运营商以及
+			IP 地址。
+		</p>
+		<h3>修复了吗？</h3>
+		<p>在提报后的两天之后，此漏洞终于被修复（指抹去了 IP 地址）…</p>
+		<footer>
+			<a href=".">鬼影的基地</a>
+		</footer>
+	</body>
+</html>

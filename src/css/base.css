@@ -27,7 +27,6 @@ html {
 	background-color: var(--background-color--1);
 	font-family: system-ui, ui-sans-serif, sans-serif;
 	font-weight: var(--font-weight--4);
-	font-size: 18px;
 	color: var(--foreground-color--1);
 	transition: var(--transition--background-color),
 		var(--transition--font-weight), var(--transition--color);
@@ -189,6 +188,7 @@ footer::before {
 }
 
 :root {
+	font-size: 18px;
 	color-scheme: light dark;
 	--body-max-width: min(calc(100vw - 2em), 40em);
 	--transition--background-color: background-color 350ms;
@@ -209,7 +209,6 @@ footer::before {
 	--foreground-color--1: var(--black--1);
 	--foreground-color--2: var(--black--2);
 	--foreground-color--3: var(--black--3);
-
 	--foreground-color-titles: var(--black--0);
 	--font-weight--1: 1000;
 	--font-weight--2: 800;

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-Hans-CN">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="color-scheme" content="light dark" />
+		<meta name="theme-color" content="hsl(0, 0%, 96%);" />
+		<meta
+			name="theme-color"
+			media="(prefers-color-scheme: dark)"
+			content="hsl(0, 0%, 8%);"
+		/>
+		<meta name="description" content="在 CSS 中进行数据类型转换" />
+		<meta
+			name="keywords"
+			content="CSS, 数据类型, 转换, 数字, 字符串, 长度, counter, @property, tan, atan2"
+		/>
+		<meta property="og:title" content="在 CSS 中进行数据类型转换" />
+		<meta property="og:locale" content="zh_CN" />
+		<meta
+			property="og:url"
+			content="https://gui-ying233.github.io/Nest/Convert%20Data%20Types%20in%20CSS"
+		/>
+		<meta property="og:site_name" content="鬼影的基地" />
+		<meta property="og:description" content="在 CSS 中进行数据类型转换" />
+		<meta property="og:type" content="article" />
+		<meta property="article:author" content="鬼影233" />
+		<meta name="twitter:card" content="summary" />
+		<meta property="twitter:title" content="在 CSS 中进行数据类型转换" />
+		<link
+			rel="canonical"
+			href="https://gui-ying233.github.io/Nest/Convert%20Data%20Types%20in%20CSS"
+		/>
+		<link rel="icon" type="image/x-icon" href="src/asset/favicon.ico" />
+		<link rel="apple-touch-icon" href="src/asset/favicon.ico" />
+		<title>在 CSS 中进行数据类型转换 - 鬼影的基地</title>
+		<script async src="src/js/clarity.js"></script>
+		<script
+			async
+			src="https://www.googletagmanager.com/gtag/js?id=G-ZMHY61ZCQE"
+		></script>
+		<script async src="src/js/gtag.js"></script>
+		<script
+			async
+			src="https://hm.baidu.com/hm.js?abdce5cc5a81bdfb51506edb4641e824"
+		></script>
+		<link rel="stylesheet" href="src/css/base.css" />
+	</head>
+	<body>
+		<h1>在 CSS 中进行数据类型转换</h1>
+		<h2>前言</h2>
+		<p>以下大部分方法的兼容性并不算高。</p>
+		<h2><code>&lt;number&gt;</code> → <code>&lt;dimension&gt;</code></h2>
+		<p>
+			最简单的，通过
+			<code>calc(5 * 1px)</code>
+			可以将数字转换为任何<code>&lt;dimension&gt;</code>。
+		</p>
+		<h2><code>&lt;dimension&gt;</code> → <code>&lt;number&gt;</code></h2>
+		<p>
+			第一时间想到的便是相对的
+			<code>calc(5px / 1px)</code
+			>，但这样实际上并不能成功。正确的方法是使用
+			<code>tan(atan2(5px, 1px))</code>。
+		</p>
+		<h2><code>&lt;integer&gt;</code> → <code>&lt;string&gt;</code></h2>
+		<pre data-lang="css">
+::before {
+	counter-reset: n 1;
+	content: counter(n);
+}</pre
+		>
+		<p>
+			注意此处的数字如果是直接指定（包括变量）为一个非整数，那其会被设定为
+			0。但如果是通过计算得到的，则会被隐式转换为整数（四舍五入）。
+		</p>
+		<p>而如果需要保留小数部分，可以通过：</p>
+		<pre data-lang="css">
+::before {
+	--n: calc(pi);
+	--w: round(down, var(--n));
+	counter-reset: w var(--w) f calc((var(--n) - var(--w)) * pow(10, 2));
+	content: counter(w) "." counter(f);
+}</pre
+		>
+		<p>或者兼容性稍微好一点的：</p>
+		<pre data-lang="css">
+@property --w {
+	syntax: "&lt;integer&gt;";
+	inherits: false;
+	initial-value: 0;
+}
+::before {
+	--n: calc(78.8);
+	--w: calc(var(--n) - 0.5);
+	--r: 3;
+	counter-reset: w var(--w) f calc((var(--n) - var(--w)) * pow(10, var(--r)) - 0.5 + pow(10, calc(var(--r) * -1)));
+	content: counter(w) "." counter(f);
+}</pre
+		>
+		<h2><code>&lt;dimension&gt;</code> → <code>&lt;dimension&gt;</code></h2>
+		<pre>
+@property --x {
+	syntax: "&lt;length&gt;";
+	inherits: false;
+	initial-value: 0;
+}
+::before {
+	--x: calc(1em);
+	counter-reset: n tan(atan2(var(--x), 1px));
+	content: counter(n);
+}</pre
+		>
+		<p>通过这种方式，我们可以方便地查看每个元素的字体大小（px）。</p>
+		<p>
+			类似地，我们也可以通过
+			<code>--x: calc(100vw);</code> 来查看视口的实时宽度。
+		</p>
+		<p>
+			但似乎这种方式在与上方的小数显示方法一起使用时会出现问题，具体原因不明。
+		</p>
+		<footer>
+			<a href=".">鬼影的基地</a>
+		</footer>
+	</body>
+</html>

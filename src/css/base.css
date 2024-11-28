@@ -40,6 +40,11 @@ body {
 	transition: var(--transition--background-color);
 }
 
+[lang|="zh"] ruby > rt {
+	font-size: 57.5%;
+	text-align: center;
+}
+
 h1,
 h2,
 h3,

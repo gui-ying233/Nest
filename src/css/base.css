@@ -30,6 +30,7 @@ html {
 	color: var(--foreground-color--1);
 	transition: var(--transition--background-color),
 		var(--transition--font-weight), var(--transition--color);
+	font-palette: light;
 }
 body {
 	background-color: var(--background-color--1);
@@ -230,6 +231,9 @@ footer::before {
 		--font-weight--3: 500;
 		--font-weight--4: 300;
 		--font-weight--5: 100;
+	}
+	html {
+		font-palette: dark;
 	}
 }
 ::selection {

@@ -168,7 +168,7 @@ pre {
 	border-width: 0.5em 1em;
 	white-space: pre-wrap;
 	max-height: 75vh;
-	overflow: auto;
+	overflow-x: auto;
 	transition: var(--transition--outline-color),
 		var(--transition--background-color);
 }

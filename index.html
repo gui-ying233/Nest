@@ -39,6 +39,18 @@
 			src="https://hm.baidu.com/hm.js?abdce5cc5a81bdfb51506edb4641e824"
 		></script>
 		<link rel="stylesheet" href="src/css/base.css" />
+		<script type="speculationrules">
+			{
+				"prerender": [
+					{
+						"where": {
+							"href_matches": "/*"
+						},
+						"eagerness": "moderate"
+					}
+				]
+			}
+		</script>
 	</head>
 	<body>
 		<h1>鬼影的基地</h1>

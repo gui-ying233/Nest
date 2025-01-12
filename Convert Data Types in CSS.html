@@ -104,21 +104,21 @@
 		>
 		<h2><code>&lt;dimension&gt;</code> → <code>&lt;dimension&gt;</code></h2>
 		<pre>
-@property --x {
+@property --d2d {
 	syntax: "&lt;length&gt;";
 	inherits: false;
 	initial-value: 0;
 }
 ::before {
-	--x: calc(1em);
-	counter-reset: n tan(atan2(var(--x), 1px));
+	--d2d: calc(1em);
+	counter-reset: n tan(atan2(var(--d2d), 1px));
 	content: counter(n);
 }</pre
 		>
 		<p>通过这种方式，我们可以方便地查看每个元素的字体大小（px）。</p>
 		<p>
 			类似地，我们也可以通过
-			<code>--x: calc(100vw);</code> 来查看视口的实时宽度。
+			<code>--d2d: calc(100vw);</code> 来查看视口的实时宽度。
 		</p>
 		<p>
 			但似乎这种方式在与上方的小数显示方法一起使用时会出现问题，具体原因不明。

@@ -53,14 +53,22 @@
 		></script>
 		<link rel="stylesheet" href="src/css/base.css" />
 		<script type="speculationrules">
-			{ "prerender": [{ "urls": ["."] }] }
+			{
+				"prerender": [{ "urls": ["."] }],
+				"prefetch": [
+					{
+						"where": { "selector_matches": "a[target='_blank']" },
+						"eagerness": "moderate"
+					}
+				]
+			}
 		</script>
 	</head>
 	<body>
 		<h1>在 macOS 上部署 Viper</h1>
 		<h2>前言</h2>
 		<p>
-			虽然<a href="//github.com/FunnyWolf/Viper" target="_blank"
+			虽然<a href="https://github.com/FunnyWolf/Viper" target="_blank"
 				>Viper（炫彩蛇）</a
 			>官方的提供了一个问题的解决办法，但并不能顺利解决所有的问题。<!--
             -->因此在此将个人部署的过程进行一个分享。虽然并不一定每一步都是必要的。
@@ -144,7 +152,9 @@ docker compose up -d</pre
 		</p>
 		<p>
 			在启动完成后你可以通过
-			<a href="//localhost:60000" target="_blank">localhost:60000</a>
+			<a href="https://localhost:60000" target="_blank"
+				>localhost:60000</a
+			>
 			等网址访问。
 		</p>
 		<footer>

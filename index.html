@@ -43,9 +43,13 @@
 			{
 				"prerender": [
 					{
-						"where": {
-							"href_matches": "/*"
-						},
+						"where": { "href_matches": "/*" },
+						"eagerness": "moderate"
+					}
+				],
+				"prefetch": [
+					{
+						"where": { "selector_matches": "a[target='_blank']" },
 						"eagerness": "moderate"
 					}
 				]
@@ -56,7 +60,9 @@
 		<h1>鬼影的基地</h1>
 		<ol>
 			<li>
-				<a href="//stats.uptimerobot.com/YA7oGr0wpq" target="_blank"
+				<a
+					href="https://stats.uptimerobot.com/YA7oGr0wpq"
+					target="_blank"
 					>萌娘百科监测</a
 				>
 			</li>

@@ -56,7 +56,15 @@
 		></script>
 		<link rel="stylesheet" href="src/css/base.css" />
 		<script type="speculationrules">
-			{ "prerender": [{ "urls": ["."] }] }
+			{
+				"prerender": [{ "urls": ["."] }],
+				"prefetch": [
+					{
+						"where": { "selector_matches": "a[target='_blank']" },
+						"eagerness": "moderate"
+					}
+				]
+			}
 		</script>
 	</head>
 	<body>

@@ -5,14 +5,10 @@ body > pre,
 body > footer {
 	content-visibility: auto;
 }
-
 @keyframes fade-in {
 	to {
 		opacity: 1;
 	}
-}
-body * {
-	text-wrap: pretty;
 }
 body > * {
 	opacity: 0;
@@ -21,6 +17,9 @@ body > * {
 body > * * {
 	opacity: 0;
 	animation: fade-in 1s ease-out forwards;
+}
+body * {
+	text-wrap: pretty;
 }
 
 html {
@@ -244,4 +243,31 @@ footer::before {
 ::selection {
 	background-color: var(--foreground-color--1);
 	color: var(--background-color--1);
+}
+
+@view-transition {
+	navigation: auto;
+}
+@keyframes page-out {
+	from {
+		clip-path: circle(100%);
+	}
+	to {
+		clip-path: circle(0%);
+	}
+}
+@keyframes page-in {
+	from {
+		clip-path: circle(0%);
+	}
+
+	to {
+		clip-path: circle(100%);
+	}
+}
+::view-transition-old(root) {
+	animation: 0.5s ease-in both page-out;
+}
+::view-transition-new(root) {
+	animation: 0.5s ease-in both page-in 0.5s;
 }

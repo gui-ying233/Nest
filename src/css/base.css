@@ -188,8 +188,13 @@ pre[data-lang]::before {
 footer {
 	margin-top: 3em;
 }
-footer::before {
+footer > a[href="."] {
+	margin-left: 1em;
+}
+footer > a[href="."]::before {
 	content: "← ";
+	float: left;
+	margin-left: -1em;
 }
 
 :root {

@@ -39,4 +39,12 @@
     <loc>https://gui-ying233.github.io/Nest/Convert%20Data%20Types%20in%20CSS</loc>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://gui-ying233.github.io/Nest/MediaWiki/</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://gui-ying233.github.io/Nest/MediaWiki/Namespace</loc>
+    <priority>0.7</priority>
+  </url>
 </urlset>

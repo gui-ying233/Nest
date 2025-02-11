@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="zh-Hans-CN">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="color-scheme" content="light dark" />
+		<meta name="theme-color" content="hsl(0, 0%, 96%);" />
+		<meta
+			name="theme-color"
+			media="(prefers-color-scheme: dark)"
+			content="hsl(0, 0%, 8%);"
+		/>
+		<meta name="author" content="鬼影233" />
+		<meta
+			name="description"
+			content="命名空间（名字空间）是 MediaWiki 的一种以前缀区分页面的方式，其大部分属性均可在后端更改配置，且可被配置别名映射。"
+		/>
+		<meta
+			name="keywords"
+			content="命名空间, 名字空间, MediaWiki, Wikitext, 前缀, 页面, 配置, 别名, 映射, API, CSS, JS"
+		/>
+		<meta property="og:title" content="命名空间" />
+		<meta property="og:locale" content="zh_CN" />
+		<meta
+			property="og:url"
+			content="https://gui-ying233.github.io/Nest/MediaWiki/Namespace"
+		/>
+		<meta property="og:site_name" content="鬼影的基地" />
+		<meta
+			property="og:description"
+			content="命名空间（名字空间）是 MediaWiki 的一种以前缀区分页面的方式，其大部分属性均可在后端更改配置，且可被配置别名映射。"
+		/>
+		<meta property="og:type" content="article" />
+		<meta property="article:author" content="鬼影233" />
+		<meta name="twitter:card" content="summary" />
+		<meta property="twitter:title" content="命名空间" />
+		<link
+			rel="canonical"
+			href="https://gui-ying233.github.io/Nest/MediaWiki/Namespace"
+		/>
+		<link rel="icon" type="image/x-icon" href="../src/asset/favicon.ico" />
+		<link rel="apple-touch-icon" href="../src/asset/favicon.ico" />
+		<title>命名空间 - 《MediaWiki：从入门到放弃》 - 鬼影的基地</title>
+		<script async src="../src/js/clarity.js"></script>
+		<script
+			async
+			src="https://www.googletagmanager.com/gtag/js?id=G-ZMHY61ZCQE"
+		></script>
+		<script async src="../src/js/gtag.js"></script>
+		<script
+			async
+			src="https://hm.baidu.com/hm.js?abdce5cc5a81bdfb51506edb4641e824"
+		></script>
+		<link rel="stylesheet" href="../src/css/base.css" />
+		<script type="speculationrules">
+			{
+				"prerender": [
+					{ "urls": ["."] },
+					{ "urls": [".."], "eagerness": "eager" }
+				],
+				"prefetch": [
+					{ "urls": [".."] },
+					{
+						"where": {
+							"selector_matches": "a[target=_blank]"
+						},
+						"eagerness": "moderate"
+					}
+				]
+			}
+		</script>
+	</head>
+	<body>
+		<h1>命名空间</h1>
+		<h2>简介</h2>
+		<p>
+			命名空间（名字空间）是 MediaWiki
+			的一种以前缀区分页面的方式，其大部分属性均可在后端更改配置，且可被配置<a
+				href="#别名"
+				>别名映射</a
+			>。
+		</p>
+		<h2>内置命名空间</h2>
+		<p>MediaWiki 默认的 18个内置命名空间：</p>
+		<dl>
+			<dt>-2：Media</dt>
+			<dd>
+				通过网址查看时会被重定向至 File
+				命名空间；链入时链至文件的最终路径
+			</dd>
+			<dt>-1：Special</dt>
+			<dd>特殊页面，由 MediaWiki 提供的特殊功能页面，不可被编辑</dd>
+			<dt>0：（主）</dt>
+			<dd>即一般条目的命名空间，实际命名空间名称为空，故以此表示</dd>
+			<dt>1：Talk</dt>
+			<dd>（主）命名空间的讨论页</dd>
+			<dt>2：User</dt>
+			<dd>与用户相关联</dd>
+			<dt>3：User talk</dt>
+			<dd>
+				User 命名空间的讨论页,
+				与用户相关联。他人编辑时会让页面主人收到通知
+			</dd>
+			<dt>4：Project</dt>
+			<dd>通常为 wiki 名</dd>
+			<dt>5：Project talk</dt>
+			<dd>Project 命名空间的讨论页</dd>
+			<dt>6：File</dt>
+			<dd>
+				链入图像文件时直接显示图像，页面中除编辑的内容外还包含文件的元数据等信息；移动文件需要
+				movefile 权限
+			</dd>
+			<dt>7：File talk</dt>
+			<dd>File 命名空间的讨论页</dd>
+			<dt>8：MediaWiki</dt>
+			<dd>
+				需要 editinterface（甚至 editsitecss 或
+				editesitejs）权限才可编辑，可用于配置全站
+				CSS、JS、不同语言变体的系统消息等
+			</dd>
+			<dt>9：MediaWiki talk</dt>
+			<dd>MediaWiki 命名空间的讨论页</dd>
+			<dt>10：Template</dt>
+			<dd>被嵌入时可以省略前缀</dd>
+			<dt>11：Template talk</dt>
+			<dd>Template 命名空间的讨论页</dd>
+			<dt>12：Help</dt>
+			<dd>帮助页面</dd>
+			<dt>13：Help talk</dt>
+			<dd>Help 命名空间的讨论页</dd>
+			<dt>14：Category</dt>
+			<dd>
+				分类页面，其页面的分类影响分类的父分类，页面中除编辑的内容外还包含被归为此类的子分类和子页面列表；移动分类需要
+				move-categorypages 权限
+			</dd>
+			<dt>Category talk</dt>
+			<dd>15：Category 命名空间的讨论页</dd>
+		</dl>
+		<p>
+			除了以上 18
+			个内置命名空间外，也可以由扩展、插件或后端手动配置更多命名空间。
+		</p>
+		<p>
+			命名空间编号 -1、-2
+			为“虚拟命名”空间。虚拟命名空间与数据库中的页面不对应，由 MediaWiki
+			自动生成；编号 0~15
+			为“真实”命名空间，偶数为基本命名空间（主题空间），奇数（基本命名空间的编号
+			+1）为对应的讨论页（讨论命名空间）。
+		</p>
+		<h2>命名空间属性</h2>
+		<p>
+			命名空间包含 8
+			个属性：<code>id</code>（唯一整数编号）、<code>case</code>（大小写方式）、<code>name</code>（显示名称）、<code>subpages</code>（是否允许子页面）、<code>canonical</code>（规范名称）、<code>content</code>（是否属于内容命名空间）、<code>nonincludable</code>（是否不可被嵌入）、<code>defaultcontentmodel</code>（默认页面模型）
+			，可以通过例如
+			<a
+				href="https://www.mediawiki.org/wiki/Special:ApiSandbox#action=query&format=json&meta=siteinfo&utf8=1&formatversion=2&siprop=namespaces"
+				target="_blank"
+				>API 沙盒</a
+			>来获取每个 wiki 所配置的命名空间及其属性。
+		</p>
+		<h2 id="别名">别名</h2>
+		<p>
+			命名空间可被配置别名（重定向），可通过
+			<a
+				href="https://www.mediawiki.org/wiki/Special:ApiSandbox#action=query&format=json&meta=siteinfo&utf8=1&formatversion=2&siprop=namespacealiases"
+				target="_blank"
+				>API 沙盒</a
+			>
+			查看，一个命名空间可有多个别名。通常非英文 wiki
+			会配置本地语言的别名。
+		</p>
+		<h2>内容命名空间</h2>
+		<p>
+			内容命名空间默认只包含“（主）”命名空间，其会影响默认搜索（内容页面）的范围；也会影响到部分特殊页面：Special:Random、Special:Statistics、Special:AncientPages、Special:DeadendPages、Special:FewestRevisions、Special:LonelyPages、Special:MostCategories、Special:MostInterwikis、Special:RandomPage、Special:ShortPages、Special:LongPages、Special:UncategorizedPages、Special:WithoutInterwiki；以及影响魔术字
+			<code>{{NUMBEROFARTICLES}}</code>
+			的统计；和影响页面被链入通知的生效范围。
+		</p>
+		<h2>获取命名空间相关</h2>
+		<h3>Wikitext（<a href="Magic words">魔术字</a>）</h3>
+		<h4>变量</h4>
+		<dl>
+			<dt><code>{{NUMBEROFARTICLES}}</code></dt>
+			<dd>获取当前 wiki 的内容页面数量</dd>
+			<dt>
+				<code>{{PAGESINNS:编号}}</code>、<code
+					>{{PAGESINNAMESPACE:编号}}</code
+				>
+			</dt>
+			<dd>
+				<strong>【高开销】</strong>根据编号获取当前 wiki
+				的指定命名空间的页面数量。<code>{{PAGESINNS:0}}</code>
+				与前者的不同之处在于本变量包括重定向和消歧义页面。
+			</dd>
+			<dt>
+				<code>{{NAMESPACE}}</code>、<code
+					>{{NAMESPACE:完整页面名称}}</code
+				>
+			</dt>
+			<dd>获取当前或指定页面的命名空间名称</dd>
+			<dt>
+				<code>{{NAMESPACEE}}</code>、<code
+					>{{NAMESPACEE:完整页面名称}}</code
+				>
+			</dt>
+			<dd>经过 MediaWiki URL 编码的前者</dd>
+			<dt>
+				<code>{{NAMESPACENUMBER}}</code>、<code
+					>{{NAMESPACENUMBER:命名空间名称}}</code
+				>
+			</dt>
+			<dd>获取当前或指定命名空间的命名空间编号</dd>
+			<dt>
+				<code>{{SUBJECTSPACE}}</code
+				>、<code>{{ARTICLESPACE}}</code>、<code>{{SUBJECTSPACE:完整页面名称}}</code>、<code
+					>{{ARTICLESPACE:完整页面名称}}</code
+				>
+			</dt>
+			<dd>获取当前或指定页面相关的基本命名空间名称</dd>
+			<dt>
+				<code>{{SUBJECTSPACEE}}</code
+				>、<code>{{ARTICLESPACEE}}</code>、<code>{{SUBJECTSPACEE:完整页面名称}}</code>、<code
+					>{{ARTICLESPACEE:完整页面名称}}</code
+				>
+			</dt>
+			<dd>经过 MediaWiki URL 编码的前者</dd>
+			<dt>
+				<code>{{TALKSPACE}}</code>、<code
+					>{{TALKSPACE:完整页面名称}}</code
+				>
+			</dt>
+			<dd>获取当前或指定页面相关的讨论命名空间名称</dd>
+			<dt>
+				<code>{{TALKSPACEE}}</code>、<code
+					>{{TALKSPACEE:完整页面名称}}</code
+				>
+			</dt>
+			<dd>经过 MediaWiki URL 编码的前者</dd>
+		</dl>
+		<h4>解析器函数</h4>
+		<dl>
+			<dt><code>{{ns:命名空间编号或命名空间名称}}</code></dt>
+			<dl>获取指定命名空间的格式化名称</dl>
+			<dt><code>{{nse:命名空间编号或命名空间名称}}</code></dt>
+			<dl>经过 MediaWiki URL 编码的前者</dl>
+		</dl>
+		<h3>DOM</h3>
+		<p>
+			<code>&#60;body&#62;</code> 会附带一个例如 <code>ns-0</code>
+			的类名，对应当前页面的命名空间编号；如果是基本命名空间，会附带一个
+			<code>ns-subject</code> 的类名；如果是讨论命名空间，则会附带一个
+			<code>ns-talk</code> 的类名。CSS 和 JS
+			可以通过这些类名来实现特定的需求。
+		</p>
+		<h3>JS</h3>
+		<dl>
+			<dt><code>mw.config.get("wgCanonicalNamespace")</code></dt>
+			<dl>获取当前页面的规范命名空间名称</dl>
+			<dt><code>mw.config.get("wgCaseSensitiveNamespaces")</code></dt>
+			<dl>获取大小写敏感的命名空间编号数组</dl>
+			<dt><code>mw.config.get("wgContentNamespaces")</code></dt>
+			<dl>获取内容命名空间的编号数组</dl>
+			<dt><code>mw.config.get("wgExtraSignatureNamespaces")</code></dt>
+			<dl>
+				获取额外的编辑工具栏中显示签名工具的命名空间编号数组（不包括内置命名空间中的讨论命名空间）
+			</dl>
+			<dt><code>mw.config.get("wgFormattedNamespaces")</code></dt>
+			<dl>获取格式化的命名空间名称数组</dl>
+			<dt><code>mw.config.get("wgNamespaceIds")</code></dt>
+			<dl>获取命名空间编号数组</dl>
+			<dt><code>mw.config.get("wgNamespaceNumber")</code></dt>
+			<dl>获取当前页面的命名空间编号</dl>
+		</dl>
+		<h3>API</h3>
+		<p>
+			通过 API 可以获取当前 wiki 的所有命名空间及其属性，在 API
+			沙盒中查看：
+			<a
+				href="https://www.mediawiki.org/wiki/Special:ApiSandbox#action=query&format=json&meta=siteinfo&utf8=1&formatversion=2&siprop=namespaces"
+				target="_blank"
+			>
+				MediaWiki wiki 的命名空间
+			</a>
+		</p>
+		<h2>参看</h2>
+		<ul>
+			<li>
+				<a
+					href="https://www.mediawiki.org/wiki/Help:Namespaces"
+					target="_blank"
+					>Help:Namespaces</a
+				>
+			</li>
+			<li>
+				<a
+					href="https://www.mediawiki.org/wiki/Manual:Namespace"
+					target="_blank"
+					>Manual:Namespace</a
+				>
+			</li>
+			<li>
+				<a
+					href="https://www.mediawiki.org/wiki/Manual:$wgNamespaceAliases"
+					target="_blank"
+					>Manual:$wgNamespaceAliases</a
+				>
+			</li>
+			<li>
+				<a
+					href="https://www.mediawiki.org/wiki/Manual:$wgContentNamespaces"
+					target="_blank"
+					>Manual:$wgContentNamespaces</a
+				>
+			</li>
+			<li>
+				<a
+					href="https://www.mediawiki.org/wiki/Manual:$wgExtraSignatureNamespaces"
+					target="_blank"
+					>Manual:$wgExtraSignatureNamespaces</a
+				>
+			</li>
+		</ul>
+		<footer>
+			<a href=".">《MediaWiki：从入门到放弃》</a> -
+			<a href="..">鬼影的基地</a>
+		</footer>
+	</body>
+</html>

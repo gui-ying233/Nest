@@ -55,18 +55,21 @@ h6 {
 }
 h1 {
 	margin-block: 2.4em 0;
+	scroll-margin-block-start: 1.2em;
 	font-size: 2.5rem;
 	line-height: 1.2;
 	font-weight: var(--font-weight--2);
 }
 h2 {
 	margin-block: 1.8em 0;
+	scroll-margin-block-start: 0.9em;
 	font-size: 2rem;
 	line-height: 1.25;
 	font-weight: var(--font-weight--3);
 }
 h3 {
 	margin-block: 1em 0;
+	scroll-margin-block-start: 0.5em;
 	font-size: 1.125rem;
 	line-height: 1.5;
 	font-weight: var(--font-weight--3);
@@ -84,7 +87,7 @@ p,
 figure {
 	max-width: calc(100% - 2px);
 	margin-inline: 0;
-	margin-block: 1em;
+	margin-block: 1em 0;
 }
 figcaption {
 	font-size: smaller;
@@ -127,6 +130,9 @@ a {
 body > a {
 	margin: 0 0.5em;
 }
+a[href^="#"] {
+	border-bottom-style: dotted;
+}
 a[target="_blank"] {
 	border-bottom-style: dashed;
 }
@@ -144,6 +150,22 @@ ol {
 }
 li + li {
 	margin-top: 0.5em;
+}
+
+b,
+strong {
+	font-weight: var(--font-weight--2);
+}
+dt {
+	font-weight: var(--font-weight--3);
+}
+
+em {
+	font-style: normal;
+	-webkit-text-emphasis: dot;
+	text-emphasis: dot;
+	-webkit-text-emphasis-position: under right;
+	text-emphasis-position: under right;
 }
 
 pre,
@@ -178,7 +200,7 @@ pre[data-lang]::before {
 	padding-inline-end: 0.875em;
 	background-color: var(--background-color--3);
 	font-size: 0.75rem;
-	font-weight: 700;
+	font-weight: var(--font-weight--2);
 	letter-spacing: 0.125em;
 	line-height: 1;
 	text-transform: uppercase;

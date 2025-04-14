@@ -20,6 +20,7 @@ body > * * {
 }
 body * {
 	text-wrap: pretty;
+	overflow-wrap: anywhere;
 }
 
 html {
@@ -130,15 +131,20 @@ a {
 body > a {
 	margin: 0 0.5em;
 }
-a[href^="#"] {
-	border-bottom-style: dotted;
+li > a {
+	vertical-align: middle;
 }
-a[target="_blank"] {
-	border-bottom-style: dashed;
-}
-a:hover {
-	border-bottom-width: 2px;
-	margin-bottom: 0;
+@media screen {
+	a[href^="#"] {
+		border-bottom-style: dotted;
+	}
+	a[target="_blank"] {
+		border-bottom-style: dashed;
+	}
+	a:hover {
+		border-bottom-width: 2px;
+		margin-bottom: 0;
+	}
 }
 
 small {
@@ -150,6 +156,25 @@ ol {
 }
 li + li {
 	margin-top: 0.5em;
+}
+
+table {
+	border-collapse: collapse;
+}
+tr > * {
+	padding-inline: 0.5em;
+	padding-block: 0.25em;
+}
+th {
+	font-weight: var(--font-weight--2);
+	background-color: var(--background-color--3);
+	color: var(--foreground-color--2);
+	transition: var(--transition--background-color), var(--transition--color),
+		var(--transition--font-weight);
+}
+tr:nth-child(2n) > td {
+	background-color: var(--background-color--1);
+	transition: var(--transition--background-color);
 }
 
 b,
@@ -171,13 +196,13 @@ em {
 pre,
 code {
 	font-family: ui-monospace, monospace;
-	overflow-wrap: break-word;
 	tab-size: 4;
 	transition: var(--transition--outline-color),
 		var(--transition--background-color);
 }
 p code,
-pre {
+pre,
+table {
 	background-color: var(--background-color--2);
 	outline: 1px solid var(--background-color--3);
 	border: solid transparent;
@@ -204,19 +229,28 @@ pre[data-lang]::before {
 	letter-spacing: 0.125em;
 	line-height: 1;
 	text-transform: uppercase;
-	transition: var(--transition--background-color);
+	transition: var(--transition--background-color), var(--transition--color),
+		var(--transition--font-weight);
 }
 
 footer {
 	margin-top: 3em;
 }
-footer > a[href="."] {
+footer > a {
 	margin-left: 1em;
 }
-footer > a[href="."]::before {
+footer > a::before {
 	content: "← ";
 	float: left;
 	margin-left: -1em;
+}
+footer > a ~ a {
+	margin-left: unset;
+}
+footer > a ~ a::before {
+	content: unset;
+	float: unset;
+	margin-left: unset;
 }
 
 :root {
@@ -228,13 +262,13 @@ footer > a[href="."]::before {
 	--transition--color: color 350ms;
 	--transition--outline-color: outline-color 350ms;
 	--black--0: hsl(0, 0%, 0%);
-	--black--1: hsl(0, 0%, 8%);
-	--black--2: hsl(0, 0%, 12%);
-	--black--3: hsl(0, 0%, 16%);
+	--black--1: hsl(0, 0%, 4%);
+	--black--2: hsl(0, 0%, 6%);
+	--black--3: hsl(0, 0%, 8%);
 	--white--0: hsl(0, 0%, 100%);
-	--white--1: hsl(0, 0%, 96%);
-	--white--2: hsl(0, 0%, 94%);
-	--white--3: hsl(0, 0%, 92%);
+	--white--1: hsl(0, 0%, 92%);
+	--white--2: hsl(0, 0%, 88%);
+	--white--3: hsl(0, 0%, 84%);
 	--background-color--1: var(--white--1);
 	--background-color--2: var(--white--2);
 	--background-color--3: var(--white--3);

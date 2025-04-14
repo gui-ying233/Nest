@@ -75,8 +75,7 @@
 		</p>
 		<h2>Box-shadow</h2>
 		<p>
-			代码写起来较为简短，也有很多的生成器。但一般需要再套个元素再外以帮助占位，<!--
-			-->浏览器缩放会影响显示效果（存在缝隙或堆叠），且不太方便自适应。
+			代码写起来较为简短，也有很多的生成器。但一般需要再套个元素再外以帮助占位，浏览器缩放会影响显示效果（存在缝隙或堆叠），且不太方便自适应。
 		</p>
 		<a
 			href="https://fjolt.com/article/css-pixel-art-generator"
@@ -145,8 +144,8 @@
 		</figure>
 		<h2>Linear-gradient</h2>
 		<p>
-			只需一个元素，十分方便的自适应，只需宽与高任意指定一个，甚至可以在里面写点字。<!--
-			-->但不支持透明，且代码又长又没什么生成器，写起来会不太方便。
+			只需一个元素，十分方便的自适应，只需宽与高任意指定一个，甚至可以在里面写点字。但不支持透明，且代码又长又没什么生成器，写起来会不太方便。此外还应当设置
+			<code>print-color-adjust: exact</code>。
 		</p>
 		<h3>简易生成代码</h3>
 		<a href="https://codepen.io/cgreinhold/pen/rNagxoK" target="_blank"
@@ -195,6 +194,8 @@ pixelArt.removeAttribute("id")</pre
 				role="img"
 				aria-label="使用 CSS background-image 属性绘制的 Minecraft 灾厄旗帜。"
 				style="
+					-webkit-print-color-adjust: exact;
+					print-color-adjust: exact;
 					max-width: 50vw;
 					aspect-ratio: 1/2;
 					background-image: linear-gradient(
@@ -1935,6 +1936,8 @@ pixelArt.removeAttribute("id")</pre
 				role="img"
 				aria-label="使用 CSS background-image 属性绘制的 Minecraft 村庄英雄状态效果图标。"
 				style="
+					-webkit-print-color-adjust: exact;
+					print-color-adjust: exact;
 					max-width: 50vw;
 					aspect-ratio: 1/1;
 					background-image: linear-gradient(
@@ -2508,5 +2511,6 @@ pixelArt.removeAttribute("id")</pre
 		<footer>
 			<a href=".">鬼影的基地</a>
 		</footer>
+		<link rel="stylesheet" media="print" href="src/css/print.css" />
 	</body>
 </html>

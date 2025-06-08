@@ -306,29 +306,31 @@ footer > a ~ a::before {
 	color: var(--background-color--1);
 }
 
-@view-transition {
-	navigation: auto;
-}
-@keyframes page-out {
-	from {
-		clip-path: circle(100%);
+@media not (prefers-reduced-motion: reduce) {
+	@view-transition {
+		navigation: auto;
 	}
-	to {
-		clip-path: circle(0%);
+	@keyframes page-out {
+		from {
+			clip-path: circle(100%);
+		}
+		to {
+			clip-path: circle(0%);
+		}
 	}
-}
-@keyframes page-in {
-	from {
-		clip-path: circle(0%);
-	}
+	@keyframes page-in {
+		from {
+			clip-path: circle(0%);
+		}
 
-	to {
-		clip-path: circle(100%);
+		to {
+			clip-path: circle(100%);
+		}
 	}
-}
-::view-transition-old(root) {
-	animation: 0.25s ease-in both page-out;
-}
-::view-transition-new(root) {
-	animation: 0.25s ease-in both page-in 0.25s;
+	::view-transition-old(root) {
+		animation: 0.25s ease-in both page-out;
+	}
+	::view-transition-new(root) {
+		animation: 0.25s ease-in both page-in 0.25s;
+	}
 }

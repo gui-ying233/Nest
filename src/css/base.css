@@ -110,6 +110,7 @@ img,
 }
 img {
 	font-style: italic;
+	text-align: center;
 	vertical-align: middle;
 	height: auto;
 	background-image: var(--base64);

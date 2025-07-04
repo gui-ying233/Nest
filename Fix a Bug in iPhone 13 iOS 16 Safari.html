@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="zh-Hans-CN">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="color-scheme" content="light dark" />
+		<meta name="theme-color" content="hsl(0, 0%, 92%);" />
+		<meta
+			name="theme-color"
+			media="(prefers-color-scheme: dark)"
+			content="hsl(0, 0%, 4%);"
+		/>
+		<meta name="author" content="鬼影233" />
+		<meta
+			name="description"
+			content="记录修复 iPhone 13 iOS 16 Safari 中选项卡文字消失 Bug 的过程。"
+		/>
+		<meta
+			name="keywords"
+			content="Bug, JS, JavaScript, 重排, Reflow, 重绘, Repaint, CSS, Render, Webkit, Safari, Safari 16, iOS, iOS 16, iPhone, iPhone 13, 苹果手机, 苹果, 伪元素, Pseudo, after"
+		/>
+		<meta
+			property="og:title"
+			content="修复 iPhone 13 iOS 16 Safari 中的 Bug"
+		/>
+		<meta property="og:locale" content="zh_CN" />
+		<meta
+			property="og:url"
+			content="https://gui-ying233.github.io/Nest/Fix%20a%20Bug%20in%20iPhone%2013%20iOS%2016%20Safari"
+		/>
+		<meta property="og:site_name" content="鬼影的基地" />
+		<meta
+			property="og:description"
+			content="记录修复 iPhone 13 iOS 16 Safari 中选项卡文字消失 Bug 的过程。"
+		/>
+		<meta property="og:type" content="article" />
+		<meta property="article:author" content="鬼影233" />
+		<meta name="twitter:card" content="summary" />
+		<meta
+			property="twitter:title"
+			content="修复 iPhone 13 iOS 16 Safari 中的 Bug"
+		/>
+		<link
+			rel="canonical"
+			href="https://gui-ying233.github.io/Nest/Fix%20a%20Bug%20in%20iPhone%2013%20iOS%2016%20Safari"
+		/>
+		<link rel="icon" type="image/x-icon" href="src/asset/favicon.ico" />
+		<link rel="apple-touch-icon" href="src/asset/favicon.ico" />
+		<title>修复 iPhone 13 iOS 16 Safari 中的 Bug - 鬼影的基地</title>
+		<!-- <script defer src="src/js/clarity.js"></script>
+		<script
+			defer
+			src="https://www.googletagmanager.com/gtag/js?id=G-ZMHY61ZCQE"
+		></script>
+		<script defer src="src/js/gtag.js"></script>
+		<script
+			defer
+			src="https://hm.baidu.com/hm.js?abdce5cc5a81bdfb51506edb4641e824"
+		></script>
+		<script
+			src="https://app.rybbit.io/api/script.js"
+			data-site-id="1309"
+			data-track-errors="true"
+			data-session-replay="true"
+			data-web-vitals="true"
+			data-tracking-errors="true"
+			defer
+		></script> -->
+		<link rel="stylesheet" href="src/css/base.css" />
+		<script type="speculationrules">
+			{
+				"prerender": [{ "urls": ["."] }],
+				"prefetch": [
+					{
+						"where": {
+							"selector_matches": "a[href][target='_blank']"
+						},
+						"eagerness": "moderate"
+					}
+				]
+			}
+		</script>
+	</head>
+	<body>
+		<h1>修复 iPhone 13 iOS 16 Safari 中的 Bug</h1>
+		<h2>开始</h2>
+		<p>
+			某天，有个用户反馈到技术群，发了个视频说发现他的 wiki 站中的选项卡在
+			iOS 上出现了问题。
+		</p>
+		<figure>
+			<picture>
+				<source
+					srcset="src/asset/image/tabs%20normal%20in%20light.webp"
+					media="(prefers-color-scheme: light)"
+				/>
+				<source
+					srcset="src/asset/image/tabs%20normal%20in%20dark.webp"
+					media="(prefers-color-scheme: dark)"
+				/>
+				<img src="src/asset/image/tabs%20normal%20in%20light.webp" />
+			</picture>
+			<figcaption>选项卡的正常状态</figcaption>
+		</figure>
+		<p>
+			打开我的苹果手机一开，果然无法复现。在排除了各种干扰项、询问了具体环境之后，是时候打开
+			<a href="https://live.browserstack.com/dashboard" target="_blank"
+				>BrowserStack</a
+			>
+			了。稳定复现了，可喜可贺可喜可贺。
+		</p>
+		<p>什么环境？不是写在标题内了吗？</p>
+		<figure>
+			<picture>
+				<source
+					srcset="src/asset/image/tabs%20Buggy%20in%20light.webp"
+					media="(prefers-color-scheme: light)"
+				/>
+				<source
+					srcset="src/asset/image/tabs%20Buggy%20in%20dark.webp"
+					media="(prefers-color-scheme: dark)"
+				/>
+				<img src="src/asset/image/tabs%20Buggy%20in%20light.webp" />
+			</picture>
+			<figcaption>切换选项卡后切换前的选项文字会消失</figcaption>
+		</figure>
+		<h2>初步检查</h2>
+		<p>先来大概看看代码，整体大概长这样，源代码比此更加复杂：</p>
+		<p>
+			<small>
+				源代码：
+				<a
+					href="https://wiki.biligame.com/lysk/?oldid=66759"
+					target="_blank"
+					>Template</a
+				>、
+				<a
+					href="https://wiki.biligame.com/lysk/?oldid=61992"
+					target="_blank"
+					>Widget</a
+				></small
+			>
+		</p>
+		<pre data-lang="HTML">
+&lt;head&gt;
+	&lt;style&gt;
+		.d-tab .hidden {
+			display: none;
+		}
+		.d-tab-titles .d-tab-delimiter:last-child {
+			display: none;
+		}
+	&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+	&lt;div class="d-tab"&gt;
+		&lt;div class="d-tab-titles"&gt;
+			&lt;span class="d-tab-title active"&gt;乾&lt;/span&gt;
+			&lt;span class="d-tab-title"&gt;坤&lt;/span&gt;
+		&lt;/div&gt;
+		&lt;div class="d-tab-contents"&gt;
+			&lt;div class="tab-content active"&gt;乾为天：元亨，利贞。&lt;/div&gt;
+			&lt;div class="tab-content hidden"&gt;
+				坤为地：元亨，利牝马之贞。君子有攸往，先迷后得主，利西南得朋，东北丧朋。安贞，吉。
+			&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;script&gt;
+			function dTab() {
+				const singleSwitch = `&lt;!--{$singleSwitch}--&gt;` ?? false;
+				//  console.log("singleSwitch=",singleSwitch);
+				document
+					.querySelectorAll(".d-tab-titles .d-tab-title")
+					.forEach((tab, i) =&gt; {
+						tab.addEventListener("click", () =&gt; {
+							// 找到当前 tab 所在的标题列表
+							const titleListContainer =
+								tab.closest(".d-tab-titles");
+							//console.log(titleListContainer)
+							if (!titleListContainer) return;
+
+							const titleList = Array.from(
+								titleListContainer.querySelectorAll(
+									".d-tab-title"
+								)
+							);
+
+							// 找到对应的 .d-tab 容器和内容列表
+							const tabsContainer =
+								titleListContainer.closest(".d-tab");
+							const tabContents = Array.from(
+								tabsContainer.querySelectorAll(
+									":scope &gt; .d-tab-contents &gt; .tab-content"
+								)
+							);
+
+							// 如果只有一个 tab，直接切换 active 类
+							if (titleList.length === 1 && singleSwitch) {
+								if (
+									titleList[0].classList.contains(
+										"active"
+									)
+								) {
+									titleList[0].classList.remove("active");
+									tabContents[0].classList.remove(
+										"active"
+									);
+									tabContents[0].classList.add("hidden");
+								} else {
+									titleList[0].classList.add("active");
+									tabContents[0].classList.add("active");
+									tabContents[0].classList.remove(
+										"hidden"
+									);
+								}
+								return;
+							}
+							// 移除其他 tab 的 active 类
+							titleList.forEach(t =&gt;
+								t.classList.remove("active")
+							);
+							tab.classList.add("active");
+
+							// 获取当前 tab 的索引
+							const index = titleList.indexOf(tab);
+
+							// 关闭所有 tab 内容
+							tabContents.forEach(content =&gt;
+								content.classList.remove("active")
+							);
+							tabContents.forEach(content =&gt;
+								content.classList.add("hidden")
+							);
+
+							// 打开对应索引的 tab 内容
+							if (tabContents[index]) {
+								tabContents[index].classList.remove(
+									"hidden"
+								);
+								tabContents[index].classList.add("active");
+							}
+						});
+					});
+			}
+
+			if (document.readyState === "loading") {
+				document.addEventListener("DOMContentLoaded", dTab);
+			} else {
+				dTab();
+			}
+		&lt;/script&gt;
+		&lt;style&gt;
+			.d-tab &gt; .d-tab-titles {
+				background: #414858;
+				display: flex;
+				border-bottom: 2px solid #414858;
+				color: white;
+			}
+			.d-tab &gt; .d-tab-titles &gt; .d-tab-title.active {
+				color: #fff1c5;
+				box-shadow: none;
+			}
+			.d-tab &gt; .d-tab-titles &gt; .d-tab-title {
+				width: 25%;
+				padding: 7px 0;
+				font-size: 16px;
+				position: relative;
+				border-radius: 0;
+				text-align: center;
+			}
+			.d-tab &gt; .d-tab-titles &gt; .d-tab-title.active:after {
+				content: "";
+				position: absolute;
+				height: 2px;
+				width: calc(100% - 10px);
+				background: #fff1c5;
+				left: 5px;
+				bottom: 0;
+			}
+		&lt;/style&gt;
+	&lt;/div&gt;
+&lt;/body&gt;
+</pre
+		>
+		<p>根据报告人说，在删除了其中这段代码后便能恢复正常：</p>
+		<pre data-lang="CSS">
+.d-tab > .d-tab-titles > .d-tab-title.active:after {
+	content: "";
+	position: absolute;
+	height: 2px;
+	width: calc(100% - 10px);
+	background: #fff1c5;
+	left: 5px;
+	bottom: 0;
+}</pre
+		>
+		<p>这不合理，但确实恢复了……</p>
+		<p>
+			先大概看一眼各个的计算样式，似乎也没啥问题。那先确认是渲染 / CSS
+			上的问题吧：选择文本消失的选项元素
+			<code>$0.innerText</code> → <code>""</code> （<code
+				>$0.textContent</code
+			>
+			→ <code>"乾"</code>）。
+		</p>
+		<p>很好，确认了，反正 JS 不多，直接单步调试走一遍吧。</p>
+		<h2>深入调查</h2>
+		<p>
+			我使用了 Chrome DevTools（至少对于
+			Bug，用哪个区别不大），然后发现……单步调试的时候似乎无法复现
+			Bug，那很明显是渲染上的 Bug 了。
+		</p>
+		<p>
+			于是我直接在所有的 class 更改的操作后面增加了对应的
+			<code>ele.offsetTop;</code> 来尝试强制触发<a
+				href="https://developer.mozilla.org/zh-CN/docs/Glossary/Reflow"
+				target="_blank"
+				>重排</a
+			>并触发<a
+				href="https://developer.mozilla.org/zh-CN/docs/Glossary/Repaint"
+				target="_blank"
+				>重绘</a
+			>。
+		</p>
+		<p>好吧没用，不过我相信不是我的问题而是 Safari 在重绘上的问题。</p>
+		<p>
+			那换种方法，将所有 <code>ele.offsetTop;</code> 改成
+			<code>console.log(ele.innerText);</code>
+		</p>
+		<p>我们可以发现在这之后文字就消失了：</p>
+		<pre data-lang="JavaScript">
+// 移除其他 tab 的 active 类
+titleList.forEach(t =>
+	t.classList.remove("active")
+);
+tab.classList.add("active");
+</pre
+		>
+		<p>
+			至此，我们已经定位到了具体位置，大概确定了原因，那么是时候解决了。
+		</p>
+		<h2>修复</h2>
+		<p>
+			首先我想到的是在上面那段代码之后刷新一下 DOM，例如使用
+			<code>ele.innerHTML</code
+			>，但考虑到可能的元素绑定，感觉需要更加麻烦的办法……
+		</p>
+		<p>
+			正当我苦思冥想之际（并不），我突发奇想，试了一下使用<a
+				href="https://developer.mozilla.org/zh-CN/docs/Web/API/HTML_DOM_API/Microtask_guide/In_depth"
+				target="_blank"
+				>微任务</a
+			>：
+			<code>setTimeout(() => tab.classList.add("active"), 0);</code>
+			就成功修复了……
+		</p>
+		<h2>结语</h2>
+		<p>至此也差不多结束了，为什么修复了？我不知道。</p>
+		<p>
+			然后要吐槽一下 BrowserStack 的调试真的很难用，有很多 Bug。但也要感谢
+			<a href="https://education.github.com/pack" target="_blank"
+				>GitHub Student Developer Pack</a
+			>，申请又方便东西又多，例如和 BrowserStack 合作的<a
+				href="https://www.browserstack.com/github-students"
+				target="_blank"
+				>学生计划</a
+			>。
+		</p>
+		<footer>
+			<a href=".">鬼影的基地</a>
+		</footer>
+		<link rel="stylesheet" media="print" href="src/css/print.css" />
+	</body>
+</html>

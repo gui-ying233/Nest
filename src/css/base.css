@@ -1,8 +1,7 @@
 body > div,
-body > img,
-body > [role="img"],
 body > pre,
-body > footer {
+body > footer,
+body > figure {
 	content-visibility: auto;
 }
 @keyframes fade-in {
@@ -64,7 +63,7 @@ h1 {
 h2 {
 	margin-block: 1.8em 0;
 	scroll-margin-block-start: 0.9em;
-	font-size: 2rem;
+	font-size: 1.75rem;
 	line-height: 1.25;
 	font-weight: var(--font-weight--3);
 }

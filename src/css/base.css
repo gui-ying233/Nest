@@ -50,6 +50,7 @@ h3,
 h4,
 h5,
 h6 {
+	font-family: ui-serif, serif;
 	color: var(--foreground-color-titles);
 	transition: var(--transition--color), var(--transition--font-weight);
 }

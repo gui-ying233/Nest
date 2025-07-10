@@ -39,6 +39,15 @@ body {
 	transition: var(--transition--background-color);
 }
 
+[lang|="zh"] ruby > rb::before {
+	content: "";
+}
+[lang|="zh"] ruby > rb::before,
+rp {
+	display: inline-block;
+	width: 0;
+	font-size: 0;
+}
 [lang|="zh"] ruby > rt {
 	font-size: 57.5%;
 	text-align: center;

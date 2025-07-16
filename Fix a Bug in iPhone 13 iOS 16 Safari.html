@@ -96,7 +96,12 @@
 			iOS 上出现了问题。
 		</p>
 		<figure>
-			<picture>
+			<picture
+				style="
+					--light-base64: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAECAYAAACHtL/sAAAAAXNSR0IArs4c6QAAAJhJREFUKFN9jTEKwkAURN9ft4vgWtmImNboJRSPJIiNIQgW3kdyhlQRhNgZGxvZ3Ru4Em0sNNMNb3gjZXkO22xPPB5SXx80UUphTA/n/Lv/S7ZbI+WpCpvsQDwaUN/uiGiUaEzf4KxrFaTpCrHWhqq6kCRTtO5QFAXJbEJ+zJkvF0RRFxUgAPJDJ9778EHNBEJ4IqJan7/hC5MXL5Swxp08AAAAAElFTkSuQmCC');
+					--dark-base64: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAECAYAAACHtL/sAAAAAXNSR0IArs4c6QAAAKNJREFUKFNljb0OwWAYRs/7kaaLb9AmfgY30AswGKQGiwvAVTaxWAxiETfQK0Bi0X6LRJFXgqTKs53hnEfCsK2D4YRuy7I/ZQgPjBisDXDZhXJ3MNcvhs16hQRhV/vDMb1Ok+PhjEoNMXWsbZC7rBTUAFINbJaI7/saRRFpmlIUN+J4xHa3ZT6dkSwScudeotFf/d0Sz/NUVRGp1kH/Hiv3H3gCSxAvoejk1+sAAAAASUVORK5CYII=');
+				"
+			>
 				<source
 					srcset="src/asset/image/tabs%20normal%20in%20light.webp"
 					media="(prefers-color-scheme: light)"
@@ -105,7 +110,13 @@
 					srcset="src/asset/image/tabs%20normal%20in%20dark.webp"
 					media="(prefers-color-scheme: dark)"
 				/>
-				<img src="src/asset/image/tabs%20normal%20in%20light.webp" />
+				<img
+					loading="lazy"
+					decoding="async"
+					src="src/asset/image/tabs%20normal%20in%20light.webp"
+					width="680"
+					height="170"
+				/>
 			</picture>
 			<figcaption>选项卡的正常状态</figcaption>
 		</figure>
@@ -118,7 +129,12 @@
 		</p>
 		<p>什么环境？不是写在标题内了吗？</p>
 		<figure>
-			<picture>
+			<picture
+				style="
+					--light-base64: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAECAYAAACHtL/sAAAAAXNSR0IArs4c6QAAANdJREFUKFNVjDFLAnEchp/fXweX7g4XkWq76YrIbtSvkvYdHII0LqExaIigD6Jrbjco3HUGrgcXriYZhh3+/1FD1jO97wPvK0kyNRe9GzYKtDaICCUUZWuH+esbYPhGC+SFn/jLdecceUqmptu73VrZoJTg2BaL+QIt6v/qT7u6bCNpmpowDImiiCAIGI3GHB553N890Gyeslp9sLe/S0GKDIeP1Bt1JpNnlAi1k+PtgW3bZFmG7/vEcYznHTAY9Gm1zqhWK+S5ZjZ7Yb3+xHVdlst3HMfiC/ZKUIEjPC4CAAAAAElFTkSuQmCC');
+					--dark-base64: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAECAYAAACHtL/sAAAAAXNSR0IArs4c6QAAANRJREFUKFM9i7FKw2AURs9NrUOTDqW/GcS1CJkCGQJqDBhwtk9iXyGvU+eIgx2ERHDKmkBQHOtktBRE0iuo7dm+c/hkfHCop2cXfFl9QLCAPRVG9oD3jxVbOoHOApWd4unhDhmZIz05v/w9/9HR1w576PC5WrNh/99vu+72Y36LuK6rURTh+z5pmpIkCUVRMLueMb+Zoyq8vD7Tkx7TqymLxT2TyTHd5puyLBFjjIZhSNu2eJ5HnucEQUDTNMRxTJZl1HWN4wwxxmDbA6qqwpgxy+UbP21LRqYfs5ymAAAAAElFTkSuQmCC');
+				"
+			>
 				<source
 					srcset="src/asset/image/tabs%20Buggy%20in%20light.webp"
 					media="(prefers-color-scheme: light)"
@@ -127,7 +143,13 @@
 					srcset="src/asset/image/tabs%20Buggy%20in%20dark.webp"
 					media="(prefers-color-scheme: dark)"
 				/>
-				<img src="src/asset/image/tabs%20Buggy%20in%20light.webp" />
+				<img
+					loading="lazy"
+					decoding="async"
+					src="src/asset/image/tabs%20Buggy%20in%20light.webp"
+					width="680"
+					height="170"
+				/>
 			</picture>
 			<figcaption>切换选项卡后切换前的选项文字会消失</figcaption>
 		</figure>

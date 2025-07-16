@@ -104,7 +104,12 @@
 		>
 		<p>将此段代码放入 inspector-stylesheet 中，即可复现。</p>
 		<figure>
-			<picture>
+			<picture
+				style="
+					--light-base64: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAICAYAAADwdn+XAAAAAXNSR0IArs4c6QAAANVJREFUKFPFkLFKxFAURM9NChVTJq0GsbG0EvMZG79AKz9MwWK3zj+4IKhNsIyCRXADKxtB3xvxBUTZdVunm8tlODPWPD3r4vKK07NzIhNxbHzJzJBAEjacVsoW/bvCM8Zj05BlGVsbmxiG84Yi4c0Fb1rOMC8/nAVVVXF0fMjN9T1d1zEalcjEeDKmLE9oX+c83N5RFEUgDKReTmgwdV2zm+8we2mZTafk+we0iznb+R5pmvLhHG99T5Ik3yghwIgGiNB3TeEVK/wK+HuqNSP+JPiXgE+jaF6yto0zFgAAAABJRU5ErkJggg==');
+					--dark-base64: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAICAYAAADwdn+XAAAAAXNSR0IArs4c6QAAANpJREFUKFOlkDFPwmAQhp/7IEDjH8DFUVpiwlQWp24dOrj4KzEmxIGNHwDpL5CBxsSpiS5WbdPvDG0KGCGRcNPl7t7n7j0Jw1CjKGLy8Ihi0TLHChjbQoVt7KW7IiC+72tVEUO/f0mapuR5QQelMIIVxagi9dSfENd1t60gCIjjmNtxByzM5ivapcPd/ZDp0xq5cBhdD1kuFrvLNgDVmuF5HkmScNVaMR7c8Pz6wae2efm2vL1/gTE43R5Zlv0GVA6kdtnADh98xEIjaiD/FVeL939wirCZPRvwAww3TSdz8FOfAAAAAElFTkSuQmCC');
+				"
+			>
 				<source
 					srcset="
 						src/asset/image/url()%20highlighting%20error%20in%20light.webp
@@ -118,7 +123,11 @@
 					media="(prefers-color-scheme: dark)"
 				/>
 				<img
+					loading="lazy"
+					decoding="async"
 					src="src/asset/image/url()%20highlighting%20error%20in%20light.webp"
+					width="600"
+					height="300"
 				/>
 			</picture>
 			<figcaption>

@@ -112,7 +112,8 @@ img,
 [role="img"] {
 	max-width: calc(100% - 2px);
 	margin-inline: auto;
-	outline: 1px solid var(--background-color--3);
+	box-sizing: border-box;
+	border: 1px solid var(--background-color--3);
 	background-color: var(--background-color--2);
 	transition: var(--transition--outline-color),
 		var(--transition--background-color);
@@ -122,6 +123,7 @@ img {
 	text-align: center;
 	vertical-align: middle;
 	height: auto;
+	--base64: var(--light-base64);
 	background-image: var(--base64);
 	background-size: cover;
 	background-repeat: no-repeat;
@@ -309,6 +311,9 @@ footer > a ~ a::before {
 	}
 	html {
 		font-palette: dark;
+	}
+	img {
+		--base64: var(--dark-base64);
 	}
 }
 ::selection {

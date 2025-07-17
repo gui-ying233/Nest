@@ -111,14 +111,16 @@
 					media="(prefers-color-scheme: dark)"
 				/>
 				<img
-					loading="lazy"
-					decoding="async"
+					fetchpriority="high"
 					src="src/asset/image/tabs%20normal%20in%20light.webp"
+					alt="选项卡的正常状态，两个选项卡标题栏都正常显示。"
 					width="680"
 					height="170"
 				/>
 			</picture>
-			<figcaption>选项卡的正常状态</figcaption>
+			<figcaption aria-hidden="true">
+				选项卡的正常状态，两个选项卡标题栏都正常显示。
+			</figcaption>
 		</figure>
 		<p>
 			打开我的苹果手机一开，果然无法复现。在排除了各种干扰项、询问了具体环境之后，是时候打开
@@ -144,14 +146,16 @@
 					media="(prefers-color-scheme: dark)"
 				/>
 				<img
-					loading="lazy"
-					decoding="async"
+					fetchpriority="high"
 					src="src/asset/image/tabs%20buggy%20in%20light.webp"
+					alt="切换选项卡后，切换前的选项标题栏文字会消失。"
 					width="680"
 					height="170"
 				/>
 			</picture>
-			<figcaption>切换选项卡后切换前的选项文字会消失</figcaption>
+			<figcaption aria-hidden="true">
+				切换选项卡后，切换前的选项标题栏文字会消失。
+			</figcaption>
 		</figure>
 		<h2>初步检查</h2>
 		<p>先来大概看看代码，整体大概长这样，源代码比此更加复杂：</p>

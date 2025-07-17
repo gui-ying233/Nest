@@ -330,12 +330,12 @@ footer > a ~ a::before {
 			clip-path: circle(100%);
 		}
 		to {
-			clip-path: circle(0%);
+			clip-path: circle(0);
 		}
 	}
 	@keyframes page-in {
 		from {
-			clip-path: circle(0%);
+			clip-path: circle(0);
 		}
 
 		to {

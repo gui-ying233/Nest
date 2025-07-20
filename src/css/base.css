@@ -337,7 +337,6 @@ footer > a ~ a::before {
 		from {
 			clip-path: circle(0);
 		}
-
 		to {
 			clip-path: circle(100%);
 		}

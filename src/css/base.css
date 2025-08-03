@@ -19,7 +19,7 @@ body > * * {
 	animation: fade-in 1s ease-out forwards;
 }
 body * {
-	font-size-adjust: ic-height 1;
+	font-size-adjust: from-font;
 	text-wrap: pretty;
 	overflow-wrap: anywhere;
 }

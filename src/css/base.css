@@ -141,6 +141,13 @@ a {
 	text-underline-offset: 0.2em;
 	transition: var(--transition--color), text-decoration-thickness 0.2s linear;
 }
+a[hreflang]::after {
+	margin-left: 0.25em;
+	content: " [" attr(hreflang) "] ";
+	font-size: smaller;
+	float: right;
+	vertical-align: super;
+}
 body > a {
 	margin: 0 0.5em;
 }

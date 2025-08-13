@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="zh-Hans-CN">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="color-scheme" content="light dark" />
+		<meta name="theme-color" content="hsl(0, 0%, 92%);" />
+		<meta
+			name="theme-color"
+			media="(prefers-color-scheme: dark)"
+			content="hsl(0, 0%, 4%);"
+		/>
+		<meta name="author" content="鬼影233" />
+		<meta name="description" content="萌娘百科头像魔术字 IP 泄露" />
+		<meta
+			name="keywords"
+			content="萌娘百科, 萌百, 头像, 魔术字, IP, 泄露"
+		/>
+		<meta property="og:title" content="萌娘百科头像魔术字 IP 泄露" />
+		<meta property="og:locale" content="zh_CN" />
+		<meta
+			property="og:url"
+			content="https://gui-ying233.github.io/Nest/Moegirlpedia%20Avatar%20Magic%20Word%20IP%20Leak"
+		/>
+		<meta property="og:site_name" content="鬼影的基地" />
+		<meta property="og:description" content="萌娘百科头像魔术字 IP 泄露" />
+		<meta property="og:type" content="article" />
+		<meta property="article:author" content="鬼影233" />
+		<meta name="twitter:card" content="summary" />
+		<meta property="twitter:title" content="萌娘百科头像魔术字 IP 泄露" />
+		<meta property="twitter:creator" content="@guiying2333" />
+		<meta property="twitter:site" content="@guiying2333" />
+		<link
+			rel="canonical"
+			href="https://gui-ying233.github.io/Nest/Moegirlpedia%20Avatar%20Magic%20Word%20IP%20Leak"
+		/>
+		<link rel="icon" type="image/x-icon" href="src/asset/favicon.ico" />
+		<link rel="apple-touch-icon" href="src/asset/favicon.ico" />
+		<title>萌娘百科头像魔术字 IP 泄露 - 鬼影的基地</title>
+		<script
+			defer
+			src="https://www.googletagmanager.com/gtag/js?id=G-ZMHY61ZCQE"
+		></script>
+		<script defer src="src/js/analytics.min.js"></script>
+		<script
+			src="https://app.rybbit.io/api/script.js"
+			data-site-id="1309"
+			data-track-errors="true"
+			data-session-replay="true"
+			data-web-vitals="true"
+			data-tracking-errors="true"
+			defer
+		></script>
+		<link rel="stylesheet" href="src/css/base.min.css" />
+		<script type="speculationrules">
+			{
+				"prerender": [{ "urls": ["."] }],
+				"prefetch": [
+					{
+						"where": { "selector_matches": "a[target='_blank']" },
+						"eagerness": "moderate"
+					}
+				]
+			}
+		</script>
+	</head>
+	<body>
+		<noscript>
+			<img
+				src="https://mc.yandex.ru/watch/103373011"
+				style="position: absolute; left: -9999px"
+				alt=""
+		/></noscript>
+		<h1>萌娘百科头像魔术字 IP 泄露</h1>
+		<h2>前言</h2>
+		<p>
+			于
+			<time datetime="2025-07-29T22:28:17+0800"
+				>2025年7月29日 22:28:17</time
+			>，星海子 在 Help:沙盒留下了<a
+				href="https://zh.moegirl.org.cn/_?oldid=8088684&utm_medium=referral&utm_source=鬼影的基地&utm_content=https://gui-ying233.github.io/Nest/Moegirlpedia%20Avatar%20Magic%20Word%20IP%20Leak"
+				target="_blank"
+				>一笔编辑</a
+			>，<time datetime="2025-07-30T12:29:16+0800">约 14 小时后</time
+			>我对此魔术字进行了一次<a
+				href="https://zh.moegirl.org.cn/_?oldid=8089498&utm_medium=referral&utm_source=鬼影的基地&utm_content=https://gui-ying233.github.io/Nest/Moegirlpedia%20Avatar%20Magic%20Word%20IP%20Leak"
+				target="_blank"
+				>测试</a
+			>（已经过申请后被监督），并在萌娘百科官方限水编辑讨论群发布了初步的调查报告。
+		</p>
+		<h2>漏洞详情</h2>
+		<h3>初步调查</h3>
+		<blockquote>
+			<p>
+				<code>{{#avatar:萌百娘}}</code>、<code
+					>{{#avatar:萌百娘|res=128}}</code
+				>
+				--&gt; <code>width=128</code>，图源 <code>256px</code> 支持小数
+			</p>
+			<p>
+				<code>64 &lt;= res &lt; 128</code> --&gt;
+				<code>width=res</code>，图源 <code>64px</code
+				><a
+					href="https://storage.moegirl.org.cn/moegirl/avatars/30749/latest.png!/sq/64?utm_medium=referral&utm_source=鬼影的基地&utm_content=https://gui-ying233.github.io/Nest/Moegirlpedia%20Avatar%20Magic%20Word%20IP%20Leak"
+					target="_blank"
+					>（https://storage.moegirl.org.cn/moegirl/avatars/30749/latest.png!/sq/64）</a
+				>
+			</p>
+			<p>
+				<code>{{#avatar:萌百娘|res=}}</code>（或<code>&lt;0</code>）
+				--&gt; <code>width=""</code>（自动同图源大小），图源
+				<code>256px</code>
+			</p>
+			<br />
+			<p>
+				不能 <code>subst</code>，且如果
+				<code>subst</code> 不存在用户，会暴露你的 ip
+			</p>
+			<br />
+			<p>—— <cite>初步调查报告</cite></p>
+		</blockquote>
+		<pre data-lang="wikitext">
+{{#avatar:}}
+
+{{subst:#avatar:}}
+</pre
+		>
+		<figure>
+			<picture
+				style="
+					--light-base64: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAMCAYAAABr5z2BAAAAAXNSR0IArs4c6QAAAidJREFUOE99kltIk2Ecxn/fDi1dOZmH2ERjmBXYaEIIKullKBQVYXRTBkGFUkZdFN0UHSy6KYsiqeuIwou6qt0o1o1WHsZQ1OZmpLgtdYfmt8/vEN8mmhG+N//3/b/P/+F9nucVRFHUADRNLwKKomIyGZAkGUUT9CtyLMZMldMixk0WBCHb15egEyiygj6uqPDVN8vUopHgTILjDdsIDQ6xs8hAoaeaZGAMe8VukvEEBmmJrSWlWYJkLMGXznu4TrYTF2FLnhUVgQKrQP9nH3feJzndWMKBfUV0dIeRUimuHXPwLSRnCfSntD4L8Picizd9UR52T3PhSCknGoqRFRVv+xmq266A3Ym0rOJw2tdLWD2tbIbHf9EzlubiISe/U2lyc3Td/6JWPIhOh7Te29epu3SVfNeO/6M26GYk9H3qx2rNocrjZmEhwd2OB+ytquFgYy1DIyHq9+/h++QPysqcGI0GTOZsKqspjI6OMxdOUFvjZmDAz+DQMG2tLQQCwUy85eUufD4/bnclKV1SrmU9QTye4ONbL0dbDjPzM8rlFxO8vlmXAUUjMQoK81hKpXnunWd4Ms7L9gpkWcWy2ZxN4VVvhAqbSEmxNeNwLCnRfH+CD7cq6Xw3w/kmB8gS6rLE2adBbpwqx5FvXiOI+EcY6HpC06MuliUZ/9Qinl2F66yLzYWRFufpmbWhGUw01xeteZCOxxAX5rFtd6GqWiayv7/rRtH8AXXYAEOUpY/aAAAAAElFTkSuQmCC');
+					--dark-base64: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAMCAYAAABr5z2BAAAAAXNSR0IArs4c6QAAAiVJREFUOE+Vkl1Ik2EUx3/P3nd+LOdC50czbIYTTbb8SmsbJUbCyCTUaxPtouuECrKLrrroQ2+iQEIQoovYhSUZYlARZIRlVDTRMhdTXM2PNNe2197YazKCvOhcned/zvPn+T3nCFuZUwUQQhBPZElCURTSZBURLwArykaml2Vi6+ugale0EPqjZ7WTpNORpFM5krcNs/KVfcYwt4JZVBbZeLOsMvphgvysHOYWQliMycSkZGZDCxsGOQY9je5a+kZGsG43IKI/0P2KsahLp76iinpnFUOjrxmbnMJTXUGOyUj/o6eUZxsSL+hsOU63d4C6cgcnD1Zy9+EgXl8QScCVUx3cuD/EajhKcGkRJY6xiZDrak4A/RE95p/sMUS46jdhkAVhRdX+518hqp11qru5kxeDN1kKzmzRtrUsSksdakm5i0h4jU++cbJ27KKl4xz+wDzPBq5TXNPAy+F+iuw1+KfeocSiRCPhBELcIL/QjslswffqCfYDHgqKHHh7L5K7c7c23rkvH7Ha7HyefIvRlMnKcuhvA0Oaib3uRkaHb5Nf6KDpxGm6z7dqTXkFJczOTJCWnsH+2mMUFJfRd+0M+qQU1laX0RCqDzXwfSlEJBJl2jdGerJEe1cvPRfaOdzYyuMHd5D1SQghccmVyeXnAWZXoxuLtInQ1NZJT1ebJpaaU3n/LcEZ17ItVpBTqUoJIasx7k0uJgziCEZTBvOB6f+ewm9uwcDaDwQzuAAAAABJRU5ErkJggg==');
+				"
+			>
+				<source
+					srcset="
+						src/asset/image/ip%20in%20avatar%20title%20in%20light.webp
+					"
+					media="(prefers-color-scheme: light)"
+				/>
+				<source
+					srcset="
+						src/asset/image/ip%20in%20avatar%20title%20in%20dark.webp
+					"
+					media="(prefers-color-scheme: dark)"
+				/>
+				<img
+					fetchpriority="high"
+					src="src/asset/image/ip%20in%20avatar%20title%20in%20light.webp"
+					alt="头像的 alt 属性会记录提交者的 IP 地址"
+					width="664"
+					height="500"
+				/>
+			</picture>
+			<figcaption aria-hidden="true">
+				头像的 alt 属性会记录提交者的 IP 地址
+			</figcaption>
+		</figure>
+		<p>
+			好吧，似乎只有
+			<a
+				href="https://www.mediawiki.org/wiki/Help:Substitution/zh"
+				target="_blank"
+				><abbr>subst（替换引用）</abbr></a
+			>
+			未注册用户的头像才会暴露，前者会只返回每位访问者的
+			IP，但一般人但凡预览了都会察觉。
+		</p>
+		<p>但，真的只是这样吗？</p>
+		<h3>Web 缓存欺骗攻击</h3>
+		<p>前情提要：萌百在此前上线了页面缓存。</p>
+		<p>
+			是的，不出意外，其第一个，“只返回每位访问者的
+			IP”，变成了只返回第一位访问者的 IP。 而其缓存是对
+			<a
+				href="https://developer.mozilla.org/zh-CN/docs/Web/API/URL/search"
+				target="_blank"
+				>URL 查询字符串</a
+			>敏感的。
+		</p>
+		<p>
+			也就是说，我可以发送一个包含此头像的页面链接，并在链接中增加例如
+			<code>uuid=077860A0-4976-4999-9F08-DB0A651D3A56</code
+			>，然后发送给目标，在例如确定对方查看页面后，我再次以类似方式访问此页面，就能命中缓存，获取对方的
+			IP。
+		</p>
+		<h3>修复了吗？</h3>
+		<p>本次由于是在工作日上班时间发现的，基本在半天内就修复了。</p>
+		<h2>题外话</h2>
+		<p>即使版本被监督了，缓存也不会因此失效。</p>
+		<h2>相关链接</h2>
+		<p>
+			2024年7月26日的：<a href="Moegirlpedia%20Comment%20List%20IP%20Leak"
+				>萌娘百科评论区 IP 泄露</a
+			>
+		</p>
+		<footer>
+			<a href=".">鬼影的基地</a>
+		</footer>
+		<link rel="stylesheet" media="print" href="src/css/print.min.css" />
+	</body>
+</html>

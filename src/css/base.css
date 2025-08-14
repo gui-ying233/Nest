@@ -263,6 +263,7 @@ blockquote {
 	font-size: 2em;
 	line-height: 1;
 	opacity: 0.25;
+	font-feature-settings: "fwid";
 }
 [lang|="zh-Hans"] blockquote::before {
 	content: "“" / "";

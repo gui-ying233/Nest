@@ -384,4 +384,7 @@ footer > a ~ a::before {
 	::view-transition-new(root) {
 		animation: 0.25s ease-in both page-in 0.25s;
 	}
+	html {
+		scroll-behavior: smooth;
+	}
 }

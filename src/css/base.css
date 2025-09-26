@@ -112,6 +112,9 @@ figure > img,
 figure > picture {
 	max-width: 100%;
 }
+picture {
+	--base64: var(--light-base64);
+}
 img,
 [role="img"] {
 	max-width: calc(100% - 2px);
@@ -127,7 +130,6 @@ img {
 	text-align: center;
 	vertical-align: middle;
 	height: auto;
-	--base64: var(--light-base64);
 	background-image: var(--base64);
 	background-size: cover;
 	background-repeat: no-repeat;
@@ -349,7 +351,7 @@ footer > a ~ a::before {
 	html {
 		font-palette: dark;
 	}
-	img {
+	picture {
 		--base64: var(--dark-base64);
 	}
 }

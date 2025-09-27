@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="zh-Hans-CN">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link
+			rel="preload"
+			fetchpriority="high"
+			as="style"
+			href="src/css/base.min.css"
+		/>
+		<link
+			rel="preload"
+			fetchpriority="high"
+			as="image"
+			type="image/webp"
+			src="src/asset/image/my%20comment%20with%20another%20username.webp"
+		/>
+		<meta name="color-scheme" content="light dark" />
+		<meta name="theme-color" content="hsl(0, 0%, 92%);" />
+		<meta
+			name="theme-color"
+			media="(prefers-color-scheme: dark)"
+			content="hsl(0, 0%, 4%);"
+		/>
+		<meta name="author" content="鬼影233" />
+		<meta name="description" content="萌娘百科水平越权漏洞" />
+		<meta
+			name="keywords"
+			content="萌娘百科, 萌百, 水平权限, 访问控制, 漏洞"
+		/>
+		<meta property="og:title" content="萌娘百科水平越权漏洞" />
+		<meta property="og:locale" content="zh_CN" />
+		<meta
+			property="og:url"
+			content="https://gui-ying233.github.io/Nest/Moegirlpedia%20Horizontal%20Privilege%20Escalation%20Bug"
+		/>
+		<meta property="og:site_name" content="鬼影的基地" />
+		<meta property="og:description" content="萌娘百科水平越权漏洞" />
+		<meta property="og:type" content="article" />
+		<meta property="article:author" content="鬼影233" />
+		<meta name="twitter:card" content="summary" />
+		<meta property="twitter:title" content="萌娘百科水平越权漏洞" />
+		<meta property="twitter:creator" content="@guiying2333" />
+		<meta property="twitter:site" content="@guiying2333" />
+		<link
+			rel="canonical"
+			href="https://gui-ying233.github.io/Nest/Moegirlpedia%20Horizontal%20Privilege%20Escalation%20Bug"
+		/>
+		<link rel="icon" type="image/x-icon" href="src/asset/favicon.ico" />
+		<link rel="apple-touch-icon" href="src/asset/favicon.ico" />
+		<title>萌娘百科水平越权漏洞 - 鬼影的基地</title>
+		<script
+			defer
+			src="https://www.googletagmanager.com/gtag/js?id=G-ZMHY61ZCQE"
+		></script>
+		<script defer src="src/js/analytics.min.js"></script>
+		<script
+			src="https://app.rybbit.io/api/script.js"
+			data-site-id="1309"
+			data-track-errors="true"
+			data-session-replay="true"
+			data-web-vitals="true"
+			data-tracking-errors="true"
+			defer
+		></script>
+		<link
+			rel="stylesheet"
+			fetchpriority="high"
+			href="src/css/base.min.css"
+		/>
+		<script type="speculationrules">
+			{
+				"prerender": [
+					{ "urls": ["."] },
+					{
+						"urls": [
+							"Moegirlpedia%20Comment%20List%20IP%20Leak",
+							"Moegirlpedia%20Avatar%20Magic%20Word%20IP%20Leak"
+						],
+						"eagerness": "eager"
+					}
+				],
+				"prefetch": [
+					{
+						"urls": [
+							"Moegirlpedia%20Comment%20List%20IP%20Leak",
+							"Moegirlpedia%20Avatar%20Magic%20Word%20IP%20Leak"
+						]
+					},
+					{
+						"where": { "selector_matches": "a[target='_blank']" },
+						"eagerness": "moderate"
+					}
+				]
+			}
+		</script>
+	</head>
+	<body>
+		<noscript>
+			<img
+				src="https://mc.yandex.ru/watch/103373011"
+				style="position: absolute; left: -9999px"
+				alt=""
+		/></noscript>
+		<h1>萌娘百科水平越权漏洞</h1>
+		<h2>意外的惊喜</h2>
+		<p>
+			<time datetime="2025-09-17T14:09:00+0800">2025年9月17日</time
+			>，我闲着没事在测试萌百的 API（<a
+				href="https://api.moegirl.org.cn/?utm_medium=referral&utm_source=鬼影的基地&utm_content=https://gui-ying233.github.io/Nest/Moegirlpedia%20Horizontal%20Privilege%20Escalation%20Bug"
+				target="_blank"
+				>https://api.moegirl.org.cn/</a
+			>），我之前都通过自动进行的 cookie
+			同步，但由于主力设备当时正在修理，便选择手动找到必要的
+			cookie，并用于测试。
+		</p>
+		<p>
+			萌百通常用于鉴权等的 cookie
+			有三个：<code>moegirlSSOUserID</code>、<code>moegirlSSOToken</code>、<code>moegirlSSOUserName</code>，通常前两个足以，但我测试时发现有一些似乎不够，一些返回我的用户名的字段会变成
+			IP，于是我突发奇想，放了个萌娘百科·娜娜奇的用户名（<a
+				href="https://developer.mozilla.org/zh-CN/docs/Glossary/Percent-encoding"
+				target="_blank"
+				>百分号编码</a
+			>），然后，大部分的 API 都返回了那个用户的信息……
+		</p>
+		<p>
+			我正好逛到了发布帖子的 API（大概是
+			<a
+				href="https://api.moegirl.org.cn/moegirl.moepad.MoepadCommunityService/NewArticle?utm_medium=referral&utm_source=鬼影的基地&utm_content=https://gui-ying233.github.io/Nest/Moegirlpedia%20Horizontal%20Privilege%20Escalation%20Bug"
+				target="_blank"
+				>https://api.moegirl.org.cn/moegirl.moepad.MoepadCommunityService/NewArticle</a
+			>），并不小心按下了发送……
+		</p>
+		<h2>命运的齿轮</h2>
+		<figure>
+			<img
+				fetchpriority="high"
+				src="src/asset/image/my%20comment%20with%20another%20username.webp"
+				alt="我的评论和头像，但用户名是其他用户"
+				width="1290"
+				height="405"
+				style="
+					--base64: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAFCAYAAABM6GxJAAAAWUlEQVR4AZyLwQ3AIAwDTagyAv0RKjEB+y9S9uBX5MKjA6RRTrIln9Ra2VqjmbkoV2G2TFFVnCkhxuji0AMhBMgYA3fv8B4fAuvFK357ctmryA5zTvxhuy8AAAD//wF+cRcAAAAGSURBVAMADOtSxTqA4n4AAAAASUVORK5CYII=');
+				"
+			/>
+			<figcaption aria-hidden="true">
+				我的评论和头像，但用户名是其他用户
+			</figcaption>
+		</figure>
+		<p>
+			是的，鉴权只是检测了这 3
+			个的值，然后各自使用需要的值，就像此处用户名、链接是来自
+			<code>moegirlSSOUserName</code> 的，头像是来自
+			<code>moegirlSSOUserID</code>
+			的，而评论本身的发布指向是来自我的，因为之后有人回复了这条，而我收到了通知。说实话，我不确定这个是否真的用到了
+			<code>moegirlSSOToken</code> 来鉴权，但至少用户名没有对应。
+		</p>
+		<p>
+			当我发现了这个，我又尝试了获取用户的萌百会员支付历史（<a
+				href="https://api.moegirl.org.cn/moegirl.moepad.MoepadPurchaseService/GetPaymentHistory"
+				target="_blank"
+				>https://api.moegirl.org.cn/moegirl.moepad.MoepadPurchaseService/GetPaymentHistory</a
+			>，是的，我以那个用户的 <code>moegirlSSOUserID</code>、<code
+				>moegirlSSOUserName</code
+			>
+			和我的
+			<code>moegirlSSOToken</code>
+			获取到了那个用户的历史，并发现其为了测试萌百会员，付出了 ￥0.14
+			的巨款（x
+		</p>
+		<h2>混沌的中立</h2>
+		<p>
+			与之前不一样，这次我只提报了这张图片，没有提供其他信息（毕竟是个很明显且没啥技术含量的漏洞）。在一周后我再次检查，此问题已经修复了。
+		</p>
+		<h2>相关的链接</h2>
+		<ol>
+			<li>
+				<time datetime="2024-07-18T18:51:15+0800">2024年7月26日</time
+				>的：<a href="Moegirlpedia%20Comment%20List%20IP%20Leak"
+					>萌娘百科评论区 IP 泄露</a
+				>
+			</li>
+			<li>
+				<time datetime="2025-07-30T12:29:16+0800">2025年7月29日</time
+				>的：<a href="Moegirlpedia%20Avatar%20Magic%20Word%20IP%20Leak"
+					>萌娘百科头像魔术字 IP 泄露</a
+				>
+			</li>
+		</ol>
+		<footer>
+			<a href=".">鬼影的基地</a>
+		</footer>
+		<link rel="stylesheet" media="print" href="src/css/print.min.css" />
+	</body>
+</html>

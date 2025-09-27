@@ -3,6 +3,12 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link
+			rel="preload"
+			fetchpriority="high"
+			as="style"
+			href="src/css/base.min.css"
+		/>
 		<meta name="color-scheme" content="light dark" />
 		<meta name="theme-color" content="hsl(0, 0%, 92%);" />
 		<meta
@@ -56,8 +62,11 @@
 			data-web-vitals="true"
 			data-tracking-errors="true"
 			defer
-		></script>
-		<link rel="stylesheet" href="src/css/base.min.css" />
+		></script>		<link
+			rel="stylesheet"
+			fetchpriority="high"
+			href="src/css/base.min.css"
+		/>
 		<script type="speculationrules">
 			{
 				"prerender": [{ "urls": ["."] }],

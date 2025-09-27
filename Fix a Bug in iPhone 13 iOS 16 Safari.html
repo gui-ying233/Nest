@@ -3,6 +3,26 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link
+			rel="preload"
+			fetchpriority="high"
+			as="style"
+			href="src/css/base.min.css"
+		/>
+		<link
+			rel="preload"
+			fetchpriority="high"
+			as="image"
+			type="image/webp"
+			src="src/asset/image/tabs%20normal%20in%20light.webp"
+		/>
+		<link
+			rel="preload"
+			fetchpriority="high"
+			as="image"
+			type="image/webp"
+			src="src/asset/image/tabs%20buggy%20in%20light.webp"
+		/>
 		<meta name="color-scheme" content="light dark" />
 		<meta name="theme-color" content="hsl(0, 0%, 92%);" />
 		<meta
@@ -67,8 +87,11 @@
 			data-web-vitals="true"
 			data-tracking-errors="true"
 			defer
-		></script>
-		<link rel="stylesheet" href="src/css/base.min.css" />
+		></script>		<link
+			rel="stylesheet"
+			fetchpriority="high"
+			href="src/css/base.min.css"
+		/>
 		<script type="speculationrules">
 			{
 				"prerender": [{ "urls": ["."] }],
@@ -105,10 +128,12 @@
 			>
 				<source
 					srcset="src/asset/image/tabs%20normal%20in%20light.webp"
+					type="image/webp"
 					media="(prefers-color-scheme: light)"
 				/>
 				<source
 					srcset="src/asset/image/tabs%20normal%20in%20dark.webp"
+					type="image/webp"
 					media="(prefers-color-scheme: dark)"
 				/>
 				<img
@@ -143,10 +168,12 @@
 			>
 				<source
 					srcset="src/asset/image/tabs%20buggy%20in%20light.webp"
+					type="image/webp"
 					media="(prefers-color-scheme: light)"
 				/>
 				<source
 					srcset="src/asset/image/tabs%20buggy%20in%20dark.webp"
+					type="image/webp"
 					media="(prefers-color-scheme: dark)"
 				/>
 				<img

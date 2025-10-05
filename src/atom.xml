@@ -1,0 +1,93 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+	<channel>
+		<title>鬼影的基地</title>
+		<description>– 鬼影233</description>
+		<link>https://gui-ying233.github.io/Nest/</link>
+		<atom:link href="https://gui-ying233.github.io/Nest/src/atom.xml" rel="self"
+			type="application/rss+xml" />
+		<item>
+			<title>CSS 像素画的方法</title>
+			<description>暴力的 div、table 堆叠不在此进行赘述，image-rendering、svg 与 canvas 不在范围内。</description>
+			<link>https://gui-ying233.github.io/Nest/CSS%20Pixel%20Art</link>
+			<guid isPermaLink="true">https://gui-ying233.github.io/Nest/CSS%20Pixel%20Art</guid>
+		</item>
+		<item>
+			<title>CSS 自适应简单 Table</title>
+			<description>众所周知，Table 由于其不方便换行的固有特性，且常常存在一行大量文本正在逐渐与现代的自适应布局脱节。Grid 与 Flex
+				的效果固然不错，但有没有什么方法能将简单的 Table 进行简单的自适应并保持代码（例如 Wikitext）基本格式以对代码力较差的大众也能看懂？</description>
+			<link>https://gui-ying233.github.io/Nest/Flex%20Table</link>
+			<guid isPermaLink="true">https://gui-ying233.github.io/Nest/Flex%20Table</guid>
+		</item>
+		<item>
+			<title>在 macOS 上部署 Viper</title>
+			<description>虽然
+				Viper（炫彩蛇）官方的提供了一个问题的解决办法，但并不能顺利解决所有的问题。因此在此将个人部署的过程进行一个分享。虽然并不一定每一步都是必要的。</description>
+			<link>https://gui-ying233.github.io/Nest/Viper%20on%20macOS</link>
+			<guid isPermaLink="true">https://gui-ying233.github.io/Nest/Viper%20on%20macOS</guid>
+		</item>
+		<item>
+			<title>Safari animation Bug</title>
+			<description>Safari 的一个 animation Bug 以及如何解决。</description>
+			<link>https://gui-ying233.github.io/Nest/Safari%20animation%20Bug</link>
+			<guid isPermaLink="true">https://gui-ying233.github.io/Nest/Safari%20animation%20Bug</guid>
+		</item>
+		<item>
+			<title>CodeMirror url() Bug</title>
+			<description>CodeMirror 的空 url() Bug 以及如何解决。</description>
+			<link>https://gui-ying233.github.io/Nest/CodeMirror%20url()%20Bug</link>
+			<guid isPermaLink="true">https://gui-ying233.github.io/Nest/CodeMirror%20url()%20Bug</guid>
+		</item>
+		<item>
+			<title>在 iOS 的 Apple Mail 中添加 QQ邮箱</title>
+			<description>在 iOS 的 Apple Mail 中添加 QQ邮箱</description>
+			<link>
+				https://gui-ying233.github.io/Nest/Adding%20QQ%20Mail%20to%20Apple%20Mail%20for%20iOS</link>
+			<guid isPermaLink="true">
+				https://gui-ying233.github.io/Nest/Adding%20QQ%20Mail%20to%20Apple%20Mail%20for%20iOS</guid>
+		</item>
+		<item>
+			<title>萌娘百科评论区 IP 泄露</title>
+			<description>萌娘百科评论区 IP 泄露</description>
+			<link>https://gui-ying233.github.io/Nest/Moegirlpedia%20Comment%20List%20IP%20Leak</link>
+			<guid isPermaLink="true">
+				https://gui-ying233.github.io/Nest/Moegirlpedia%20Comment%20List%20IP%20Leak</guid>
+		</item>
+		<item>
+			<title>在 CSS 中进行数据类型转换</title>
+			<description>在 CSS 中进行数据类型转换</description>
+			<link>https://gui-ying233.github.io/Nest/Convert%20Data%20Types%20in%20CSS</link>
+			<guid isPermaLink="true">
+				https://gui-ying233.github.io/Nest/Convert%20Data%20Types%20in%20CSS</guid>
+		</item>
+		<item>
+			<title>命名空间</title>
+			<description>命名空间（名字空间）是 MediaWiki 的一种以前缀区分页面的方式，其大部分属性均可在后端更改配置，且可被配置别名映射。</description>
+			<link>https://gui-ying233.github.io/Nest/MediaWiki/Namespace</link>
+			<guid isPermaLink="true">https://gui-ying233.github.io/Nest/MediaWiki/Namespace</guid>
+		</item>
+		<item>
+			<title>修复 iPhone 13 iOS 16 Safari 中选项卡文字消失 Bug</title>
+			<description>记录修复 iPhone 13 iOS 16 Safari 中选项卡文字消失 Bug 的过程。</description>
+			<link>
+				https://gui-ying233.github.io/Nest/Fix%20a%20Bug%20in%20iPhone%2013%20iOS%2016%20Safari</link>
+			<guid isPermaLink="true">
+				https://gui-ying233.github.io/Nest/Fix%20a%20Bug%20in%20iPhone%2013%20iOS%2016%20Safari</guid>
+		</item>
+		<item>
+			<title>萌娘百科头像魔术字 IP 泄露</title>
+			<description>萌娘百科头像魔术字 IP 泄露</description>
+			<link>
+				https://gui-ying233.github.io/Nest/Moegirlpedia%20Avatar%20Magic%20Word%20IP%20Leak</link>
+			<guid isPermaLink="true">
+				https://gui-ying233.github.io/Nest/Moegirlpedia%20Avatar%20Magic%20Word%20IP%20Leak</guid>
+		</item>
+		<item>
+			<title>萌娘百科水平越权漏洞</title>
+			<description>萌娘百科水平越权漏洞</description>
+			<link>
+				https://gui-ying233.github.io/Nest/Moegirlpedia%20Horizontal%20Privilege%20Escalation%20Bug</link>
+			<guid isPermaLink="true">
+				https://gui-ying233.github.io/Nest/Moegirlpedia%20Horizontal%20Privilege%20Escalation%20Bug</guid>
+		</item>
+	</channel>
+</rss>

@@ -153,9 +153,6 @@ a[hreflang]::after {
 body > a {
 	margin: 0 0.5em;
 }
-li > a {
-	vertical-align: middle;
-}
 @media screen {
 	a[href^="#"] {
 		text-decoration-style: dotted;

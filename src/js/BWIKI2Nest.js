@@ -1,1 +1,1 @@
-window.location.href=`https://gui-ying233.github.io/Nest/?utm_source=${document.location.hostname}/${document.location.pathname.split("/")[1]}/&utm_medium=profile&utm_content=${window.location.href}`;
+if (RLCONF.wgAction === "view")window.location.href=`https://gui-ying233.github.io/Nest/?utm_source=${document.location.hostname}/${document.location.pathname.split("/")[1]}/&utm_medium=profile&utm_content=${window.location.href}`;

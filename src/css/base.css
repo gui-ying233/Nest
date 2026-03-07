@@ -11,11 +11,11 @@ tr {
 	}
 }
 body > * {
-	opacity: 0;
+	opacity: 0.01;
 	animation: fade-in 0.5s ease-out forwards;
 }
 body > * * {
-	opacity: 0;
+	opacity: 0.01;
 	animation: fade-in 1s ease-out forwards;
 }
 body * {
@@ -29,8 +29,9 @@ html {
 	font-family: ui-sans-serif, sans-serif;
 	font-weight: var(--font-weight--4);
 	color: var(--foreground-color--1);
-	transition: var(--transition--background-color),
-		var(--transition--font-weight), var(--transition--color);
+	transition:
+		var(--transition--background-color), var(--transition--font-weight),
+		var(--transition--color);
 	font-palette: light;
 }
 body {
@@ -122,8 +123,8 @@ img,
 	box-sizing: border-box;
 	border: 1px solid var(--background-color--3);
 	background-color: var(--background-color--2);
-	transition: var(--transition--outline-color),
-		var(--transition--background-color);
+	transition:
+		var(--transition--outline-color), var(--transition--background-color);
 }
 img {
 	font-style: italic;
@@ -141,7 +142,9 @@ a {
 	color: var(--foreground-color--2);
 	text-decoration: underline 1px;
 	text-underline-offset: 0.2em;
-	transition: var(--transition--color), text-decoration-thickness 0.2s linear;
+	transition:
+		var(--transition--color),
+		text-decoration-thickness 0.2s linear;
 }
 a[hreflang]::after {
 	margin-left: 0.25em;
@@ -187,7 +190,8 @@ th {
 	font-weight: var(--font-weight--2);
 	background-color: var(--background-color--3);
 	color: var(--foreground-color--2);
-	transition: var(--transition--background-color), var(--transition--color),
+	transition:
+		var(--transition--background-color), var(--transition--color),
 		var(--transition--font-weight);
 }
 tr:nth-child(2n) > td {
@@ -215,8 +219,8 @@ pre,
 code {
 	font-family: ui-monospace, monospace;
 	tab-size: 4;
-	transition: var(--transition--outline-color),
-		var(--transition--background-color);
+	transition:
+		var(--transition--outline-color), var(--transition--background-color);
 }
 p code,
 pre,
@@ -234,8 +238,8 @@ pre {
 	white-space: pre-wrap;
 	max-height: 75vh;
 	overflow-x: auto;
-	transition: var(--transition--outline-color),
-		var(--transition--background-color);
+	transition:
+		var(--transition--outline-color), var(--transition--background-color);
 }
 pre[data-lang]::before {
 	content: attr(data-lang);
@@ -248,7 +252,8 @@ pre[data-lang]::before {
 	letter-spacing: 0.125em;
 	line-height: 1;
 	text-transform: uppercase;
-	transition: var(--transition--background-color), var(--transition--color),
+	transition:
+		var(--transition--background-color), var(--transition--color),
 		var(--transition--font-weight);
 }
 blockquote {

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-Hans-CN">
 	<head>
 		<meta charset="UTF-8" />
@@ -51,9 +51,41 @@
 			rel="canonical"
 			href="https://gui-ying233.github.io/Nest/CSS%20Pixel%20Art"
 		/>
-		<link rel="icon" type="image/x-icon" href="https://testingcf.jsdelivr.net/gh/gui-ying233/Nest@main/src/asset/favicon.ico" />
-		<link rel="apple-touch-icon" href="https://testingcf.jsdelivr.net/gh/gui-ying233/Nest@main/src/asset/favicon.ico" />
+		<link
+			rel="icon"
+			type="image/x-icon"
+			href="https://testingcf.jsdelivr.net/gh/gui-ying233/Nest@main/src/asset/favicon.ico"
+		/>
+		<link
+			rel="apple-touch-icon"
+			href="https://testingcf.jsdelivr.net/gh/gui-ying233/Nest@main/src/asset/favicon.ico"
+		/>
 		<title>CSS 像素画的方法 - 鬼影的基地</title>
+		<script type="application/ld+json">
+			{
+				"@context": "https://schema.org/",
+				"@type": "BlogPosting",
+				"@id": "https://gui-ying233.github.io/Nest/CSS%20Pixel%20Art#BlogPosting",
+				"mainEntityOfPage": "https://gui-ying233.github.io/Nest/CSS%20Pixel%20Art",
+				"headline": "CSS 像素画的方法",
+				"name": "CSS 像素画的方法",
+				"description": "暴力的 div、table 堆叠不在此进行赘述，image-rendering、svg 与 canvas 不在范围内。",
+				"author": {
+					"@id": "https://gui-ying233.github.io/Nest/#Person"
+				},
+				"url": "https://gui-ying233.github.io/Nest/CSS%20Pixel%20Art",
+				"isPartOf": {
+					"@id": "https://gui-ying233.github.io/Nest/#Blog"
+				},
+				"keywords": [
+					"CSS",
+					"像素画",
+					"Box-shadow",
+					"Linear-gradient",
+					"生成器"
+				]
+			}
+		</script>
 		<script
 			defer
 			src="https://www.googletagmanager.com/gtag/js?id=G-ZMHY61ZCQE"
@@ -63,7 +95,10 @@
 			src="https://static.cloudflareinsights.com/beacon.min.js"
 			data-cf-beacon='{"token": "b293bc8b0a614b42abf757d0eb6fe419"}'
 		></script>
-		<script defer src="https://testingcf.jsdelivr.net/gh/gui-ying233/Nest@main/src/js/analytics.min.js"></script>
+		<script
+			defer
+			src="https://testingcf.jsdelivr.net/gh/gui-ying233/Nest@main/src/js/analytics.min.js"
+		></script>
 		<script
 			src="https://app.rybbit.io/api/script.js"
 			data-site-id="1309"
@@ -136,47 +171,127 @@
 						width: 1px;
 						height: 1px;
 						transform: scale(20) translate(50%, 50%);
-						box-shadow: 4px 0px #11727a, 5px 0px #11727a,
-							6px 0px #11727a, 7px 0px #11727a, 3px 1px #11727a,
-							4px 1px white, 5px 1px white, 6px 1px white,
-							7px 1px #d5fff6, 8px 1px #11727a, 2px 2px #11727a,
-							3px 2px white, 4px 2px #4aedd9, 5px 2px #4aedd9,
-							6px 2px #a1fbe8, 7px 2px #d5fff6, 8px 2px #20c585,
-							9px 2px #145e53, 1px 3px #11727a, 2px 3px white,
-							3px 3px #4aedd9, 4px 3px #a1fbe8, 5px 3px #a1fbe8,
-							6px 3px #d5fff6, 7px 3px #a1fbe8, 8px 3px #4aedd9,
-							9px 3px #20c585, 10px 3px #145e53, 1px 4px #11727a,
-							2px 4px white, 3px 4px #4aedd9, 4px 4px white,
-							5px 4px #d5fff6, 6px 4px white, 7px 4px #d5fff6,
-							8px 4px #4aedd9, 9px 4px #4aedd9, 10px 4px #145e53,
-							0px 5px #11727a, 1px 5px white, 2px 5px #4aedd9,
-							3px 5px white, 4px 5px #4aedd9, 5px 5px #4aedd9,
-							6px 5px #a1fbe8, 7px 5px #a1fbe8, 8px 5px #1aaaa7,
-							9px 5px #20c585, 10px 5px #1aaaa7, 11px 5px #145e53,
-							0px 6px #11727a, 1px 6px white, 2px 6px #4aedd9,
-							3px 6px #d5fff6, 4px 6px #4aedd9, 5px 6px #a1fbe8,
-							6px 6px #a1fbe8, 7px 6px #a1fbe8, 8px 6px #1c919a,
-							9px 6px #20c585, 10px 6px #1aaaa7, 11px 6px #145e53,
-							0px 7px #11727a, 1px 7px white, 2px 7px white,
-							3px 7px #20c5b5, 4px 7px #a1fbe8, 5px 7px #a1fbe8,
-							6px 7px #a1fbe8, 7px 7px #4aedd9, 8px 7px #1c919a,
-							9px 7px #1aaaa7, 10px 7px #1aaaa7, 11px 7px #145e53,
-							0px 8px #11727a, 1px 8px #d5fff6, 2px 8px #4aedd9,
-							3px 8px #4aedd9, 4px 8px #1aaaa7, 5px 8px #1aaaa7,
-							6px 8px #1aaaa7, 7px 8px #1aaaa7, 8px 8px #20c585,
-							9px 8px #20c585, 10px 8px #1c919a, 11px 8px #145e53,
-							1px 9px #145e53, 2px 9px #4aedd9, 3px 9px #1aaaa7,
-							4px 9px #20c585, 5px 9px #20c585, 6px 9px #20c585,
-							7px 9px #20c585, 8px 9px #1aaaa7, 9px 9px #20c585,
-							10px 9px #145e53, 1px 10px #145e53, 2px 10px #2ce0d8,
-							3px 10px #1aaaa7, 4px 10px #20c585, 5px 10px #20c585,
-							6px 10px #20c585, 7px 10px #20c585, 8px 10px #1aaaa7,
-							9px 10px #a1fbe8, 10px 10px #145e53,
-							2px 11px #145e53, 3px 11px #1c919a, 4px 11px #4aedd9,
-							5px 11px #4aedd9, 6px 11px #a1fbe8, 7px 11px #a1fbe8,
-							8px 11px #20c5b5, 9px 11px #145e53, 3px 12px #145e53,
-							4px 12px #145e53, 5px 12px #145e53, 6px 12px #145e53,
-							7px 12px #145e53, 8px 12px #145e53;
+						box-shadow:
+							4px 0px #11727a,
+							5px 0px #11727a,
+							6px 0px #11727a,
+							7px 0px #11727a,
+							3px 1px #11727a,
+							4px 1px white,
+							5px 1px white,
+							6px 1px white,
+							7px 1px #d5fff6,
+							8px 1px #11727a,
+							2px 2px #11727a,
+							3px 2px white,
+							4px 2px #4aedd9,
+							5px 2px #4aedd9,
+							6px 2px #a1fbe8,
+							7px 2px #d5fff6,
+							8px 2px #20c585,
+							9px 2px #145e53,
+							1px 3px #11727a,
+							2px 3px white,
+							3px 3px #4aedd9,
+							4px 3px #a1fbe8,
+							5px 3px #a1fbe8,
+							6px 3px #d5fff6,
+							7px 3px #a1fbe8,
+							8px 3px #4aedd9,
+							9px 3px #20c585,
+							10px 3px #145e53,
+							1px 4px #11727a,
+							2px 4px white,
+							3px 4px #4aedd9,
+							4px 4px white,
+							5px 4px #d5fff6,
+							6px 4px white,
+							7px 4px #d5fff6,
+							8px 4px #4aedd9,
+							9px 4px #4aedd9,
+							10px 4px #145e53,
+							0px 5px #11727a,
+							1px 5px white,
+							2px 5px #4aedd9,
+							3px 5px white,
+							4px 5px #4aedd9,
+							5px 5px #4aedd9,
+							6px 5px #a1fbe8,
+							7px 5px #a1fbe8,
+							8px 5px #1aaaa7,
+							9px 5px #20c585,
+							10px 5px #1aaaa7,
+							11px 5px #145e53,
+							0px 6px #11727a,
+							1px 6px white,
+							2px 6px #4aedd9,
+							3px 6px #d5fff6,
+							4px 6px #4aedd9,
+							5px 6px #a1fbe8,
+							6px 6px #a1fbe8,
+							7px 6px #a1fbe8,
+							8px 6px #1c919a,
+							9px 6px #20c585,
+							10px 6px #1aaaa7,
+							11px 6px #145e53,
+							0px 7px #11727a,
+							1px 7px white,
+							2px 7px white,
+							3px 7px #20c5b5,
+							4px 7px #a1fbe8,
+							5px 7px #a1fbe8,
+							6px 7px #a1fbe8,
+							7px 7px #4aedd9,
+							8px 7px #1c919a,
+							9px 7px #1aaaa7,
+							10px 7px #1aaaa7,
+							11px 7px #145e53,
+							0px 8px #11727a,
+							1px 8px #d5fff6,
+							2px 8px #4aedd9,
+							3px 8px #4aedd9,
+							4px 8px #1aaaa7,
+							5px 8px #1aaaa7,
+							6px 8px #1aaaa7,
+							7px 8px #1aaaa7,
+							8px 8px #20c585,
+							9px 8px #20c585,
+							10px 8px #1c919a,
+							11px 8px #145e53,
+							1px 9px #145e53,
+							2px 9px #4aedd9,
+							3px 9px #1aaaa7,
+							4px 9px #20c585,
+							5px 9px #20c585,
+							6px 9px #20c585,
+							7px 9px #20c585,
+							8px 9px #1aaaa7,
+							9px 9px #20c585,
+							10px 9px #145e53,
+							1px 10px #145e53,
+							2px 10px #2ce0d8,
+							3px 10px #1aaaa7,
+							4px 10px #20c585,
+							5px 10px #20c585,
+							6px 10px #20c585,
+							7px 10px #20c585,
+							8px 10px #1aaaa7,
+							9px 10px #a1fbe8,
+							10px 10px #145e53,
+							2px 11px #145e53,
+							3px 11px #1c919a,
+							4px 11px #4aedd9,
+							5px 11px #4aedd9,
+							6px 11px #a1fbe8,
+							7px 11px #a1fbe8,
+							8px 11px #20c5b5,
+							9px 11px #145e53,
+							3px 12px #145e53,
+							4px 12px #145e53,
+							5px 12px #145e53,
+							6px 12px #145e53,
+							7px 12px #145e53,
+							8px 12px #145e53;
 					"
 				></div>
 			</div>
@@ -240,7 +355,8 @@ pixelArt.removeAttribute("id")</pre
 					print-color-adjust: exact;
 					max-width: 50vw;
 					aspect-ratio: 1/2;
-					background-image: linear-gradient(
+					background-image:
+						linear-gradient(
 							to right,
 							#171518 0%,
 							#171518 5%,
@@ -1961,14 +2077,46 @@ pixelArt.removeAttribute("id")</pre
 							#171518 100%
 						);
 					background-repeat: repeat-x;
-					background-size: 100% 2.5%, 100% 5%, 100% 7.5%, 100% 10%,
-						100% 12.5%, 100% 15%, 100% 17.5%, 100% 20%, 100% 22.5%,
-						100% 25%, 100% 27.5%, 100% 30%, 100% 32.5%, 100% 35%,
-						100% 37.5%, 100% 40%, 100% 42.5%, 100% 45%, 100% 47.5%,
-						100% 50%, 100% 52.5%, 100% 55%, 100% 57.5%, 100% 60%,
-						100% 62.5%, 100% 65%, 100% 67.5%, 100% 70%, 100% 72.5%,
-						100% 75%, 100% 77.5%, 100% 80%, 100% 82.5%, 100% 85%,
-						100% 87.5%, 100% 90%, 100% 92.5%, 100% 95%, 100% 97.5%,
+					background-size:
+						100% 2.5%,
+						100% 5%,
+						100% 7.5%,
+						100% 10%,
+						100% 12.5%,
+						100% 15%,
+						100% 17.5%,
+						100% 20%,
+						100% 22.5%,
+						100% 25%,
+						100% 27.5%,
+						100% 30%,
+						100% 32.5%,
+						100% 35%,
+						100% 37.5%,
+						100% 40%,
+						100% 42.5%,
+						100% 45%,
+						100% 47.5%,
+						100% 50%,
+						100% 52.5%,
+						100% 55%,
+						100% 57.5%,
+						100% 60%,
+						100% 62.5%,
+						100% 65%,
+						100% 67.5%,
+						100% 70%,
+						100% 72.5%,
+						100% 75%,
+						100% 77.5%,
+						100% 80%,
+						100% 82.5%,
+						100% 85%,
+						100% 87.5%,
+						100% 90%,
+						100% 92.5%,
+						100% 95%,
+						100% 97.5%,
 						100% 100%;
 				"
 			></div>
@@ -1982,7 +2130,8 @@ pixelArt.removeAttribute("id")</pre
 					print-color-adjust: exact;
 					max-width: 50vw;
 					aspect-ratio: 1/1;
-					background-image: linear-gradient(
+					background-image:
+						linear-gradient(
 							to right,
 							#fff 0%,
 							#fff 6.25%,
@@ -2543,16 +2692,33 @@ pixelArt.removeAttribute("id")</pre
 							#fff 100%
 						);
 					background-repeat: repeat-x;
-					background-size: 100% 6.25%, 100% 12.5%, 100% 18.75%,
-						100% 25%, 100% 31.25%, 100% 37.5%, 100% 43.75%, 100% 50%,
-						100% 56.25%, 100% 62.5%, 100% 68.75%, 100% 75%,
-						100% 81.25%, 100% 87.5%, 100% 93.75%, 100% 100%;
+					background-size:
+						100% 6.25%,
+						100% 12.5%,
+						100% 18.75%,
+						100% 25%,
+						100% 31.25%,
+						100% 37.5%,
+						100% 43.75%,
+						100% 50%,
+						100% 56.25%,
+						100% 62.5%,
+						100% 68.75%,
+						100% 75%,
+						100% 81.25%,
+						100% 87.5%,
+						100% 93.75%,
+						100% 100%;
 				"
 			></div>
 		</figure>
 		<footer>
 			<a href=".">鬼影的基地</a>
 		</footer>
-		<link rel="stylesheet" media="print" href="https://testingcf.jsdelivr.net/gh/gui-ying233/Nest@main/src/css/print.min.css" />
+		<link
+			rel="stylesheet"
+			media="print"
+			href="https://testingcf.jsdelivr.net/gh/gui-ying233/Nest@main/src/css/print.min.css"
+		/>
 	</body>
 </html>

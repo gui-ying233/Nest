@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-Hans-CN">
 	<head>
 		<meta charset="UTF-8" />
@@ -14,7 +14,16 @@
 			fetchpriority="high"
 			as="image"
 			type="image/webp"
-			src="https://testingcf.jsdelivr.net/gh/gui-ying233/Nest@main/src/asset/image/url()%20highlighting%20error%20in%20light.webp"
+			href="https://testingcf.jsdelivr.net/gh/gui-ying233/Nest@main/src/asset/image/url()%20highlighting%20error%20in%20light.webp"
+			media="(prefers-color-scheme: light)"
+		/>
+		<link
+			rel="preload"
+			fetchpriority="high"
+			as="image"
+			type="image/webp"
+			href="https://testingcf.jsdelivr.net/gh/gui-ying233/Nest@main/src/asset/image/url()%20highlighting%20error%20in%20dark.webp"
+			media="(prefers-color-scheme: dark)"
 		/>
 		<meta name="color-scheme" content="light dark" />
 		<meta name="theme-color" content="hsl(0, 0%, 92%);" />
@@ -66,8 +75,15 @@
 			rel="canonical"
 			href="https://gui-ying233.github.io/Nest/CodeMirror%20url()%20Bug"
 		/>
-		<link rel="icon" type="image/x-icon" href="https://testingcf.jsdelivr.net/gh/gui-ying233/Nest@main/src/asset/favicon.ico" />
-		<link rel="apple-touch-icon" href="https://testingcf.jsdelivr.net/gh/gui-ying233/Nest@main/src/asset/favicon.ico" />
+		<link
+			rel="icon"
+			type="image/x-icon"
+			href="https://testingcf.jsdelivr.net/gh/gui-ying233/Nest@main/src/asset/favicon.ico"
+		/>
+		<link
+			rel="apple-touch-icon"
+			href="https://testingcf.jsdelivr.net/gh/gui-ying233/Nest@main/src/asset/favicon.ico"
+		/>
 		<title>CodeMirror url() Bug - 鬼影的基地</title>
 		<script type="application/ld+json">
 			{
@@ -99,6 +115,19 @@
 					"CSS",
 					"解决方案",
 					"解决方法"
+				],
+				"image": [
+					{
+						"@type": "ImageObject",
+						"url": "https://testingcf.jsdelivr.net/gh/gui-ying233/Nest@main/src/asset/image/url()%20highlighting%20error%20in%20light.webp",
+						"caption": "inspector-stylesheet 中出现了高亮异常，后续字符变为字符串的高亮颜色。",
+						"width": 600,
+						"height": 300,
+						"author": {
+							"@id": "https://gui-ying233.github.io/Nest/#Person"
+						},
+						"sameAs": "https://testingcf.jsdelivr.net/gh/gui-ying233/Nest@main/src/asset/image/url()%20highlighting%20error%20in%20dark.webp"
+					}
 				]
 			}
 		</script>
@@ -111,7 +140,10 @@
 			src="https://static.cloudflareinsights.com/beacon.min.js"
 			data-cf-beacon='{"token": "b293bc8b0a614b42abf757d0eb6fe419"}'
 		></script>
-		<script defer src="https://testingcf.jsdelivr.net/gh/gui-ying233/Nest@main/src/js/analytics.min.js"></script>
+		<script
+			defer
+			src="https://testingcf.jsdelivr.net/gh/gui-ying233/Nest@main/src/js/analytics.min.js"
+		></script>
 		<script
 			src="https://app.rybbit.io/api/script.js"
 			data-site-id="1309"
@@ -173,20 +205,20 @@
 		<figure>
 			<picture
 				style="
-					--light-base64: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAICAYAAADwdn+XAAAAAXNSR0IArs4c6QAAANVJREFUKFPFkLFKxFAURM9NChVTJq0GsbG0EvMZG79AKz9MwWK3zj+4IKhNsIyCRXADKxtB3xvxBUTZdVunm8tlODPWPD3r4vKK07NzIhNxbHzJzJBAEjacVsoW/bvCM8Zj05BlGVsbmxiG84Yi4c0Fb1rOMC8/nAVVVXF0fMjN9T1d1zEalcjEeDKmLE9oX+c83N5RFEUgDKReTmgwdV2zm+8we2mZTafk+we0iznb+R5pmvLhHG99T5Ik3yghwIgGiNB3TeEVK/wK+HuqNSP+JPiXgE+jaF6yto0zFgAAAABJRU5ErkJggg==');
-					--dark-base64: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAICAYAAADwdn+XAAAAAXNSR0IArs4c6QAAANpJREFUKFOlkDFPwmAQhp/7IEDjH8DFUVpiwlQWp24dOrj4KzEmxIGNHwDpL5CBxsSpiS5WbdPvDG0KGCGRcNPl7t7n7j0Jw1CjKGLy8Ihi0TLHChjbQoVt7KW7IiC+72tVEUO/f0mapuR5QQelMIIVxagi9dSfENd1t60gCIjjmNtxByzM5ivapcPd/ZDp0xq5cBhdD1kuFrvLNgDVmuF5HkmScNVaMR7c8Pz6wae2efm2vL1/gTE43R5Zlv0GVA6kdtnADh98xEIjaiD/FVeL939wirCZPRvwAww3TSdz8FOfAAAAAElFTkSuQmCC');
+					--light-base64: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAICAYAAADwdn+XAAAAAXNSR0IArs4c6QAAANVJREFUKFPFkLFKxFAURM9NChVTJq0GsbG0EvMZG79AKz9MwWK3zj+4IKhNsIyCRXADKxtB3xvxBUTZdVunm8tlODPWPD3r4vKK07NzIhNxbHzJzJBAEjacVsoW/bvCM8Zj05BlGVsbmxiG84Yi4c0Fb1rOMC8/nAVVVXF0fMjN9T1d1zEalcjEeDKmLE9oX+c83N5RFEUgDKReTmgwdV2zm+8we2mZTafk+we0iznb+R5pmvLhHG99T5Ik3yghwIgGiNB3TeEVK/wK+HuqNSP+JPiXgE+jaF6yto0zFgAAAABJRU5ErkJggg==&quot;);
+					--dark-base64: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAICAYAAADwdn+XAAAAAXNSR0IArs4c6QAAANpJREFUKFOlkDFPwmAQhp/7IEDjH8DFUVpiwlQWp24dOrj4KzEmxIGNHwDpL5CBxsSpiS5WbdPvDG0KGCGRcNPl7t7n7j0Jw1CjKGLy8Ihi0TLHChjbQoVt7KW7IiC+72tVEUO/f0mapuR5QQelMIIVxagi9dSfENd1t60gCIjjmNtxByzM5ivapcPd/ZDp0xq5cBhdD1kuFrvLNgDVmuF5HkmScNVaMR7c8Pz6wae2efm2vL1/gTE43R5Zlv0GVA6kdtnADh98xEIjaiD/FVeL939wirCZPRvwAww3TSdz8FOfAAAAAElFTkSuQmCC&quot;);
 				"
 			>
 				<source
 					srcset="
-						src/asset/image/url()%20highlighting%20error%20in%20light.webp
+						https://testingcf.jsdelivr.net/gh/gui-ying233/Nest@main/src/asset/image/url()%20highlighting%20error%20in%20light.webp
 					"
 					type="image/webp"
 					media="(prefers-color-scheme: light)"
 				/>
 				<source
 					srcset="
-						src/asset/image/url()%20highlighting%20error%20in%20dark.webp
+						https://testingcf.jsdelivr.net/gh/gui-ying233/Nest@main/src/asset/image/url()%20highlighting%20error%20in%20dark.webp
 					"
 					type="image/webp"
 					media="(prefers-color-scheme: dark)"
@@ -232,6 +264,10 @@
 		<footer>
 			<a href=".">鬼影的基地</a>
 		</footer>
-		<link rel="stylesheet" media="print" href="https://testingcf.jsdelivr.net/gh/gui-ying233/Nest@main/src/css/print.min.css" />
+		<link
+			rel="stylesheet"
+			media="print"
+			href="https://testingcf.jsdelivr.net/gh/gui-ying233/Nest@main/src/css/print.min.css"
+		/>
 	</body>
 </html>

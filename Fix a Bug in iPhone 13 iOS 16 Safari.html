@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-Hans-CN">
 	<head>
 		<meta charset="UTF-8" />
@@ -14,14 +14,16 @@
 			fetchpriority="high"
 			as="image"
 			type="image/webp"
-			src="https://testingcf.jsdelivr.net/gh/gui-ying233/Nest@main/src/asset/image/tabs%20normal%20in%20light.webp"
+			href="https://testingcf.jsdelivr.net/gh/gui-ying233/Nest@main/src/asset/image/tabs%20normal%20in%20light.webp"
+			media="(prefers-color-scheme: light)"
 		/>
 		<link
 			rel="preload"
 			fetchpriority="high"
 			as="image"
 			type="image/webp"
-			src="https://testingcf.jsdelivr.net/gh/gui-ying233/Nest@main/src/asset/image/tabs%20buggy%20in%20light.webp"
+			href="https://testingcf.jsdelivr.net/gh/gui-ying233/Nest@main/src/asset/image/tabs%20buggy%20in%20dark.webp"
+			media="(prefers-color-scheme: dark)"
 		/>
 		<meta name="color-scheme" content="light dark" />
 		<meta name="theme-color" content="hsl(0, 0%, 92%);" />
@@ -76,8 +78,15 @@
 			rel="canonical"
 			href="https://gui-ying233.github.io/Nest/Fix%20a%20Bug%20in%20iPhone%2013%20iOS%2016%20Safari"
 		/>
-		<link rel="icon" type="image/x-icon" href="https://testingcf.jsdelivr.net/gh/gui-ying233/Nest@main/src/asset/favicon.ico" />
-		<link rel="apple-touch-icon" href="https://testingcf.jsdelivr.net/gh/gui-ying233/Nest@main/src/asset/favicon.ico" />
+		<link
+			rel="icon"
+			type="image/x-icon"
+			href="https://testingcf.jsdelivr.net/gh/gui-ying233/Nest@main/src/asset/favicon.ico"
+		/>
+		<link
+			rel="apple-touch-icon"
+			href="https://testingcf.jsdelivr.net/gh/gui-ying233/Nest@main/src/asset/favicon.ico"
+		/>
 		<title>修复 iPhone 13 iOS 16 Safari 中的 Bug - 鬼影的基地</title>
 		<script type="application/ld+json">
 			{
@@ -117,6 +126,30 @@
 					"伪元素",
 					"Pseudo",
 					"after"
+				],
+				"image": [
+					{
+						"@type": "ImageObject",
+						"url": "https://testingcf.jsdelivr.net/gh/gui-ying233/Nest@main/src/asset/image/tabs%20normal%20in%20light.webp",
+						"caption": "选项卡的正常状态，两个选项卡标题栏都正常显示。",
+						"width": 680,
+						"height": 170,
+						"author": {
+							"@id": "https://gui-ying233.github.io/Nest/#Person"
+						},
+						"sameAs": "https://testingcf.jsdelivr.net/gh/gui-ying233/Nest@main/src/asset/image/tabs%20normal%20in%20dark.webp"
+					},
+					{
+						"@type": "ImageObject",
+						"url": "https://testingcf.jsdelivr.net/gh/gui-ying233/Nest@main/src/asset/image/tabs%20buggy%20in%20light.webp",
+						"caption": "切换选项卡后，切换前的选项标题栏文字会消失。",
+						"width": 680,
+						"height": 170,
+						"author": {
+							"@id": "https://gui-ying233.github.io/Nest/#Person"
+						},
+						"sameAs": "https://testingcf.jsdelivr.net/gh/gui-ying233/Nest@main/src/asset/image/tabs%20buggy%20in%20dark.webp"
+					}
 				]
 			}
 		</script>
@@ -129,7 +162,10 @@
 			src="https://static.cloudflareinsights.com/beacon.min.js"
 			data-cf-beacon='{"token": "b293bc8b0a614b42abf757d0eb6fe419"}'
 		></script>
-		<script defer src="https://testingcf.jsdelivr.net/gh/gui-ying233/Nest@main/src/js/analytics.min.js"></script>
+		<script
+			defer
+			src="https://testingcf.jsdelivr.net/gh/gui-ying233/Nest@main/src/js/analytics.min.js"
+		></script>
 		<script
 			src="https://app.rybbit.io/api/script.js"
 			data-site-id="1309"
@@ -139,7 +175,8 @@
 			data-tracking-errors="true"
 			data-debounce="0"
 			defer
-		></script>		<link
+		></script>
+		<link
 			rel="stylesheet"
 			fetchpriority="high"
 			href="https://testingcf.jsdelivr.net/gh/gui-ying233/Nest@main/src/css/base.min.css"
@@ -179,17 +216,21 @@
 		<figure>
 			<picture
 				style="
-					--light-base64: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAECAYAAACHtL/sAAAAAXNSR0IArs4c6QAAAJhJREFUKFN9jTEKwkAURN9ft4vgWtmImNboJRSPJIiNIQgW3kdyhlQRhNgZGxvZ3Ru4Em0sNNMNb3gjZXkO22xPPB5SXx80UUphTA/n/Lv/S7ZbI+WpCpvsQDwaUN/uiGiUaEzf4KxrFaTpCrHWhqq6kCRTtO5QFAXJbEJ+zJkvF0RRFxUgAPJDJ9778EHNBEJ4IqJan7/hC5MXL5Swxp08AAAAAElFTkSuQmCC');
-					--dark-base64: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAECAYAAACHtL/sAAAAAXNSR0IArs4c6QAAAKNJREFUKFNljb0OwWAYRs/7kaaLb9AmfgY30AswGKQGiwvAVTaxWAxiETfQK0Bi0X6LRJFXgqTKs53hnEfCsK2D4YRuy7I/ZQgPjBisDXDZhXJ3MNcvhs16hQRhV/vDMb1Ok+PhjEoNMXWsbZC7rBTUAFINbJaI7/saRRFpmlIUN+J4xHa3ZT6dkSwScudeotFf/d0Sz/NUVRGp1kH/Hiv3H3gCSxAvoejk1+sAAAAASUVORK5CYII=');
+					--light-base64: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAECAYAAACHtL/sAAAAAXNSR0IArs4c6QAAAJhJREFUKFN9jTEKwkAURN9ft4vgWtmImNboJRSPJIiNIQgW3kdyhlQRhNgZGxvZ3Ru4Em0sNNMNb3gjZXkO22xPPB5SXx80UUphTA/n/Lv/S7ZbI+WpCpvsQDwaUN/uiGiUaEzf4KxrFaTpCrHWhqq6kCRTtO5QFAXJbEJ+zJkvF0RRFxUgAPJDJ9778EHNBEJ4IqJan7/hC5MXL5Swxp08AAAAAElFTkSuQmCC&quot;);
+					--dark-base64: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAECAYAAACHtL/sAAAAAXNSR0IArs4c6QAAAKNJREFUKFNljb0OwWAYRs/7kaaLb9AmfgY30AswGKQGiwvAVTaxWAxiETfQK0Bi0X6LRJFXgqTKs53hnEfCsK2D4YRuy7I/ZQgPjBisDXDZhXJ3MNcvhs16hQRhV/vDMb1Ok+PhjEoNMXWsbZC7rBTUAFINbJaI7/saRRFpmlIUN+J4xHa3ZT6dkSwScudeotFf/d0Sz/NUVRGp1kH/Hiv3H3gCSxAvoejk1+sAAAAASUVORK5CYII=&quot;);
 				"
 			>
 				<source
-					srcset="https://testingcf.jsdelivr.net/gh/gui-ying233/Nest@main/src/asset/image/tabs%20normal%20in%20light.webp"
+					srcset="
+						https://testingcf.jsdelivr.net/gh/gui-ying233/Nest@main/src/asset/image/tabs%20normal%20in%20light.webp
+					"
 					type="image/webp"
 					media="(prefers-color-scheme: light)"
 				/>
 				<source
-					srcset="https://testingcf.jsdelivr.net/gh/gui-ying233/Nest@main/src/asset/image/tabs%20normal%20in%20dark.webp"
+					srcset="
+						https://testingcf.jsdelivr.net/gh/gui-ying233/Nest@main/src/asset/image/tabs%20normal%20in%20dark.webp
+					"
 					type="image/webp"
 					media="(prefers-color-scheme: dark)"
 				/>
@@ -219,17 +260,21 @@
 		<figure>
 			<picture
 				style="
-					--light-base64: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAECAYAAACHtL/sAAAAAXNSR0IArs4c6QAAANdJREFUKFNVjDFLAnEchp/fXweX7g4XkWq76YrIbtSvkvYdHII0LqExaIigD6Jrbjco3HUGrgcXriYZhh3+/1FD1jO97wPvK0kyNRe9GzYKtDaICCUUZWuH+esbYPhGC+SFn/jLdecceUqmptu73VrZoJTg2BaL+QIt6v/qT7u6bCNpmpowDImiiCAIGI3GHB553N890Gyeslp9sLe/S0GKDIeP1Bt1JpNnlAi1k+PtgW3bZFmG7/vEcYznHTAY9Gm1zqhWK+S5ZjZ7Yb3+xHVdlst3HMfiC/ZKUIEjPC4CAAAAAElFTkSuQmCC');
-					--dark-base64: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAECAYAAACHtL/sAAAAAXNSR0IArs4c6QAAANRJREFUKFM9i7FKw2AURs9NrUOTDqW/GcS1CJkCGQJqDBhwtk9iXyGvU+eIgx2ERHDKmkBQHOtktBRE0iuo7dm+c/hkfHCop2cXfFl9QLCAPRVG9oD3jxVbOoHOApWd4unhDhmZIz05v/w9/9HR1w576PC5WrNh/99vu+72Y36LuK6rURTh+z5pmpIkCUVRMLueMb+Zoyq8vD7Tkx7TqymLxT2TyTHd5puyLBFjjIZhSNu2eJ5HnucEQUDTNMRxTJZl1HWN4wwxxmDbA6qqwpgxy+UbP21LRqYfs5ymAAAAAElFTkSuQmCC');
+					--light-base64: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAECAYAAACHtL/sAAAAAXNSR0IArs4c6QAAANdJREFUKFNVjDFLAnEchp/fXweX7g4XkWq76YrIbtSvkvYdHII0LqExaIigD6Jrbjco3HUGrgcXriYZhh3+/1FD1jO97wPvK0kyNRe9GzYKtDaICCUUZWuH+esbYPhGC+SFn/jLdecceUqmptu73VrZoJTg2BaL+QIt6v/qT7u6bCNpmpowDImiiCAIGI3GHB553N890Gyeslp9sLe/S0GKDIeP1Bt1JpNnlAi1k+PtgW3bZFmG7/vEcYznHTAY9Gm1zqhWK+S5ZjZ7Yb3+xHVdlst3HMfiC/ZKUIEjPC4CAAAAAElFTkSuQmCC&quot;);
+					--dark-base64: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAECAYAAACHtL/sAAAAAXNSR0IArs4c6QAAANRJREFUKFM9i7FKw2AURs9NrUOTDqW/GcS1CJkCGQJqDBhwtk9iXyGvU+eIgx2ERHDKmkBQHOtktBRE0iuo7dm+c/hkfHCop2cXfFl9QLCAPRVG9oD3jxVbOoHOApWd4unhDhmZIz05v/w9/9HR1w576PC5WrNh/99vu+72Y36LuK6rURTh+z5pmpIkCUVRMLueMb+Zoyq8vD7Tkx7TqymLxT2TyTHd5puyLBFjjIZhSNu2eJ5HnucEQUDTNMRxTJZl1HWN4wwxxmDbA6qqwpgxy+UbP21LRqYfs5ymAAAAAElFTkSuQmCC&quot;);
 				"
 			>
 				<source
-					srcset="https://testingcf.jsdelivr.net/gh/gui-ying233/Nest@main/src/asset/image/tabs%20buggy%20in%20light.webp"
+					srcset="
+						https://testingcf.jsdelivr.net/gh/gui-ying233/Nest@main/src/asset/image/tabs%20buggy%20in%20light.webp
+					"
 					type="image/webp"
 					media="(prefers-color-scheme: light)"
 				/>
 				<source
-					srcset="https://testingcf.jsdelivr.net/gh/gui-ying233/Nest@main/src/asset/image/tabs%20buggy%20in%20dark.webp"
+					srcset="
+						https://testingcf.jsdelivr.net/gh/gui-ying233/Nest@main/src/asset/image/tabs%20buggy%20in%20dark.webp
+					"
 					type="image/webp"
 					media="(prefers-color-scheme: dark)"
 				/>
@@ -493,6 +538,10 @@ tab.classList.add("active");
 		<footer>
 			<a href=".">鬼影的基地</a>
 		</footer>
-		<link rel="stylesheet" media="print" href="https://testingcf.jsdelivr.net/gh/gui-ying233/Nest@main/src/css/print.min.css" />
+		<link
+			rel="stylesheet"
+			media="print"
+			href="https://testingcf.jsdelivr.net/gh/gui-ying233/Nest@main/src/css/print.min.css"
+		/>
 	</body>
 </html>

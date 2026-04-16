@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-Hans-CN">
 	<head>
 		<meta charset="UTF-8" />
@@ -14,7 +14,16 @@
 			fetchpriority="high"
 			as="image"
 			type="image/webp"
-			src="https://testingcf.jsdelivr.net/gh/gui-ying233/Nest@main/src/asset/image/ip%20in%20avatar%20title%20in%20light.webp"
+			href="https://testingcf.jsdelivr.net/gh/gui-ying233/Nest@main/src/asset/image/ip%20in%20avatar%20title%20in%20light.webp"
+			media="(prefers-color-scheme: light)"
+		/>
+		<link
+			rel="preload"
+			fetchpriority="high"
+			as="image"
+			type="image/webp"
+			href="https://testingcf.jsdelivr.net/gh/gui-ying233/Nest@main/src/asset/image/ip%20in%20avatar%20title%20in%20dark.webp"
+			media="(prefers-color-scheme: dark)"
 		/>
 		<meta name="color-scheme" content="light dark" />
 		<meta name="theme-color" content="hsl(0, 0%, 92%);" />
@@ -52,17 +61,25 @@
 			rel="canonical"
 			href="https://gui-ying233.github.io/Nest/Moegirlpedia%20Avatar%20Magic%20Word%20IP%20Leak"
 		/>
-		<link rel="icon" type="image/x-icon" href="https://testingcf.jsdelivr.net/gh/gui-ying233/Nest@main/src/asset/favicon.ico" />
-		<link rel="apple-touch-icon" href="https://testingcf.jsdelivr.net/gh/gui-ying233/Nest@main/src/asset/favicon.ico" />
-		<title>萌娘百科头像魔术字 IP 泄露 - 鬼影的基地</title>		<script type="application/ld+json">
+		<link
+			rel="icon"
+			type="image/x-icon"
+			href="https://testingcf.jsdelivr.net/gh/gui-ying233/Nest@main/src/asset/favicon.ico"
+		/>
+		<link
+			rel="apple-touch-icon"
+			href="https://testingcf.jsdelivr.net/gh/gui-ying233/Nest@main/src/asset/favicon.ico"
+		/>
+		<title>萌娘百科头像魔术字 IP 泄露 - 鬼影的基地</title>
+		<script type="application/ld+json">
 			{
 				"@context": "https://schema.org/",
 				"@type": "BlogPosting",
 				"@id": "https://gui-ying233.github.io/Nest/Moegirlpedia%20Avatar%20Magic%20Word%20IP%20Leak#BlogPosting",
 				"mainEntityOfPage": "https://gui-ying233.github.io/Nest/Moegirlpedia%20Avatar%20Magic%20Word%20IP%20Leak",
-				"headline": "萌娘百科头像魔术字 IP 況漏",
-				"name": "萌娘百科头像魔术字 IP 況漏",
-				"description": "萌娘百科头像魔术字 IP 況漏",
+				"headline": "萌娘百科头像魔术字 IP 泄露",
+				"name": "萌娘百科头像魔术字 IP 泄露",
+				"description": "萌娘百科头像魔术字 IP 泄露",
 				"author": {
 					"@id": "https://gui-ying233.github.io/Nest/#Person"
 				},
@@ -76,10 +93,24 @@
 					"头像",
 					"魔术字",
 					"IP",
-					"況漏"
+					"泄露"
+				],
+				"image": [
+					{
+						"@type": "ImageObject",
+						"url": "https://testingcf.jsdelivr.net/gh/gui-ying233/Nest@main/src/asset/image/ip%20in%20avatar%20title%20in%20light.webp",
+						"caption": "头像的 alt 属性会记录提交者的 IP 地址",
+						"width": 664,
+						"height": 500,
+						"author": {
+							"@id": "https://gui-ying233.github.io/Nest/#Person"
+						},
+						"sameAs": "https://testingcf.jsdelivr.net/gh/gui-ying233/Nest@main/src/asset/image/ip%20in%20avatar%20title%20in%20dark.webp"
+					}
 				]
 			}
-		</script>		<script
+		</script>
+		<script
 			defer
 			src="https://www.googletagmanager.com/gtag/js?id=G-ZMHY61ZCQE"
 		></script>
@@ -88,7 +119,10 @@
 			src="https://static.cloudflareinsights.com/beacon.min.js"
 			data-cf-beacon='{"token": "b293bc8b0a614b42abf757d0eb6fe419"}'
 		></script>
-		<script defer src="https://testingcf.jsdelivr.net/gh/gui-ying233/Nest@main/src/js/analytics.min.js"></script>
+		<script
+			defer
+			src="https://testingcf.jsdelivr.net/gh/gui-ying233/Nest@main/src/js/analytics.min.js"
+		></script>
 		<script
 			src="https://app.rybbit.io/api/script.js"
 			data-site-id="1309"
@@ -200,20 +234,20 @@
 		<figure>
 			<picture
 				style="
-					--light-base64: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAMCAYAAABr5z2BAAAAAXNSR0IArs4c6QAAAidJREFUOE99kltIk2Ecxn/fDi1dOZmH2ERjmBXYaEIIKullKBQVYXRTBkGFUkZdFN0UHSy6KYsiqeuIwou6qt0o1o1WHsZQ1OZmpLgtdYfmt8/vEN8mmhG+N//3/b/P/+F9nucVRFHUADRNLwKKomIyGZAkGUUT9CtyLMZMldMixk0WBCHb15egEyiygj6uqPDVN8vUopHgTILjDdsIDQ6xs8hAoaeaZGAMe8VukvEEBmmJrSWlWYJkLMGXznu4TrYTF2FLnhUVgQKrQP9nH3feJzndWMKBfUV0dIeRUimuHXPwLSRnCfSntD4L8Picizd9UR52T3PhSCknGoqRFRVv+xmq266A3Ym0rOJw2tdLWD2tbIbHf9EzlubiISe/U2lyc3Td/6JWPIhOh7Te29epu3SVfNeO/6M26GYk9H3qx2rNocrjZmEhwd2OB+ytquFgYy1DIyHq9+/h++QPysqcGI0GTOZsKqspjI6OMxdOUFvjZmDAz+DQMG2tLQQCwUy85eUufD4/bnclKV1SrmU9QTye4ONbL0dbDjPzM8rlFxO8vlmXAUUjMQoK81hKpXnunWd4Ms7L9gpkWcWy2ZxN4VVvhAqbSEmxNeNwLCnRfH+CD7cq6Xw3w/kmB8gS6rLE2adBbpwqx5FvXiOI+EcY6HpC06MuliUZ/9Qinl2F66yLzYWRFufpmbWhGUw01xeteZCOxxAX5rFtd6GqWiayv7/rRtH8AXXYAEOUpY/aAAAAAElFTkSuQmCC');
-					--dark-base64: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAMCAYAAABr5z2BAAAAAXNSR0IArs4c6QAAAiVJREFUOE+Vkl1Ik2EUx3/P3nd+LOdC50czbIYTTbb8SmsbJUbCyCTUaxPtouuECrKLrrroQ2+iQEIQoovYhSUZYlARZIRlVDTRMhdTXM2PNNe2197YazKCvOhcned/zvPn+T3nCFuZUwUQQhBPZElCURTSZBURLwArykaml2Vi6+ugale0EPqjZ7WTpNORpFM5krcNs/KVfcYwt4JZVBbZeLOsMvphgvysHOYWQliMycSkZGZDCxsGOQY9je5a+kZGsG43IKI/0P2KsahLp76iinpnFUOjrxmbnMJTXUGOyUj/o6eUZxsSL+hsOU63d4C6cgcnD1Zy9+EgXl8QScCVUx3cuD/EajhKcGkRJY6xiZDrak4A/RE95p/sMUS46jdhkAVhRdX+518hqp11qru5kxeDN1kKzmzRtrUsSksdakm5i0h4jU++cbJ27KKl4xz+wDzPBq5TXNPAy+F+iuw1+KfeocSiRCPhBELcIL/QjslswffqCfYDHgqKHHh7L5K7c7c23rkvH7Ha7HyefIvRlMnKcuhvA0Oaib3uRkaHb5Nf6KDpxGm6z7dqTXkFJczOTJCWnsH+2mMUFJfRd+0M+qQU1laX0RCqDzXwfSlEJBJl2jdGerJEe1cvPRfaOdzYyuMHd5D1SQghccmVyeXnAWZXoxuLtInQ1NZJT1ebJpaaU3n/LcEZ17ItVpBTqUoJIasx7k0uJgziCEZTBvOB6f+ewm9uwcDaDwQzuAAAAABJRU5ErkJggg==');
+					--light-base64: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAMCAYAAABr5z2BAAAAAXNSR0IArs4c6QAAAidJREFUOE99kltIk2Ecxn/fDi1dOZmH2ERjmBXYaEIIKullKBQVYXRTBkGFUkZdFN0UHSy6KYsiqeuIwou6qt0o1o1WHsZQ1OZmpLgtdYfmt8/vEN8mmhG+N//3/b/P/+F9nucVRFHUADRNLwKKomIyGZAkGUUT9CtyLMZMldMixk0WBCHb15egEyiygj6uqPDVN8vUopHgTILjDdsIDQ6xs8hAoaeaZGAMe8VukvEEBmmJrSWlWYJkLMGXznu4TrYTF2FLnhUVgQKrQP9nH3feJzndWMKBfUV0dIeRUimuHXPwLSRnCfSntD4L8Picizd9UR52T3PhSCknGoqRFRVv+xmq266A3Ym0rOJw2tdLWD2tbIbHf9EzlubiISe/U2lyc3Td/6JWPIhOh7Te29epu3SVfNeO/6M26GYk9H3qx2rNocrjZmEhwd2OB+ytquFgYy1DIyHq9+/h++QPysqcGI0GTOZsKqspjI6OMxdOUFvjZmDAz+DQMG2tLQQCwUy85eUufD4/bnclKV1SrmU9QTye4ONbL0dbDjPzM8rlFxO8vlmXAUUjMQoK81hKpXnunWd4Ms7L9gpkWcWy2ZxN4VVvhAqbSEmxNeNwLCnRfH+CD7cq6Xw3w/kmB8gS6rLE2adBbpwqx5FvXiOI+EcY6HpC06MuliUZ/9Qinl2F66yLzYWRFufpmbWhGUw01xeteZCOxxAX5rFtd6GqWiayv7/rRtH8AXXYAEOUpY/aAAAAAElFTkSuQmCC&quot;);
+					--dark-base64: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAMCAYAAABr5z2BAAAAAXNSR0IArs4c6QAAAiVJREFUOE+Vkl1Ik2EUx3/P3nd+LOdC50czbIYTTbb8SmsbJUbCyCTUaxPtouuECrKLrrroQ2+iQEIQoovYhSUZYlARZIRlVDTRMhdTXM2PNNe2197YazKCvOhcned/zvPn+T3nCFuZUwUQQhBPZElCURTSZBURLwArykaml2Vi6+ugale0EPqjZ7WTpNORpFM5krcNs/KVfcYwt4JZVBbZeLOsMvphgvysHOYWQliMycSkZGZDCxsGOQY9je5a+kZGsG43IKI/0P2KsahLp76iinpnFUOjrxmbnMJTXUGOyUj/o6eUZxsSL+hsOU63d4C6cgcnD1Zy9+EgXl8QScCVUx3cuD/EajhKcGkRJY6xiZDrak4A/RE95p/sMUS46jdhkAVhRdX+518hqp11qru5kxeDN1kKzmzRtrUsSksdakm5i0h4jU++cbJ27KKl4xz+wDzPBq5TXNPAy+F+iuw1+KfeocSiRCPhBELcIL/QjslswffqCfYDHgqKHHh7L5K7c7c23rkvH7Ha7HyefIvRlMnKcuhvA0Oaib3uRkaHb5Nf6KDpxGm6z7dqTXkFJczOTJCWnsH+2mMUFJfRd+0M+qQU1laX0RCqDzXwfSlEJBJl2jdGerJEe1cvPRfaOdzYyuMHd5D1SQghccmVyeXnAWZXoxuLtInQ1NZJT1ebJpaaU3n/LcEZ17ItVpBTqUoJIasx7k0uJgziCEZTBvOB6f+ewm9uwcDaDwQzuAAAAABJRU5ErkJggg==&quot;);
 				"
 			>
 				<source
 					srcset="
-						src/asset/image/ip%20in%20avatar%20title%20in%20light.webp
+						https://testingcf.jsdelivr.net/gh/gui-ying233/Nest@main/src/asset/image/ip%20in%20avatar%20title%20in%20light.webp
 					"
 					type="image/webp"
 					media="(prefers-color-scheme: light)"
 				/>
 				<source
 					srcset="
-						src/asset/image/ip%20in%20avatar%20title%20in%20dark.webp
+						https://testingcf.jsdelivr.net/gh/gui-ying233/Nest@main/src/asset/image/ip%20in%20avatar%20title%20in%20dark.webp
 					"
 					type="image/webp"
 					media="(prefers-color-scheme: dark)"
@@ -298,6 +332,10 @@
 		<footer>
 			<a href=".">鬼影的基地</a>
 		</footer>
-		<link rel="stylesheet" media="print" href="https://testingcf.jsdelivr.net/gh/gui-ying233/Nest@main/src/css/print.min.css" />
+		<link
+			rel="stylesheet"
+			media="print"
+			href="https://testingcf.jsdelivr.net/gh/gui-ying233/Nest@main/src/css/print.min.css"
+		/>
 	</body>
 </html>

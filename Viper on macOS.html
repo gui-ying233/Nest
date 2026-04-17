@@ -64,27 +64,50 @@
 		<script type="application/ld+json">
 			{
 				"@context": "https://schema.org/",
-				"@type": "BlogPosting",
-				"@id": "https://gui-ying233.github.io/Nest/Viper%20on%20macOS#BlogPosting",
-				"mainEntityOfPage": "https://gui-ying233.github.io/Nest/Viper%20on%20macOS",
-				"headline": "在 macOS 上部署 Viper",
-				"name": "在 macOS 上部署 Viper",
-				"description": "虽然 Viper（炫彩蛇）官方的提供了一个问题的解决办法，但并不能顺利解决所有的问题。因此在此将个人部署的过程进行一个分享。虽然并不一定每一步都是必要的。",
-				"author": {
-					"@id": "https://gui-ying233.github.io/Nest/#Person"
-				},
-				"url": "https://gui-ying233.github.io/Nest/Viper%20on%20macOS",
-				"isPartOf": {
-					"@id": "https://gui-ying233.github.io/Nest/#Blog"
-				},
-				"keywords": [
-					"Viper",
-					"Mac",
-					"macOS",
-					"Docker",
-					"Docker Desktop",
-					"教程",
-					"炫彩蛇"
+				"@graph": [
+					{
+						"@type": "BlogPosting",
+						"@id": "https://gui-ying233.github.io/Nest/Viper%20on%20macOS#BlogPosting",
+						"mainEntityOfPage": "https://gui-ying233.github.io/Nest/Viper%20on%20macOS",
+						"headline": "在 macOS 上部署 Viper",
+						"name": "在 macOS 上部署 Viper",
+						"description": "虽然 Viper（炫彩蛇）官方的提供了一个问题的解决办法，但并不能顺利解决所有的问题。因此在此将个人部署的过程进行一个分享。虽然并不一定每一步都是必要的。",
+						"author": {
+							"@id": "https://gui-ying233.github.io/Nest/#Person"
+						},
+						"url": "https://gui-ying233.github.io/Nest/Viper%20on%20macOS",
+						"isPartOf": {
+							"@id": "https://gui-ying233.github.io/Nest/#Blog"
+						},
+						"keywords": [
+							"Viper",
+							"Mac",
+							"macOS",
+							"Docker",
+							"Docker Desktop",
+							"教程",
+							"炫彩蛇"
+						]
+					},
+					{
+						"@type": "BreadcrumbList",
+						"itemListElement": [
+							{
+								"@type": "ListItem",
+								"position": 1,
+								"item": {
+									"@id": "https://gui-ying233.github.io/Nest/#Blog"
+								}
+							},
+							{
+								"@type": "ListItem",
+								"position": 2,
+								"item": {
+									"@id": "https://gui-ying233.github.io/Nest/Viper%20on%20macOS#BlogPosting"
+								}
+							}
+						]
+					}
 				]
 			}
 		</script>
@@ -128,11 +151,17 @@
 			}
 		</script>
 	</head>
-	<body>
+	<body
+		role="article"
+		itemscope
+		itemtype="http://schema.org/BlogPosting"
+		itemid="https://gui-ying233.github.io/Nest/Viper%20on%20macOS#BlogPosting"
+	>
 		<a
 			href="https://wisadel.gui-ying233.workers.dev/?utm_medium=referral&utm_source=gui-ying233.github.io/Nest/"
 			rel="noindex nofollow"
 			style="position: absolute; left: -9999px"
+			aria-hidden="true"
 		></a>
 		<noscript>
 			<img
@@ -141,47 +170,50 @@
 				alt=""
 		/></noscript>
 		<h1>在 macOS 上部署 Viper</h1>
-		<h2>前言</h2>
-		<p>
-			虽然<a href="https://github.com/FunnyWolf/Viper" target="_blank"
-				>Viper（炫彩蛇）</a
-			>官方的提供了一个问题的解决办法，但并不能顺利解决所有的问题。因此在此将个人部署的过程进行一个分享。虽然并不一定每一步都是必要的。
-		</p>
-		<p>请在阅读本文的同时参考官方文档。</p>
-		<table>
-			<tbody>
-				<tr>
-					<th>系统环境</th>
-					<td>arm64 macOS 14.4.1</td>
-				</tr>
-				<tr>
-					<th>构建时间</th>
-					<td><time datatime="2024-05-08">2024 07 08</time></td>
-				</tr>
-				<tr>
-					<th>Viper 版本</th>
-					<td>2.3.1</td>
-				</tr>
-			</tbody>
-		</table>
-		<h2>安装</h2>
-		<p>macOS 上使用 Docker 需要下载 Docker Desktop，下载后打开并登录。</p>
-		<p>
-			右键访达，点击“前往文件夹…”，前往
-			<code>~/.docker/config.json</code>。打开
-			<code>config.json</code>，将 <code>credsStore</code> 的
-			<code>desktop</code> 值改为 <code>osxkeychain</code>。
-		</p>
-		<p>回到终端。</p>
-		<pre data-lang="shell">
+		<section itemprop="articleBody">
+			<h2>前言</h2>
+			<p>
+				虽然<a href="https://github.com/FunnyWolf/Viper" target="_blank"
+					>Viper（炫彩蛇）</a
+				>官方的提供了一个问题的解决办法，但并不能顺利解决所有的问题。因此在此将个人部署的过程进行一个分享。虽然并不一定每一步都是必要的。
+			</p>
+			<p>请在阅读本文的同时参考官方文档。</p>
+			<table>
+				<tbody>
+					<tr>
+						<th>系统环境</th>
+						<td>arm64 macOS 14.4.1</td>
+					</tr>
+					<tr>
+						<th>构建时间</th>
+						<td><time datatime="2024-05-08">2024 07 08</time></td>
+					</tr>
+					<tr>
+						<th>Viper 版本</th>
+						<td>2.3.1</td>
+					</tr>
+				</tbody>
+			</table>
+			<h2>安装</h2>
+			<p>
+				macOS 上使用 Docker 需要下载 Docker Desktop，下载后打开并登录。
+			</p>
+			<p>
+				右键访达，点击“前往文件夹…”，前往
+				<code>~/.docker/config.json</code>。打开
+				<code>config.json</code>，将 <code>credsStore</code> 的
+				<code>desktop</code> 值改为 <code>osxkeychain</code>。
+			</p>
+			<p>回到终端。</p>
+			<pre data-lang="shell">
 export VIPER_DIR=~/VIPER
 mkdir -p $VIPER_DIR && cd $VIPER_DIR</pre
-		>
-		<pre data-lang="shell">
+			>
+			<pre data-lang="shell">
 sudo su
 ulimit -n 65535</pre
-		>
-		<pre data-lang="shell">
+			>
+			<pre data-lang="shell">
 tee docker-compose.yml <<-'EOF'
 version: "3"
 services:
@@ -199,35 +231,39 @@ services:
 		- ${PWD}/nginxconfig:/root/viper/Docker/nginxconfig
 	command: ["VIPER_PASSWORD"]
 EOF</pre
-		>
-		<pre data-lang="shell">export VIPER_PASSWORD=diypassword</pre>
-		<pre data-lang="shell">
+			>
+			<pre data-lang="shell">export VIPER_PASSWORD=diypassword</pre>
+			<pre data-lang="shell">
 sed -i "" "s/VIPER_PASSWORD/$VIPER_PASSWORD/g" docker-compose.yml</pre
-		>
-		<pre data-lang="shell">
+			>
+			<pre data-lang="shell">
 mkdir -p /usr/local/lib/docker
 ln -s /Applications/Docker.app/Contents/Resources/cli-plugins /usr/local/lib/docker/cli-plugins
 		</pre
-		>
-		<p>
-			前往 Docker Desktop 的设置，将 Resources > File sharing > Virtual
-			file shares 下添加路径 <code>/</code>，确定并重启。
-		</p>
-		<pre data-lang="shell">
+			>
+			<p>
+				前往 Docker Desktop 的设置，将 Resources > File sharing >
+				Virtual file shares 下添加路径 <code>/</code>，确定并重启。
+			</p>
+			<pre data-lang="shell">
 cd $VIPER_DIR
 docker compose up -d</pre
-		>
-		<p>
-			然后可以去 Docker Desktop 中前往 Containers，确保关闭“Only show
-			running containers”，点击最新出现的 viper 以查看启动进度与日志。
-		</p>
-		<p>
-			在启动完成后你可以通过
-			<a href="https://localhost:60000" target="_blank"
-				>localhost:60000</a
 			>
-			等网址访问。
-		</p>
+			<p>
+				然后可以去 Docker Desktop 中前往 Containers，确保关闭“Only show
+				running containers”，点击最新出现的 viper 以查看启动进度与日志。
+			</p>
+			<p>
+				在启动完成后你可以通过
+				<a
+					href="https://localhost:60000"
+					target="_blank"
+					rel="noindex nofollow"
+					>localhost:60000</a
+				>
+				等网址访问。
+			</p>
+		</section>
 		<footer>
 			<a href=".">鬼影的基地</a>
 		</footer>

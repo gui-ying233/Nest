@@ -1,7 +1,7 @@
-body > div,
-body > pre,
-body > footer,
-body > figure,
+body > section > div,
+body > section > pre,
+body > section > footer,
+body > section > figure,
 tr {
 	content-visibility: auto;
 }
@@ -10,11 +10,13 @@ tr {
 		opacity: 1;
 	}
 }
-body > * {
+body > *,
+body > section > * {
 	opacity: 0.01;
 	animation: fade-in 0.5s ease-out forwards;
 }
-body > * * {
+body > * *,
+body > section > * * {
 	opacity: 0.01;
 	animation: fade-in 1s ease-out forwards;
 }
@@ -153,7 +155,7 @@ a[hreflang]::after {
 	float: right;
 	vertical-align: super;
 }
-body > a {
+body > section > a {
 	margin: 0 0.5em;
 }
 @media screen {

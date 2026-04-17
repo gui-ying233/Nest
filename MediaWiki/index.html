@@ -58,28 +58,51 @@
 		<script type="application/ld+json">
 			{
 				"@context": "https://schema.org/",
-				"@type": "WebPage",
-				"@id": "https://gui-ying233.github.io/Nest/MediaWiki/#WebPage",
-				"mainEntityOfPage": "https://gui-ying233.github.io/Nest/MediaWiki/",
-				"headline": "《MediaWiki：从入门到放弃》",
-				"name": "《MediaWiki：从入门到放弃》",
-				"description": "《MediaWiki：从入门到放弃》",
-				"author": {
-					"@id": "https://gui-ying233.github.io/Nest/#Person"
-				},
-				"url": "https://gui-ying233.github.io/Nest/MediaWiki/",
-				"isPartOf": {
-					"@id": "https://gui-ying233.github.io/Nest/#WebSite"
-				},
-				"keywords": [
-					"MediaWiki",
-					"Wikitext",
-					"教程",
-					"教学",
-					"文档",
-					"API",
-					"CSS",
-					"JS"
+				"@graph": [
+					{
+						"@type": "WebPage",
+						"@id": "https://gui-ying233.github.io/Nest/MediaWiki/#WebPage",
+						"mainEntityOfPage": "https://gui-ying233.github.io/Nest/MediaWiki/",
+						"headline": "《MediaWiki：从入门到放弃》",
+						"name": "《MediaWiki：从入门到放弃》",
+						"description": "《MediaWiki：从入门到放弃》",
+						"author": {
+							"@id": "https://gui-ying233.github.io/Nest/#Person"
+						},
+						"url": "https://gui-ying233.github.io/Nest/MediaWiki/",
+						"isPartOf": {
+							"@id": "https://gui-ying233.github.io/Nest/#WebSite"
+						},
+						"keywords": [
+							"MediaWiki",
+							"Wikitext",
+							"教程",
+							"教学",
+							"文档",
+							"API",
+							"CSS",
+							"JS"
+						]
+					},
+					{
+						"@type": "BreadcrumbList",
+						"itemListElement": [
+							{
+								"@type": "ListItem",
+								"position": 1,
+								"item": {
+									"@id": "https://gui-ying233.github.io/Nest/#WebSite"
+								}
+							},
+							{
+								"@type": "ListItem",
+								"position": 2,
+								"item": {
+									"@id": "https://gui-ying233.github.io/Nest/MediaWiki/#WebPage"
+								}
+							}
+						]
+					}
 				]
 			}
 		</script>
@@ -124,11 +147,17 @@
 			}
 		</script>
 	</head>
-	<body>
+	<body
+		role="article"
+		itemscope
+		itemtype="http://schema.org/WebPage"
+		itemid="https://gui-ying233.github.io/Nest/MediaWiki/#WebPage"
+	>
 		<a
 			href="https://wisadel.gui-ying233.workers.dev/?utm_medium=referral&utm_source=gui-ying233.github.io/Nest/"
 			rel="noindex nofollow"
 			style="position: absolute; left: -9999px"
+			aria-hidden="true"
 		></a>
 		<noscript>
 			<img
@@ -137,29 +166,40 @@
 				alt=""
 		/></noscript>
 		<h1>《MediaWiki：从入门到放弃》</h1>
-		<h2>前言</h2>
-		<p>本教程不涉及后端的部分，绝赞摸鱼中！</p>
-		<h2>目录</h2>
-		<ol>
-			<li>
-				基础篇
-				<ol>
-					<li><a href="Namespace">命名空间</a></li>
-				</ol>
-			</li>
-		</ol>
-		<h2>参看</h2>
-		<ul>
-			<li>
-				<a
-					href="https://www.mediawiki.org/wiki/Help:Contents"
-					hreflang="en"
-					target="_blank"
-					>Help:Contents</a
-				>
-			</li>
-		</ul>
+		<section itemprop="text">
+			<h2>前言</h2>
+			<p>本教程不涉及后端的部分，绝赞摸鱼中！</p>
+		</section>
+		<section>
+			<h2>目录</h2>
+			<ol>
+				<li>
+					基础篇
+					<ol>
+						<li
+							itemprop="hasPart"
+							itemscope
+							itemtype="http://schema.org/Article"
+							itemid="https://gui-ying233.github.io/Nest/MediaWiki/Namespace#Article"
+						>
+							<a href="Namespace">命名空间</a>
+						</li>
+					</ol>
+				</li>
+			</ol>
+		</section>
 		<footer>
+			<h2>参看</h2>
+			<ul>
+				<li>
+					<a
+						href="https://www.mediawiki.org/wiki/Help:Contents"
+						hreflang="en"
+						target="_blank"
+						>Help:Contents</a
+					>
+				</li>
+			</ul>
 			<a href="..">鬼影的基地</a>
 		</footer>
 		<link

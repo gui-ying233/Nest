@@ -47,19 +47,42 @@
 		<script type="application/ld+json">
 			{
 				"@context": "https://schema.org/",
-				"@type": "WebPage",
-				"@id": "https://gui-ying233.github.io/Nest/404#WebPage",
-				"mainEntityOfPage": "https://gui-ying233.github.io/Nest/404",
-				"headline": "404 Not Found",
-				"name": "404 Not Found",
-				"description": "404 Not Found",
-				"author": {
-					"@id": "https://gui-ying233.github.io/Nest/#Person"
-				},
-				"url": "https://gui-ying233.github.io/Nest/404",
-				"isPartOf": {
-					"@id": "https://gui-ying233.github.io/Nest/#WebSite"
-				}
+				"@graph": [
+					{
+						"@type": "WebPage",
+						"@id": "https://gui-ying233.github.io/Nest/404#WebPage",
+						"mainEntityOfPage": "https://gui-ying233.github.io/Nest/404",
+						"headline": "404 Not Found",
+						"name": "404 Not Found",
+						"description": "404 Not Found",
+						"author": {
+							"@id": "https://gui-ying233.github.io/Nest/#Person"
+						},
+						"url": "https://gui-ying233.github.io/Nest/404",
+						"isPartOf": {
+							"@id": "https://gui-ying233.github.io/Nest/#WebSite"
+						}
+					},
+					{
+						"@type": "BreadcrumbList",
+						"itemListElement": [
+							{
+								"@type": "ListItem",
+								"position": 1,
+								"item": {
+									"@id": "https://gui-ying233.github.io/Nest/#WebSite"
+								}
+							},
+							{
+								"@type": "ListItem",
+								"position": 2,
+								"item": {
+									"@id": "https://gui-ying233.github.io/Nest/404#WebPage"
+								}
+							}
+						]
+					}
+				]
 			}
 		</script>
 		<script
@@ -105,6 +128,7 @@
 			href="https://wisadel.gui-ying233.workers.dev/?utm_medium=referral&utm_source=gui-ying233.github.io/Nest/"
 			rel="noindex nofollow"
 			style="position: absolute; left: -9999px"
+			aria-hidden="true"
 		></a>
 		<noscript>
 			<img

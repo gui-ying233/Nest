@@ -58,20 +58,50 @@
 		<script type="application/ld+json">
 			{
 				"@context": "https://schema.org/",
-				"@type": "BlogPosting",
-				"@id": "https://gui-ying233.github.io/Nest/Moegirlpedia%20Comment%20List%20IP%20Leak#BlogPosting",
-				"mainEntityOfPage": "https://gui-ying233.github.io/Nest/Moegirlpedia%20Comment%20List%20IP%20Leak",
-				"headline": "萌娘百科评论区 IP 泄露",
-				"name": "萌娘百科评论区 IP 泄露",
-				"description": "萌娘百科评论区 IP 泄露",
-				"author": {
-					"@id": "https://gui-ying233.github.io/Nest/#Person"
-				},
-				"url": "https://gui-ying233.github.io/Nest/Moegirlpedia%20Comment%20List%20IP%20Leak",
-				"isPartOf": {
-					"@id": "https://gui-ying233.github.io/Nest/#Blog"
-				},
-				"keywords": ["萌娘百科", "萌百", "评论区", "评论", "IP", "泄露"]
+				"@graph": [
+					{
+						"@type": "BlogPosting",
+						"@id": "https://gui-ying233.github.io/Nest/Moegirlpedia%20Comment%20List%20IP%20Leak#BlogPosting",
+						"mainEntityOfPage": "https://gui-ying233.github.io/Nest/Moegirlpedia%20Comment%20List%20IP%20Leak",
+						"headline": "萌娘百科评论区 IP 泄露",
+						"name": "萌娘百科评论区 IP 泄露",
+						"description": "萌娘百科评论区 IP 泄露",
+						"author": {
+							"@id": "https://gui-ying233.github.io/Nest/#Person"
+						},
+						"url": "https://gui-ying233.github.io/Nest/Moegirlpedia%20Comment%20List%20IP%20Leak",
+						"isPartOf": {
+							"@id": "https://gui-ying233.github.io/Nest/#Blog"
+						},
+						"keywords": [
+							"萌娘百科",
+							"萌百",
+							"评论区",
+							"评论",
+							"IP",
+							"泄露"
+						]
+					},
+					{
+						"@type": "BreadcrumbList",
+						"itemListElement": [
+							{
+								"@type": "ListItem",
+								"position": 1,
+								"item": {
+									"@id": "https://gui-ying233.github.io/Nest/#Blog"
+								}
+							},
+							{
+								"@type": "ListItem",
+								"position": 2,
+								"item": {
+									"@id": "https://gui-ying233.github.io/Nest/Moegirlpedia%20Comment%20List%20IP%20Leak#BlogPosting"
+								}
+							}
+						]
+					}
+				]
 			}
 		</script>
 		<script
@@ -129,11 +159,17 @@
 			}
 		</script>
 	</head>
-	<body>
+	<body
+		role="article"
+		itemscope
+		itemtype="http://schema.org/BlogPosting"
+		itemid="https://gui-ying233.github.io/Nest/Moegirlpedia%20Comment%20List%20IP%20Leak#BlogPosting"
+	>
 		<a
 			href="https://wisadel.gui-ying233.workers.dev/?utm_medium=referral&utm_source=gui-ying233.github.io/Nest/"
 			rel="noindex nofollow"
 			style="position: absolute; left: -9999px"
+			aria-hidden="true"
 		></a>
 		<noscript>
 			<img
@@ -142,53 +178,57 @@
 				alt=""
 		/></noscript>
 		<h1>萌娘百科评论区 IP 泄露</h1>
-		<h2>前言</h2>
-		<p>
-			于
-			<time datetime="2024-07-18T18:51:15+0800"
-				>2024年7月26日 18:51:15</time
-			>
-			左右，<a
-				href="https://mzh.moegirl.org.cn/index.php?utm_medium=referral&utm_source=鬼影的基地&utm_content=https://gui-ying233.github.io/Nest/Moegirlpedia%20Comment%20List%20IP%20Leak#/flow/details/66a37fa3b2ce412260c0c23a"
-				target="_blank"
-				>评论区现开放了测试</a
-			>，<time datetime="2024-07-18T18:53:11+0800">约两分钟后</time
-			>第一条评论被发布。在测试开始<time
-				datetime="2024-07-18T19:30:00+0800"
-				>半小时后</time
-			>由我发现并提报了漏洞，之后也在技术实现版和评论区处做出了警告（虽然许多人都不听劝）。
-		</p>
-		<h2>漏洞详情</h2>
-		<h3>发生什么事了？</h3>
-		<p>任何人都可以极其简单并匿名地获取所有评论发送时的 IP 地址。</p>
-		<h3>如何复现？</h3>
-		<pre data-lang="shell">
+		<section itemprop="articleBody">
+			<h2>前言</h2>
+			<p>
+				于
+				<time datetime="2024-07-18T18:51:15+0800"
+					>2024年7月26日 18:51:15</time
+				>
+				左右，<a
+					href="https://mzh.moegirl.org.cn/index.php?utm_medium=referral&utm_source=鬼影的基地&utm_content=https://gui-ying233.github.io/Nest/Moegirlpedia%20Comment%20List%20IP%20Leak#/flow/details/66a37fa3b2ce412260c0c23a"
+					target="_blank"
+					>评论区现开放了测试</a
+				>，<time datetime="2024-07-18T18:53:11+0800">约两分钟后</time
+				>第一条评论被发布。在测试开始<time
+					datetime="2024-07-18T19:30:00+0800"
+					>半小时后</time
+				>由我发现并提报了漏洞，之后也在技术实现版和评论区处做出了警告（虽然许多人都不听劝）。
+			</p>
+			<h2>漏洞详情</h2>
+			<h3>发生什么事了？</h3>
+			<p>任何人都可以极其简单并匿名地获取所有评论发送时的 IP 地址。</p>
+			<h3>如何复现？</h3>
+			<pre data-lang="shell">
 curl --location 'https://api.moegirl.org.cn/moegirl.moepad.MoepadCommunityService/GetArticleCommentListWithUserInfo' --header 'Content-Type: application/grpc-web-text' --data 'AAAAACUKIwoYNjZhMzdmYTNiMmNlNDEyMjYwYzBjMjNhGAogAygEMgEB'</pre
-		>
-		<p>
-			这就是一个非常简单的
-			<code>POST</code>
-			请求，而返回的数据中我们可以看到用户的账户名和评论、精确至市级的地址、网络运营商以及
-			IP 地址。
-		</p>
-		<h3>修复了吗？</h3>
-		<p>在提报后的两天之后，此漏洞终于被修复（指抹去了 IP 地址）…</p>
-		<h2>相关链接</h2>
-		<ol>
-			<li>
-				<time datetime="2025-07-30T12:29:16+0800">2025年7月29日</time
-				>的：<a href="Moegirlpedia%20Avatar%20Magic%20Word%20IP%20Leak"
-					>萌娘百科头像魔术字 IP 泄露</a
-				>
-			</li>
-			<li>
-				2025年9月16日的：<a
-					href="Moegirlpedia%20Horizontal%20Privilege%20Escalation%20Bug"
-					>萌娘百科水平越权漏洞</a
-				>
-			</li>
-		</ol>
+			>
+			<p>
+				这就是一个非常简单的
+				<code>POST</code>
+				请求，而返回的数据中我们可以看到用户的账户名和评论、精确至市级的地址、网络运营商以及
+				IP 地址。
+			</p>
+			<h3>修复了吗？</h3>
+			<p>在提报后的两天之后，此漏洞终于被修复（指抹去了 IP 地址）…</p>
+		</section>
 		<footer>
+			<h2>相关链接</h2>
+			<ol>
+				<li>
+					<time datetime="2025-07-30T12:29:16+0800"
+						>2025年7月29日</time
+					>的：<a
+						href="Moegirlpedia%20Avatar%20Magic%20Word%20IP%20Leak"
+						>萌娘百科头像魔术字 IP 泄露</a
+					>
+				</li>
+				<li>
+					2025年9月16日的：<a
+						href="Moegirlpedia%20Horizontal%20Privilege%20Escalation%20Bug"
+						>萌娘百科水平越权漏洞</a
+					>
+				</li>
+			</ol>
 			<a href=".">鬼影的基地</a>
 		</footer>
 		<link

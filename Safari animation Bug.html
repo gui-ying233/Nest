@@ -64,28 +64,51 @@
 		<script type="application/ld+json">
 			{
 				"@context": "https://schema.org/",
-				"@type": "BlogPosting",
-				"@id": "https://gui-ying233.github.io/Nest/Safari%20animation%20Bug#BlogPosting",
-				"mainEntityOfPage": "https://gui-ying233.github.io/Nest/Safari%20animation%20Bug",
-				"headline": "Safari animation Bug",
-				"name": "Safari animation Bug",
-				"description": "Safari 的一个 animation Bug 以及如何解决。",
-				"author": {
-					"@id": "https://gui-ying233.github.io/Nest/#Person"
-				},
-				"url": "https://gui-ying233.github.io/Nest/Safari%20animation%20Bug",
-				"isPartOf": {
-					"@id": "https://gui-ying233.github.io/Nest/#Blog"
-				},
-				"keywords": [
-					"Safari",
-					"animation",
-					"Bug",
-					"delay",
-					"paused",
-					"CSS",
-					"解决方案",
-					"解决方法"
+				"@graph": [
+					{
+						"@type": "BlogPosting",
+						"@id": "https://gui-ying233.github.io/Nest/Safari%20animation%20Bug#BlogPosting",
+						"mainEntityOfPage": "https://gui-ying233.github.io/Nest/Safari%20animation%20Bug",
+						"headline": "Safari animation Bug",
+						"name": "Safari animation Bug",
+						"description": "Safari 的一个 animation Bug 以及如何解决。",
+						"author": {
+							"@id": "https://gui-ying233.github.io/Nest/#Person"
+						},
+						"url": "https://gui-ying233.github.io/Nest/Safari%20animation%20Bug",
+						"isPartOf": {
+							"@id": "https://gui-ying233.github.io/Nest/#Blog"
+						},
+						"keywords": [
+							"Safari",
+							"animation",
+							"Bug",
+							"delay",
+							"paused",
+							"CSS",
+							"解决方案",
+							"解决方法"
+						]
+					},
+					{
+						"@type": "BreadcrumbList",
+						"itemListElement": [
+							{
+								"@type": "ListItem",
+								"position": 1,
+								"item": {
+									"@id": "https://gui-ying233.github.io/Nest/#Blog"
+								}
+							},
+							{
+								"@type": "ListItem",
+								"position": 2,
+								"item": {
+									"@id": "https://gui-ying233.github.io/Nest/Safari%20animation%20Bug#BlogPosting"
+								}
+							}
+						]
+					}
 				]
 			}
 		</script>
@@ -121,11 +144,17 @@
 			{ "prerender": [{ "urls": ["."] }] }
 		</script>
 	</head>
-	<body>
+	<body
+		role="article"
+		itemscope
+		itemtype="http://schema.org/BlogPosting"
+		itemid="https://gui-ying233.github.io/Nest/Safari%20animation%20Bug#BlogPosting"
+	>
 		<a
 			href="https://wisadel.gui-ying233.workers.dev/?utm_medium=referral&utm_source=gui-ying233.github.io/Nest/"
 			rel="noindex nofollow"
 			style="position: absolute; left: -9999px"
+			aria-hidden="true"
 		></a>
 		<noscript>
 			<img
@@ -134,11 +163,12 @@
 				alt=""
 		/></noscript>
 		<h1>Safari animation Bug</h1>
-		<h2>前言</h2>
-		<p>没啥好说的，众所周知 Safari 作为新时代 IE，Bug 一大堆。</p>
-		<p>另，本人未提报此 Bug。为什么？因为它是 Safari。</p>
-		<h2>实例</h2>
-		<pre data-lang="css">
+		<section itemprop="articleBody">
+			<h2>前言</h2>
+			<p>没啥好说的，众所周知 Safari 作为新时代 IE，Bug 一大堆。</p>
+			<p>另，本人未提报此 Bug。为什么？因为它是 Safari。</p>
+			<h2>实例</h2>
+			<pre data-lang="css">
 @keyframes spin {
 	to {
 		transform: rotate(360deg);
@@ -148,31 +178,31 @@
 	transform: rotate(0deg);
 	animation: spin 10s linear infinite forwards paused -2s;
 }</pre
-		>
-		<style>
-			@keyframes spin {
-				to {
-					transform: rotate(360deg);
+			>
+			<style>
+				@keyframes spin {
+					to {
+						transform: rotate(360deg);
+					}
 				}
-			}
-			.spin {
-				width: 100px;
-				height: 100px;
-				background-color: var(--foreground-color--2);
-				transform: rotate(0deg);
-				opacity: 1;
-				animation: spin 10s linear infinite forwards paused -2s;
-			}
-		</style>
-		<div class="spin"></div>
-		<h2>简介</h2>
-		<p>
-			只是一个简单的被暂停的动画，但是在 Safari 上动画不会暂停在 -2s
-			的位置，而是 0s 的位置。
-		</p>
-		<h2>解决方案</h2>
-		<h3>方案一</h3>
-		<pre data-lang="css">
+				.spin {
+					width: 100px;
+					height: 100px;
+					background-color: var(--foreground-color--2);
+					transform: rotate(0deg);
+					opacity: 1;
+					animation: spin 10s linear infinite forwards paused -2s;
+				}
+			</style>
+			<div class="spin"></div>
+			<h2>简介</h2>
+			<p>
+				只是一个简单的被暂停的动画，但是在 Safari 上动画不会暂停在 -2s
+				的位置，而是 0s 的位置。
+			</p>
+			<h2>解决方案</h2>
+			<h3>方案一</h3>
+			<pre data-lang="css">
 @keyframes spin {
 	to {
 		transform: rotate(360deg);
@@ -181,10 +211,10 @@
 .spin {
 	animation: spin 10s linear infinite forwards paused -2s;
 }</pre
-		>
-		<p>更加简单但可能不适用一些情况。</p>
-		<h3>方案二</h3>
-		<pre data-lang="css">
+			>
+			<p>更加简单但可能不适用一些情况。</p>
+			<h3>方案二</h3>
+			<pre data-lang="css">
 @keyframes spin {
 	from {
 		transform: rotate(0deg);
@@ -196,10 +226,10 @@
 .spin {
 	animation: spin 10s linear infinite forwards paused -2s;
 }</pre
-		>
-		<p>适用于更多情况，但代码可能更多。</p>
-		<h3>方案三</h3>
-		<pre data-lang="css">
+			>
+			<p>适用于更多情况，但代码可能更多。</p>
+			<h3>方案三</h3>
+			<pre data-lang="css">
 @keyframes spin {
 	to {
 		transform: rotate(360deg);
@@ -216,11 +246,12 @@
 	animation: spin 10s linear infinite forwards paused -2s,
 		fade-in 1s ease-out forwards;
 }</pre
-		>
-		<p>
-			增加另一个 <code>animation-play-state</code> 为
-			<code>running</code> 的动画。
-		</p>
+			>
+			<p>
+				增加另一个 <code>animation-play-state</code> 为
+				<code>running</code> 的动画。
+			</p>
+		</section>
 		<footer>
 			<a href=".">鬼影的基地</a>
 		</footer>

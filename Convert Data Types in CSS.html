@@ -58,30 +58,53 @@
 		<script type="application/ld+json">
 			{
 				"@context": "https://schema.org/",
-				"@type": "BlogPosting",
-				"@id": "https://gui-ying233.github.io/Nest/Convert%20Data%20Types%20in%20CSS#BlogPosting",
-				"mainEntityOfPage": "https://gui-ying233.github.io/Nest/Convert%20Data%20Types%20in%20CSS",
-				"headline": "在 CSS 中进行数据类型转换",
-				"name": "在 CSS 中进行数据类型转换",
-				"description": "在 CSS 中进行数据类型转换",
-				"author": {
-					"@id": "https://gui-ying233.github.io/Nest/#Person"
-				},
-				"url": "https://gui-ying233.github.io/Nest/Convert%20Data%20Types%20in%20CSS",
-				"isPartOf": {
-					"@id": "https://gui-ying233.github.io/Nest/#Blog"
-				},
-				"keywords": [
-					"CSS",
-					"数据类型",
-					"转换",
-					"数字",
-					"字符串",
-					"长度",
-					"counter",
-					"@property",
-					"tan",
-					"atan2"
+				"@graph": [
+					{
+						"@type": "BlogPosting",
+						"@id": "https://gui-ying233.github.io/Nest/Convert%20Data%20Types%20in%20CSS#BlogPosting",
+						"mainEntityOfPage": "https://gui-ying233.github.io/Nest/Convert%20Data%20Types%20in%20CSS",
+						"headline": "在 CSS 中进行数据类型转换",
+						"name": "在 CSS 中进行数据类型转换",
+						"description": "在 CSS 中进行数据类型转换",
+						"author": {
+							"@id": "https://gui-ying233.github.io/Nest/#Person"
+						},
+						"url": "https://gui-ying233.github.io/Nest/Convert%20Data%20Types%20in%20CSS",
+						"isPartOf": {
+							"@id": "https://gui-ying233.github.io/Nest/#Blog"
+						},
+						"keywords": [
+							"CSS",
+							"数据类型",
+							"转换",
+							"数字",
+							"字符串",
+							"长度",
+							"counter",
+							"@property",
+							"tan",
+							"atan2"
+						]
+					},
+					{
+						"@type": "BreadcrumbList",
+						"itemListElement": [
+							{
+								"@type": "ListItem",
+								"position": 1,
+								"item": {
+									"@id": "https://gui-ying233.github.io/Nest/#Blog"
+								}
+							},
+							{
+								"@type": "ListItem",
+								"position": 2,
+								"item": {
+									"@id": "https://gui-ying233.github.io/Nest/Convert%20Data%20Types%20in%20CSS#BlogPosting"
+								}
+							}
+						]
+					}
 				]
 			}
 		</script>
@@ -117,11 +140,17 @@
 			{ "prerender": [{ "urls": ["."] }] }
 		</script>
 	</head>
-	<body>
+	<body
+		role="article"
+		itemscope
+		itemtype="http://schema.org/BlogPosting"
+		itemid="https://gui-ying233.github.io/Nest/Convert%20Data%20Types%20in%20CSS#BlogPosting"
+	>
 		<a
 			href="https://wisadel.gui-ying233.workers.dev/?utm_medium=referral&utm_source=gui-ying233.github.io/Nest/"
 			rel="noindex nofollow"
 			style="position: absolute; left: -9999px"
+			aria-hidden="true"
 		></a>
 		<noscript>
 			<img
@@ -130,43 +159,48 @@
 				alt=""
 		/></noscript>
 		<h1>在 CSS 中进行数据类型转换</h1>
-		<h2>前言</h2>
-		<p>以下大部分方法的兼容性并不算高。</p>
-		<h2><code>&lt;number&gt;</code> → <code>&lt;dimension&gt;</code></h2>
-		<p>
-			最简单的，通过
-			<code>calc(5 * 1px)</code>
-			可以将数字转换为任何<code>&lt;dimension&gt;</code>。
-		</p>
-		<h2><code>&lt;dimension&gt;</code> → <code>&lt;number&gt;</code></h2>
-		<p>
-			第一时间想到的便是相对的
-			<code>calc(5px / 1px)</code
-			>，但这样实际上并不能成功。正确的方法是使用
-			<code>tan(atan2(5px, 1px))</code>。
-		</p>
-		<h2><code>&lt;integer&gt;</code> → <code>&lt;string&gt;</code></h2>
-		<pre data-lang="css">
+		<section itemprop="articleBody">
+			<h2>前言</h2>
+			<p>以下大部分方法的兼容性并不算高。</p>
+			<h2>
+				<code>&lt;number&gt;</code> → <code>&lt;dimension&gt;</code>
+			</h2>
+			<p>
+				最简单的，通过
+				<code>calc(5 * 1px)</code>
+				可以将数字转换为任何<code>&lt;dimension&gt;</code>。
+			</p>
+			<h2>
+				<code>&lt;dimension&gt;</code> → <code>&lt;number&gt;</code>
+			</h2>
+			<p>
+				第一时间想到的便是相对的
+				<code>calc(5px / 1px)</code
+				>，但这样实际上并不能成功。正确的方法是使用
+				<code>tan(atan2(5px, 1px))</code>。
+			</p>
+			<h2><code>&lt;integer&gt;</code> → <code>&lt;string&gt;</code></h2>
+			<pre data-lang="css">
 ::before {
 	counter-reset: n 1;
 	content: counter(n);
 }</pre
-		>
-		<p>
-			注意此处的数字如果是直接指定（包括变量）为一个非整数，那其会被设定为
-			0。但如果是通过计算得到的，则会被隐式转换为整数（四舍五入）。
-		</p>
-		<p>而如果需要保留小数部分，可以通过：</p>
-		<pre data-lang="css">
+			>
+			<p>
+				注意此处的数字如果是直接指定（包括变量）为一个非整数，那其会被设定为
+				0。但如果是通过计算得到的，则会被隐式转换为整数（四舍五入）。
+			</p>
+			<p>而如果需要保留小数部分，可以通过：</p>
+			<pre data-lang="css">
 ::before {
 	--n: calc(pi);
 	--w: round(down, var(--n));
 	counter-reset: w var(--w) f calc((var(--n) - var(--w)) * pow(10, 2));
 	content: counter(w) "." counter(f);
 }</pre
-		>
-		<p>或者兼容性稍微好一点的：</p>
-		<pre data-lang="css">
+			>
+			<p>或者兼容性稍微好一点的：</p>
+			<pre data-lang="css">
 @property --w {
 	syntax: "&lt;integer&gt;";
 	inherits: false;
@@ -179,9 +213,11 @@
 	counter-reset: w var(--w) f calc((var(--n) - var(--w)) * pow(10, var(--r)) - 0.5 + pow(10, calc(var(--r) * -1)));
 	content: counter(w) "." counter(f);
 }</pre
-		>
-		<h2><code>&lt;dimension&gt;</code> → <code>&lt;dimension&gt;</code></h2>
-		<pre>
+			>
+			<h2>
+				<code>&lt;dimension&gt;</code> → <code>&lt;dimension&gt;</code>
+			</h2>
+			<pre>
 @property --d2d {
 	syntax: "&lt;length&gt;";
 	inherits: false;
@@ -192,15 +228,16 @@
 	counter-reset: n tan(atan2(var(--d2d), 1px));
 	content: counter(n);
 }</pre
-		>
-		<p>通过这种方式，我们可以方便地查看每个元素的字体大小（px）。</p>
-		<p>
-			类似地，我们也可以通过
-			<code>--d2d: calc(100vw);</code> 来查看视口的实时宽度。
-		</p>
-		<p>
-			但似乎这种方式在与上方的小数显示方法一起使用时会出现问题，具体原因不明。
-		</p>
+			>
+			<p>通过这种方式，我们可以方便地查看每个元素的字体大小（px）。</p>
+			<p>
+				类似地，我们也可以通过
+				<code>--d2d: calc(100vw);</code> 来查看视口的实时宽度。
+			</p>
+			<p>
+				但似乎这种方式在与上方的小数显示方法一起使用时会出现问题，具体原因不明。
+			</p>
+		</section>
 		<footer>
 			<a href=".">鬼影的基地</a>
 		</footer>

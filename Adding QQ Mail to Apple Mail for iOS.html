@@ -67,41 +67,64 @@
 		<script type="application/ld+json">
 			{
 				"@context": "https://schema.org/",
-				"@type": "BlogPosting",
-				"@id": "https://gui-ying233.github.io/Nest/Adding%20QQ%20Mail%20to%20Apple%20Mail%20for%20iOS#BlogPosting",
-				"mainEntityOfPage": "https://gui-ying233.github.io/Nest/Adding%20QQ%20Mail%20to%20Apple%20Mail%20for%20iOS",
-				"headline": "在 iOS 的 Apple Mail 中添加 QQ邮箱",
-				"name": "在 iOS 的 Apple Mail 中添加 QQ邮箱",
-				"description": "在 iOS 的 Apple Mail 中添加 QQ邮箱",
-				"author": {
-					"@id": "https://gui-ying233.github.io/Nest/#Person"
-				},
-				"url": "https://gui-ying233.github.io/Nest/Adding%20QQ%20Mail%20to%20Apple%20Mail%20for%20iOS",
-				"isPartOf": {
-					"@id": "https://gui-ying233.github.io/Nest/#Blog"
-				},
-				"keywords": [
-					"QQ",
-					"Apple",
-					"Mail",
-					"iOS",
-					"邮箱",
-					"邮件",
-					"iPhone",
-					"Exchange",
-					"POP3",
-					"IMAP",
-					"SMTP",
-					"CardDAV",
-					"CalDAV",
-					"Contacts",
-					"Calendar",
-					"Reminders",
-					"Notes",
-					"联系人",
-					"日历",
-					"提醒事项",
-					"备忘录"
+				"@graph": [
+					{
+						"@type": "BlogPosting",
+						"@id": "https://gui-ying233.github.io/Nest/Adding%20QQ%20Mail%20to%20Apple%20Mail%20for%20iOS#BlogPosting",
+						"mainEntityOfPage": "https://gui-ying233.github.io/Nest/Adding%20QQ%20Mail%20to%20Apple%20Mail%20for%20iOS",
+						"headline": "在 iOS 的 Apple Mail 中添加 QQ邮箱",
+						"name": "在 iOS 的 Apple Mail 中添加 QQ邮箱",
+						"description": "在 iOS 的 Apple Mail 中添加 QQ邮箱",
+						"author": {
+							"@id": "https://gui-ying233.github.io/Nest/#Person"
+						},
+						"url": "https://gui-ying233.github.io/Nest/Adding%20QQ%20Mail%20to%20Apple%20Mail%20for%20iOS",
+						"isPartOf": {
+							"@id": "https://gui-ying233.github.io/Nest/#Blog"
+						},
+						"keywords": [
+							"QQ",
+							"Apple",
+							"Mail",
+							"iOS",
+							"邮箱",
+							"邮件",
+							"iPhone",
+							"Exchange",
+							"POP3",
+							"IMAP",
+							"SMTP",
+							"CardDAV",
+							"CalDAV",
+							"Contacts",
+							"Calendar",
+							"Reminders",
+							"Notes",
+							"联系人",
+							"日历",
+							"提醒事项",
+							"备忘录"
+						]
+					},
+					{
+						"@type": "BreadcrumbList",
+						"itemListElement": [
+							{
+								"@type": "ListItem",
+								"position": 1,
+								"item": {
+									"@id": "https://gui-ying233.github.io/Nest/#Blog"
+								}
+							},
+							{
+								"@type": "ListItem",
+								"position": 2,
+								"item": {
+									"@id": "https://gui-ying233.github.io/Nest/Adding%20QQ%20Mail%20to%20Apple%20Mail%20for%20iOS#BlogPosting"
+								}
+							}
+						]
+					}
 				]
 			}
 		</script>
@@ -145,11 +168,17 @@
 			}
 		</script>
 	</head>
-	<body>
+	<body
+		role="article"
+		itemscope
+		itemtype="http://schema.org/BlogPosting"
+		itemid="https://gui-ying233.github.io/Nest/Adding%20QQ%20Mail%20to%20Apple%20Mail%20for%20iOS#BlogPosting"
+	>
 		<a
 			href="https://wisadel.gui-ying233.workers.dev/?utm_medium=referral&utm_source=gui-ying233.github.io/Nest/"
 			rel="noindex nofollow"
 			style="position: absolute; left: -9999px"
+			aria-hidden="true"
 		></a>
 		<noscript>
 			<img
@@ -158,25 +187,31 @@
 				alt=""
 		/></noscript>
 		<h1>在 iOS 的 Apple Mail 中添加 QQ邮箱</h1>
-		<h2>前言</h2>
-		<p>是的，我喜欢用苹果自带的邮箱，无论是 iPhone 上还是 MacBook 上。</p>
-		<h2>步骤</h2>
-		<h3>获取授权码</h3>
-		<p>
-			前往<a href="https://mail.qq.com" target="_blank">网页版</a>
-			QQ邮箱，设置 → 账户 → POP3/IMAP/SMTP/Exchange/CardDAV/CalDAV服务 →
-			管理服务 → 生成授权码
-		</p>
-		<p>前要填写，所以接下来授权码会很有用。</p>
-		<h3>添加账户</h3>
-		<p>前往 iPhone 的设置，邮件 → 账户 → 添加账户 → Microsoft Exchange</p>
-		<p>“电子邮件”处填写 QQ邮箱地址，“描述”处填写“QQ”。</p>
-		<p>下一步 → 手动配置</p>
-		<p>
-			“服务器”处填写“ex.qq.com”，“域”处留空，“用户名”处再次填写 QQ
-			邮箱地址，“密码”处填写<b>授权码</b>。
-		</p>
-		<p>下一步，之后就没什么好教学的了，</p>
+		<section itemprop="articleBody">
+			<h2>前言</h2>
+			<p>
+				是的，我喜欢用苹果自带的邮箱，无论是 iPhone 上还是 MacBook 上。
+			</p>
+			<h2>步骤</h2>
+			<h3>获取授权码</h3>
+			<p>
+				前往<a href="https://mail.qq.com" target="_blank">网页版</a>
+				QQ邮箱，设置 → 账户 → POP3/IMAP/SMTP/Exchange/CardDAV/CalDAV服务
+				→ 管理服务 → 生成授权码
+			</p>
+			<p>前要填写，所以接下来授权码会很有用。</p>
+			<h3>添加账户</h3>
+			<p>
+				前往 iPhone 的设置，邮件 → 账户 → 添加账户 → Microsoft Exchange
+			</p>
+			<p>“电子邮件”处填写 QQ邮箱地址，“描述”处填写“QQ”。</p>
+			<p>下一步 → 手动配置</p>
+			<p>
+				“服务器”处填写“ex.qq.com”，“域”处留空，“用户名”处再次填写 QQ
+				邮箱地址，“密码”处填写<b>授权码</b>。
+			</p>
+			<p>下一步，之后就没什么好教学的了，</p>
+		</section>
 		<footer>
 			<a href=".">鬼影的基地</a>
 		</footer>

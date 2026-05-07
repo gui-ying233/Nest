@@ -235,10 +235,12 @@
 				"prerender": [
 					{
 						"where": {
-							"selector_matches": [
-								"section li:last-of-type>a[href]"
-							],
-							"href_matches": "/*"
+							"and": {
+								"selector_matches": [
+									"section li:last-of-type>a[href]"
+								],
+								"href_matches": "/*"
+							}
 						},
 						"eagerness": "immediate"
 					},

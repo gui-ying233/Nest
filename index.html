@@ -229,10 +229,21 @@
 						"where": {
 							"selector_matches": "a[href][target='_blank']"
 						},
+						"target_hint": "_blank",
+						"target_hint": "_blank",
 						"eagerness": "moderate"
 					}
 				],
 				"prerender": [
+					{
+						"where": {
+							"selector_matches": [
+								"section li:last-of-type>a[href]"
+							],
+							"href_matches": "/*"
+						},
+						"eagerness": "eager"
+					},
 					{
 						"where": { "href_matches": "/*" },
 						"eagerness": "moderate"

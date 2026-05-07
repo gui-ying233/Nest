@@ -138,16 +138,23 @@
 		/>
 		<script type="speculationrules">
 			{
+				"prefetch": [
+					{ "urls": [".."] },
+					{
+						"where": { "href_matches": "/*" },
+						"eagerness": "immediate"
+					},
+					{
+						"where": {
+							"selector_matches": "a[href][target='_blank']"
+						},
+						"eagerness": "moderate"
+					}
+				],
 				"prerender": [
 					{ "urls": [".."] },
 					{
 						"where": { "href_matches": "/*" },
-						"eagerness": "moderate"
-					}
-				],
-				"prefetch": [
-					{
-						"where": { "selector_matches": "a[target='_blank']" },
 						"eagerness": "moderate"
 					}
 				]

@@ -208,15 +208,16 @@
 		/>
 		<script type="speculationrules">
 			{
-				"prerender": [{ "urls": ["."] }],
 				"prefetch": [
+					{ "urls": ["."] },
 					{
 						"where": {
 							"selector_matches": "a[href][target='_blank']"
 						},
 						"eagerness": "moderate"
 					}
-				]
+				],
+				"prerender": [{ "urls": ["."] }]
 			}
 		</script>
 	</head>

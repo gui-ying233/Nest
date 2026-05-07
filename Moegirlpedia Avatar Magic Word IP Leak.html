@@ -166,6 +166,18 @@
 		/>
 		<script type="speculationrules">
 			{
+				"prefetch": [
+					{
+						"where": { "href_matches": "/*" },
+						"eagerness": "immediate"
+					},
+					{
+						"where": {
+							"selector_matches": "a[href][target='_blank']"
+						},
+						"eagerness": "moderate"
+					}
+				],
 				"prerender": [
 					{ "urls": ["."] },
 					{
@@ -174,21 +186,6 @@
 							"Moegirlpedia%20Horizontal%20Privilege%20Escalation%20Bug"
 						],
 						"eagerness": "eager"
-					}
-				],
-				"prefetch": [
-					{
-						"urls": [
-							"Moegirlpedia%20Comment%20List%20IP%20Leak",
-							"Moegirlpedia%20Horizontal%20Privilege%20Escalation%20Bug"
-						]
-					},
-					{
-						"where": {
-							"selector_matches": "a[href][target='_blank']"
-						},
-						"target_hint": "_blank",
-						"eagerness": "moderate"
 					}
 				]
 			}

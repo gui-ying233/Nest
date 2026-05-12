@@ -288,6 +288,11 @@ blockquote > p:has(cite) {
 	font-style: normal;
 }
 
+abbr[title] {
+	cursor: help;
+	text-decoration: underline dotted;
+}
+
 footer {
 	margin-top: 3em;
 }

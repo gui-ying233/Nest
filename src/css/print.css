@@ -16,9 +16,11 @@ footer {
 }
 a[href],
 a[href]::after {
-	border-bottom: unset;
 	text-decoration: underline;
-	text-underline-offset: 0.25em;
+	line-height: 1.25;
+}
+abbr[title]::after {
+	text-decoration: underline dotted;
 	line-height: 1.25;
 }
 a[href]::after {
@@ -26,12 +28,10 @@ a[href]::after {
 }
 a[href^="#"],
 a[href^="#"]::after {
-	border-bottom-style: unset;
 	text-decoration-style: dotted;
 }
 a[target="_blank"],
 a[target="_blank"]::after {
-	border-bottom-style: unset;
 	text-decoration-style: dashed;
 }
 a[href]::after {
@@ -40,4 +40,12 @@ a[href]::after {
 	overflow-wrap: anywhere;
 	font-style: italic;
 	font-size: 0.75em;
+}
+abbr[title]::after {
+	content: "（" attr(title) "）";
+	display: inline-block;
+	overflow-wrap: anywhere;
+	font-style: italic;
+	font-size: 0.75em;
+	vertical-align: bottom;
 }

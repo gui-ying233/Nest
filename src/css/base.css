@@ -291,6 +291,7 @@ blockquote > p:has(cite) {
 abbr[title] {
 	cursor: help;
 	text-decoration: underline dotted;
+	text-underline-offset: 0.25em;
 }
 
 footer {

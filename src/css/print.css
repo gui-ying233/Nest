@@ -17,10 +17,7 @@ footer {
 a[href],
 a[href]::after {
 	text-decoration: underline;
-	line-height: 1.25;
-}
-abbr[title]::after {
-	text-decoration: underline dotted;
+	text-underline-offset: 0.25em;
 	line-height: 1.25;
 }
 a[href]::after {
@@ -45,7 +42,11 @@ abbr[title]::after {
 	content: "（" attr(title) "）";
 	display: inline-block;
 	overflow-wrap: anywhere;
+	font-family: cursive;
 	font-style: italic;
 	font-size: 0.75em;
 	vertical-align: bottom;
+	text-decoration: underline dotted;
+	text-underline-offset: 0.25em;
+	line-height: 1.25;
 }

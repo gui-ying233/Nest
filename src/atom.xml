@@ -5,6 +5,11 @@
 		<link>https://gui-ying233.github.io/Nest/?utm_medium=referral&amp;utm_source=atom</link>
 		<atom:link href="https://gui-ying233.github.io/Nest/src/atom.xml" rel="self"
 			type="application/atom+xml" />
+		<image>
+			<url>https://testingcf.jsdelivr.net/gh/gui-ying233/Nest@main/src/asset/favicon.ico</url>
+			<title>鬼影的基地</title>
+			<link>https://gui-ying233.github.io/Nest/?utm_medium=referral&amp;utm_source=atom</link>
+		</image>
 		<item>
 			<title>CSS 像素画的方法</title>
 			<description>暴力的 div、table 堆叠不在此进行赘述，image-rendering、svg 与 canvas 不在范围内。</description>

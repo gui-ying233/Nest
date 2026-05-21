@@ -296,6 +296,12 @@ abbr[title] {
 	text-underline-offset: 0.25em;
 }
 
+mark {
+	background-color: rgba(255, 255, 0, 0.5);
+	color: inherit;
+	border: 1px solid #ff0;
+}
+
 footer {
 	margin-top: 3em;
 }
@@ -365,6 +371,9 @@ footer > a ~ a::before {
 	}
 	picture {
 		--base64: var(--dark-base64);
+	}
+	mark {
+		background-color: rgba(255, 255, 0, 0.25);
 	}
 }
 ::selection {

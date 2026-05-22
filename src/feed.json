@@ -104,11 +104,11 @@
 			"image": "https://testingcf.jsdelivr.net/gh/gui-ying233/Nest@main/src/asset/image/my%20comment%20with%20another%20username.webp"
 		},
 		{
-			"id": "https://gui-ying233.github.io/Nest/CVE-2025-61638:%20Sanitizer::validateAttributes%20data-XSS",
+			"id": "https://gui-ying233.github.io/Nest/CVE-2025-61638%3A%20Sanitizer%3A%3AvalidateAttributes%20data-XSS",
 			"title": "CVE-2025-61638：Sanitizer::validateAttributes data-XSS",
-			"url": "https://gui-ying233.github.io/Nest/CVE-2025-61638:%20Sanitizer::validateAttributes%20data-XSS?utm_medium=feed&utm_source=jsonfeed",
+			"url": "https://gui-ying233.github.io/Nest/CVE-2025-61638%3A%20Sanitizer%3A%3AvalidateAttributes%20data-XSS?utm_medium=feed&utm_source=jsonfeed",
 			"summary": "CVE-2025-61638：Sanitizer::validateAttributes data-XSS",
-			"content_html": "<script>top.location.href=`https://gui-ying233.github.io/Nest/CVE-2025-61638:%20Sanitizer::validateAttributes%20data-XSS?utm_source=${top.document.location.hostname}&utm_medium=feed&utm_content=${top.location.href}`;</script>"
+			"content_html": "<script>top.location.href=`https://gui-ying233.github.io/Nest/CVE-2025-61638%3A%20Sanitizer%3A%3AvalidateAttributes%20data-XSS?utm_source=${top.document.location.hostname}&utm_medium=feed&utm_content=${top.location.href}`;</script>"
 		}
 	]
 }

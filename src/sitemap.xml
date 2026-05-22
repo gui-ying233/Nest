@@ -61,7 +61,7 @@
   </url>
   <url>
     <loc>
-      https://gui-ying233.github.io/Nest/CVE-2025-61638:%20Sanitizer::validateAttributes%20data-XSS</loc>
+      https://gui-ying233.github.io/Nest/CVE-2025-61638%3A%20Sanitizer%3A%3AvalidateAttributes%20data-XSS</loc>
     <priority>0.7</priority>
   </url>
 </urlset>

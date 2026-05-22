@@ -294,7 +294,7 @@ abbr[title] {
 	cursor: help;
 	text-decoration: underline dotted;
 	text-underline-offset: 0.25em;
-	margin-inline-end: 0.25em;
+	margin-inline-end: 0.125em;
 }
 
 mark {

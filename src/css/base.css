@@ -300,9 +300,9 @@ abbr[title] {
 }
 
 mark {
-	background-color: rgba(255, 255, 0, 0.5);
+	background-color: rgb(from var(--yellow) r g b / 50%);
+	border: 1px solid var(--yellow);
 	color: inherit;
-	border: 1px solid #ff0;
 }
 
 footer {
@@ -353,6 +353,7 @@ footer > a ~ a::before {
 	--font-weight--3: 600;
 	--font-weight--4: 400;
 	--font-weight--5: 200;
+	--yellow: #ebcb8b;
 }
 @media (prefers-color-scheme: dark) {
 	:root {
@@ -374,9 +375,6 @@ footer > a ~ a::before {
 	}
 	picture {
 		--base64: var(--dark-base64);
-	}
-	mark {
-		background-color: rgba(255, 255, 0, 0.25);
 	}
 }
 ::selection {

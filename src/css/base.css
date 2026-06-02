@@ -383,6 +383,14 @@ footer > a ~ a::before {
 	background-color: var(--foreground-color--1);
 	color: var(--background-color--1);
 }
+::search-text {
+	background-color: rgb(from var(--yellow) r g b / 50%);
+	text-shadow: 0 0 0.5px;
+}
+::search-text:current {
+	background-color: var(--yellow);
+	color: var(--black--1);
+}
 
 @media not (prefers-reduced-motion: reduce) {
 	@view-transition {

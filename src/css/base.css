@@ -265,7 +265,7 @@ blockquote {
 	padding: 1em 2em;
 	font-family: ui-serif, serif;
 	width: fit-content;
-	justify-self: center;
+	margin-inline: auto;
 }
 [lang|="zh-Hans"] blockquote::before,
 [lang|="zh-Hans"] blockquote::after {

@@ -30,7 +30,7 @@ body * {
 
 html {
 	background-color: var(--background-color--1);
-	font-family: ui-sans-serif, sans-serif;
+	font-family: sans-serif;
 	font-weight: var(--font-weight--4);
 	color: var(--foreground-color--1);
 	transition:
@@ -66,7 +66,7 @@ h3,
 h4,
 h5,
 h6 {
-	font-family: ui-serif, serif;
+	font-family: serif;
 	color: var(--foreground-color-titles);
 	transition: var(--transition--color), var(--transition--font-weight);
 }
@@ -221,7 +221,7 @@ em {
 
 pre,
 code {
-	font-family: ui-monospace, monospace;
+	font-family: monospace, monospace;
 	tab-size: 4;
 	transition:
 		var(--transition--outline-color), var(--transition--background-color);
@@ -263,7 +263,7 @@ pre[data-lang]::before {
 blockquote {
 	position: relative;
 	padding: 1em 2em;
-	font-family: ui-serif, serif;
+	font-family: serif;
 	width: fit-content;
 	margin-inline: auto;
 }

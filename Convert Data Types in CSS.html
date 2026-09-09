@@ -211,7 +211,7 @@
 				<code>tan(atan2(5px, 1px))</code>。
 			</p>
 			<h2><code>&lt;integer&gt;</code> → <code>&lt;string&gt;</code></h2>
-			<pre data-lang="css">
+			<pre data-lang="CSS">
 ::before {
 	counter-reset: n 1;
 	content: counter(n);
@@ -222,7 +222,7 @@
 				0。但如果是通过计算得到的，则会被隐式转换为整数（四舍五入）。
 			</p>
 			<p>而如果需要保留小数部分，可以通过：</p>
-			<pre data-lang="css">
+			<pre data-lang="CSS">
 ::before {
 	--n: calc(pi);
 	--w: round(down, var(--n));
@@ -231,7 +231,7 @@
 }</pre
 			>
 			<p>或者兼容性稍微好一点的：</p>
-			<pre data-lang="css">
+			<pre data-lang="CSS">
 @property --w {
 	syntax: "&lt;integer&gt;";
 	inherits: false;
@@ -248,7 +248,7 @@
 			<h2>
 				<code>&lt;dimension&gt;</code> → <code>&lt;dimension&gt;</code>
 			</h2>
-			<pre data-lang="css">
+			<pre data-lang="CSS">
 @property --d2d {
 	syntax: "&lt;length&gt;";
 	inherits: false;

@@ -260,6 +260,20 @@ pre[data-lang]::before {
 		var(--transition--background-color), var(--transition--color),
 		var(--transition--font-weight);
 }
+pre > * {
+	display: flow;
+}
+pre > * + * {
+	margin-block-start: 0.25em;
+	padding-block-start: 0.25em;
+	border-block-start: solid var(--background-color--3);
+	transition: border-block-start-color 350ms;
+}
+pre[data-lang="Shell"] > kbd::before {
+	content: "$ ";
+	color: var(--foreground-color--3);
+	transition: var(--transition--color);
+}
 blockquote {
 	position: relative;
 	padding: 1em 2em;

@@ -267,11 +267,10 @@
 				中）会导致后续的代码直接失效的情况，但无法复现。
 			</p>
 			<h2>复现</h2>
-			<pre data-lang="CSS">
-* {
+			<pre data-lang="CSS"><code>* {
 	background-image: url();
 	color: #FF0;
-}</pre
+}</code></code></pre>
 			>
 			<p>将此段代码放入 inspector-stylesheet 中，即可复现。</p>
 			<figure>
@@ -309,11 +308,10 @@
 				</figcaption>
 			</figure>
 			<h2>解决方案</h2>
-			<pre data-lang="CSS">
-* {
+			<pre data-lang="CSS"><code>* {
 	background-image: url("");
 	color: #FF0;
-}</pre
+}</code></pre
 			>
 			<h2>后记</h2>
 			<p>

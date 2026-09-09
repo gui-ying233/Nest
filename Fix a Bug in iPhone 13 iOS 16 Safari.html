@@ -375,8 +375,7 @@
 					></small
 				>
 			</p>
-			<pre data-lang="HTML">
-&lt;head&gt;
+			<pre data-lang="HTML"><code>&lt;head&gt;
 	&lt;style&gt;
 		.d-tab .hidden {
 			display: none;
@@ -513,11 +512,10 @@
 		&lt;/style&gt;
 	&lt;/div&gt;
 &lt;/body&gt;
-</pre
+</code></pre
 			>
 			<p>根据报告人说，在删除了其中这段代码后便能恢复正常：</p>
-			<pre data-lang="CSS">
-.d-tab > .d-tab-titles > .d-tab-title.active:after {
+			<pre data-lang="CSS"><code>.d-tab > .d-tab-titles > .d-tab-title.active:after {
 	content: "";
 	position: absolute;
 	height: 2px;
@@ -525,7 +523,7 @@
 	background: #fff1c5;
 	left: 5px;
 	bottom: 0;
-}</pre
+}</code></pre
 			>
 			<p>这不合理，但确实恢复了……</p>
 			<p>
@@ -561,13 +559,12 @@
 				<code>console.log(ele.innerText);</code>
 			</p>
 			<p>我们可以发现在这之后文字就消失了：</p>
-			<pre data-lang="JavaScript">
-// 移除其他 tab 的 active 类
+			<pre data-lang="JavaScript"><code>// 移除其他 tab 的 active 类
 titleList.forEach(t =>
 	t.classList.remove("active")
 );
 tab.classList.add("active");
-</pre
+</code></pre
 			>
 			<p>
 				至此，我们已经定位到了具体位置，大概确定了原因，那么是时候解决了。

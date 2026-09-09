@@ -237,16 +237,13 @@
 				<code>desktop</code> 值改为 <code>osxkeychain</code>。
 			</p>
 			<p>回到终端。</p>
-			<pre data-lang="Shell">
-export VIPER_DIR=~/VIPER
-mkdir -p $VIPER_DIR && cd $VIPER_DIR</pre
+			<pre data-lang="Shell"><kbd>export VIPER_DIR=~/VIPER
+mkdir -p $VIPER_DIR && cd $VIPER_DIR</kbd></pre
 			>
-			<pre data-lang="Shell">
-sudo su
-ulimit -n 65535</pre
+			<pre data-lang="Shell"><kbd>sudo su
+ulimit -n 65535</kbd></pre
 			>
-			<pre data-lang="Shell">
-tee docker-compose.yml <<-'EOF'
+			<pre data-lang="Shell"><kbd>tee docker-compose.yml <<-'EOF'
 version: "3"
 services:
 	viper:
@@ -262,24 +259,21 @@ services:
 		- ${PWD}/log:/root/viper/Docker/log
 		- ${PWD}/nginxconfig:/root/viper/Docker/nginxconfig
 	command: ["VIPER_PASSWORD"]
-EOF</pre
+EOF</code></pre
 			>
-			<pre data-lang="Shell">export VIPER_PASSWORD=diypassword</pre>
-			<pre data-lang="Shell">
-sed -i "" "s/VIPER_PASSWORD/$VIPER_PASSWORD/g" docker-compose.yml</pre
+			<pre data-lang="Shell"><kbd>export VIPER_PASSWORD=diypassword</kbd></pre>
+			<pre data-lang="Shell"><kbd>sed -i "" "s/VIPER_PASSWORD/$VIPER_PASSWORD/g" docker-compose.yml</kbd></pre
 			>
-			<pre data-lang="Shell">
-mkdir -p /usr/local/lib/docker
+			<pre data-lang="Shell"><kbd>mkdir -p /usr/local/lib/docker
 ln -s /Applications/Docker.app/Contents/Resources/cli-plugins /usr/local/lib/docker/cli-plugins
-		</pre
+		</kbd></pre
 			>
 			<p>
 				前往 Docker Desktop 的设置，将 Resources > File sharing >
 				Virtual file shares 下添加路径 <code>/</code>，确定并重启。
 			</p>
-			<pre data-lang="Shell">
-cd $VIPER_DIR
-docker compose up -d</pre
+			<pre data-lang="Shell"><kbd>cd $VIPER_DIR
+docker compose up -d</kbd></pre
 			>
 			<p>
 				然后可以去 Docker Desktop 中前往 Containers，确保关闭“Only show

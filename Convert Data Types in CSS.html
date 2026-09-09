@@ -211,28 +211,25 @@
 				<code>tan(atan2(5px, 1px))</code>。
 			</p>
 			<h2><code>&lt;integer&gt;</code> → <code>&lt;string&gt;</code></h2>
-			<pre data-lang="CSS">
-::before {
+			<pre data-lang="CSS"><code>::before {
 	counter-reset: n 1;
 	content: counter(n);
-}</pre
+}</code></pre
 			>
 			<p>
 				注意此处的数字如果是直接指定（包括变量）为一个非整数，那其会被设定为
 				0。但如果是通过计算得到的，则会被隐式转换为整数（四舍五入）。
 			</p>
 			<p>而如果需要保留小数部分，可以通过：</p>
-			<pre data-lang="CSS">
-::before {
+			<pre data-lang="CSS"><code>::before {
 	--n: calc(pi);
 	--w: round(down, var(--n));
 	counter-reset: w var(--w) f calc((var(--n) - var(--w)) * pow(10, 2));
 	content: counter(w) "." counter(f);
-}</pre
+}</code></pre
 			>
 			<p>或者兼容性稍微好一点的：</p>
-			<pre data-lang="CSS">
-@property --w {
+			<pre data-lang="CSS"><code>@property --w {
 	syntax: "&lt;integer&gt;";
 	inherits: false;
 	initial-value: 0;
@@ -243,13 +240,12 @@
 	--r: 3;
 	counter-reset: w var(--w) f calc((var(--n) - var(--w)) * pow(10, var(--r)) - 0.5 + pow(10, calc(var(--r) * -1)));
 	content: counter(w) "." counter(f);
-}</pre
+}</code></pre
 			>
 			<h2>
 				<code>&lt;dimension&gt;</code> → <code>&lt;dimension&gt;</code>
 			</h2>
-			<pre data-lang="CSS">
-@property --d2d {
+			<pre data-lang="CSS"><code>@property --d2d {
 	syntax: "&lt;length&gt;";
 	inherits: false;
 	initial-value: 0;
@@ -258,7 +254,7 @@
 	--d2d: calc(1em);
 	counter-reset: n tan(atan2(var(--d2d), 1px));
 	content: counter(n);
-}</pre
+}</code></pre
 			>
 			<p>通过这种方式，我们可以方便地查看每个元素的字体大小（px）。</p>
 			<p>

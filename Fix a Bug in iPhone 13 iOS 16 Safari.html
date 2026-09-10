@@ -512,10 +512,11 @@
 		&lt;/style&gt;
 	&lt;/div&gt;
 &lt;/body&gt;
-</code></pre
-			>
+</code></pre>
 			<p>根据报告人说，在删除了其中这段代码后便能恢复正常：</p>
-			<pre data-lang="CSS"><code>.d-tab > .d-tab-titles > .d-tab-title.active:after {
+			<pre
+				data-lang="CSS"
+			><code>.d-tab > .d-tab-titles > .d-tab-title.active:after {
 	content: "";
 	position: absolute;
 	height: 2px;
@@ -523,8 +524,7 @@
 	background: #fff1c5;
 	left: 5px;
 	bottom: 0;
-}</code></pre
-			>
+}</code></pre>
 			<p>这不合理，但确实恢复了……</p>
 			<p>
 				先大概看一眼各个的计算样式，似乎也没啥问题。那先确认是渲染 / CSS
@@ -564,8 +564,7 @@ titleList.forEach(t =>
 	t.classList.remove("active")
 );
 tab.classList.add("active");
-</code></pre
-			>
+</code></pre>
 			<p>
 				至此，我们已经定位到了具体位置，大概确定了原因，那么是时候解决了。
 			</p>
@@ -579,7 +578,7 @@ tab.classList.add("active");
 				正当我苦思冥想之际（并不），我突发奇想，试了一下使用<a
 					href="https://developer.mozilla.org/zh-CN/docs/Web/API/HTML_DOM_API/Microtask_guide/In_depth"
 					target="_blank"
-					>微任务</a
+					>任务</a
 				>：
 				<code>setTimeout(() => tab.classList.add("active"), 0);</code>
 				就成功修复了……

@@ -1,0 +1,487 @@
+<!doctype html>
+<html lang="zh-Hans-CN">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link
+			rel="preload"
+			fetchpriority="high"
+			as="style"
+			href="https://testingcf.jsdelivr.net/gh/gui-ying233/Nest@main/src/css/base.min.css"
+		/>
+		<meta name="color-scheme" content="light dark" />
+		<meta name="theme-color" content="hsl(0, 0%, 92%);" />
+		<meta
+			name="theme-color"
+			media="(prefers-color-scheme: dark)"
+			content="hsl(0, 0%, 4%);"
+		/>
+		<meta name="author" content="鬼影233" />
+		<meta name="description" content="RSA:从 00 开始的钥匙串导入崩溃" />
+		<meta
+			name="keywords"
+			content="RSA, Netscape, E-Certify, 钥匙串, Keychain, 崩溃, 导入, 证书, CA, 根证书, 512位"
+		/>
+		<meta property="og:title" content="RSA:从 00 开始的钥匙串导入崩溃" />
+		<meta property="og:locale" content="zh_CN" />
+		<meta
+			property="og:url"
+			content="https://gui-ying233.github.io/Nest/RSA:Crashing%20in%20a%20Keychain%20import%20from%2000"
+		/>
+		<meta property="og:site_name" content="鬼影的基地" />
+		<meta
+			property="og:description"
+			content="RSA:从 00 开始的钥匙串导入崩溃"
+		/>
+		<meta property="og:type" content="article" />
+		<meta property="article:author" content="鬼影233" />
+		<meta name="twitter:card" content="summary" />
+		<meta
+			property="twitter:title"
+			content="RSA:从 00 开始的钥匙串导入崩溃"
+		/>
+		<meta property="twitter:creator" content="@guiying2333" />
+		<meta property="twitter:site" content="@guiying2333" />
+		<link
+			rel="alternate"
+			type="application/atom+xml"
+			href="https://gui-ying233.github.io/Nest/src/atom.xml"
+		/>
+		<link
+			rel="alternate"
+			type="application/feed+json"
+			href="https://gui-ying233.github.io/Nest/src/feed.json"
+		/>
+		<link
+			rel="canonical"
+			href="https://gui-ying233.github.io/Nest/RSA:Crashing%20in%20a%20Keychain%20import%20from%2000"
+		/>
+		<link
+			rel="icon"
+			type="image/x-icon"
+			href="https://testingcf.jsdelivr.net/gh/gui-ying233/Nest@main/src/asset/favicon.ico"
+		/>
+		<link
+			rel="apple-touch-icon"
+			href="https://testingcf.jsdelivr.net/gh/gui-ying233/Nest@main/src/asset/favicon.ico"
+		/>
+		<title>RSA:从 00 开始的钥匙串导入崩溃 - 鬼影的基地</title>
+		<script type="application/ld+json">
+			{
+				"@context": "https://schema.org/",
+				"@graph": [
+					{
+						"@type": "BlogPosting",
+						"@id": "https://gui-ying233.github.io/Nest/RSA:Crashing%20in%20a%20Keychain%20import%20from%2000#BlogPosting",
+						"mainEntityOfPage": "https://gui-ying233.github.io/Nest/RSA:Crashing%20in%20a%20Keychain%20import%20from%2000",
+						"headline": "RSA:从 00 开始的钥匙串导入崩溃",
+						"name": "RSA:从 00 开始的钥匙串导入崩溃",
+						"description": "RSA:从 00 开始的钥匙串导入崩溃",
+						"author": {
+							"@id": "https://gui-ying233.github.io/Nest/#Person"
+						},
+						"url": "https://gui-ying233.github.io/Nest/RSA:Crashing%20in%20a%20Keychain%20import%20from%2000",
+						"isPartOf": {
+							"@id": "https://gui-ying233.github.io/Nest/#Blog"
+						},
+						"keywords": [
+							"RSA",
+							"Netscape",
+							"E-Certify",
+							"钥匙串",
+							"Keychain",
+							"崩溃",
+							"导入",
+							"证书",
+							"CA",
+							"根证书",
+							"512位"
+						]
+					},
+					{
+						"@type": "BreadcrumbList",
+						"itemListElement": [
+							{
+								"@type": "ListItem",
+								"position": 1,
+								"item": {
+									"@id": "https://gui-ying233.github.io/Nest/#Blog",
+									"name": "鬼影的基地"
+								}
+							},
+							{
+								"@type": "ListItem",
+								"position": 2,
+								"item": {
+									"@id": "https://gui-ying233.github.io/Nest/RSA:Crashing%20in%20a%20Keychain%20import%20from%2000#BlogPosting",
+									"name": "RSA:从 00 开始的钥匙串导入崩溃"
+								}
+							}
+						]
+					}
+				]
+			}
+		</script>
+		<script
+			defer
+			src="https://www.googletagmanager.com/gtag/js?id=G-ZMHY61ZCQE"
+		></script>
+		<script
+			defer
+			src="https://static.cloudflareinsights.com/beacon.min.js"
+			data-cf-beacon='{"token": "b293bc8b0a614b42abf757d0eb6fe419"}'
+		></script>
+		<script
+			defer
+			src="https://testingcf.jsdelivr.net/gh/gui-ying233/Nest@main/src/js/analytics.min.js"
+		></script>
+		<script
+			src="https://app.rybbit.io/api/script.js"
+			data-site-id="1309"
+			data-track-errors="true"
+			data-session-replay="true"
+			data-web-vitals="true"
+			data-tracking-errors="true"
+			data-debounce="0"
+			defer
+		></script>
+		<link
+			rel="stylesheet"
+			fetchpriority="high"
+			href="https://testingcf.jsdelivr.net/gh/gui-ying233/Nest@main/src/css/base.min.css"
+		/>
+		<script type="speculationrules">
+			{
+				"prefetch": [
+					{
+						"where": { "href_matches": "/*" },
+						"eagerness": "immediate"
+					},
+					{
+						"where": {
+							"selector_matches": "a[href][target='_blank']"
+						},
+						"eagerness": "moderate"
+					}
+				],
+				"prerender": [
+					{ "urls": ["."] },
+					{
+						"where": { "href_matches": "/*" },
+						"eagerness": "eager"
+					}
+				]
+			}
+		</script>
+	</head>
+	<body
+		role="article"
+		itemscope
+		itemtype="https://schema.org/BlogPosting"
+		itemid="https://gui-ying233.github.io/Nest/RSA:Crashing%20in%20a%20Keychain%20import%20from%2000#BlogPosting"
+	>
+		<a
+			href="https://wisadel.gui-ying233.workers.dev/?utm_medium=referral&utm_source=gui-ying233.github.io/Nest/"
+			rel="noindex nofollow"
+			style="position: absolute; left: -9999px"
+			aria-hidden="true"
+			tabindex="-1"
+		></a>
+		<img
+			src="https://www.abuseipdb.com/contributor/250173.svg"
+			width="1"
+			height="1"
+			style="position: absolute; left: -9999px"
+			alt=""
+			decoding="async"
+			fetchpriority="low"
+			referrerpolicy="origin-when-cross-origin"
+		/>
+		<img
+			src="https://sniffcat.com/contributor/695032a0b14d5e69c5184413.svg"
+			width="1"
+			height="1"
+			style="position: absolute; left: -9999px"
+			alt=""
+			decoding="async"
+			fetchpriority="low"
+			referrerpolicy="origin-when-cross-origin"
+		/>
+		<noscript>
+			<img
+				src="https://mc.yandex.ru/watch/103373011"
+				style="position: absolute; left: -9999px"
+				alt=""
+		/></noscript>
+		<h1>RSA:从 <code>00</code> 开始的钥匙串导入崩溃</h1>
+		<section itemprop="articleBody">
+			<p>来自 1998 年的根证书，干掉了 2026 年的“钥匙串®”。</p>
+			<p>
+				我在 Hacker News 上看到了“<a
+					href="https://mcpherrin.ca/2026/09/07/rsa.html"
+					target="_blank"
+					hreflang="en-CA"
+					lang="en-CA"
+					itemprop="citation"
+					itemscope
+					itemtype="https://schema.org/BlogPosting"
+					itemid="https://mcpherrin.ca/2026/09/07/rsa.html"
+					><cite itemprop="headline"
+						>I’ve factored the RSA keys of a Certificate
+						Authority...</cite
+					></a
+				>”，其破解了 E-Certify 的两个 512 位
+				<abbr title="Rivest–Shamir–Adleman">RSA</abbr>
+				根密钥，在此不做多赘述，但建议优先阅读作为前情提要。
+			</p>
+			<h2>RSA:从 <code>0</code> 开始的私钥模数</h2>
+			<p>
+				总之，既然已经有了这三个证书/私钥对，我就寻思着先往 macOS
+				的钥匙串里存一份。将其做成了三个
+				<abbr title="Public-Key Cryptography Standards">PKCS</abbr> #12
+				文件并导入，“Test VeriSign Commercial Software Publisher
+				CA”和“E-Certify RSA 512 Gold
+				Server”都很顺利地导入了，但“E-Certify RSA 512 Gold
+				Client”在导入时导致钥匙串访问软件直接崩溃：
+			</p>
+			<pre><samp><strong>钥匙串访问 - 意外错误</strong>
+
+意外错误，可能使“钥匙串访问”出现故障。你可能要退出“钥匙串访问”应用程序。
+
+错误：SecKeyCopyExternalRepresentation called with NULL SecKeyRef</samp></pre>
+			<p>
+				而通过
+				<code>security</code>
+				命令进行的导入，出现了同样的崩溃，不过提供了更加详细的错误信息：
+			</p>
+			<pre
+				data-lang="Shell"
+			><kbd><b>security</b> import gold-client.p12 -f pkcs12 -k ~/Library/Keychains/login.keychain-db
+</kbd><samp>password to unlock gold-client.p12: 
+*** Terminating app due to uncaught exception 'NSInvalidArgumentException', reason: 'SecKeyCopyExternalRepresentation called with NULL SecKeyRef'
+*** First throw call stack:
+(
+	0   CoreFoundation                      0x0000000188e131f0 __exceptionPreprocess + 176
+	1   libobjc.A.dylib                     0x000000018888e91c objc_exception_throw + 88
+	2   CoreFoundation                      0x0000000188e130e0 +[NSException exceptionWithName:reason:userInfo:] + 0
+	3   Security                            0x000000018c6f249c _SecKeyCheck + 116
+	4   Security                            0x000000018c6f715c SecKeyCopyExternalRepresentation + 132
+	5   Security                            0x000000018c87e2c0 SecIdentityCreate + 124
+	6   Security                            0x000000018c6d25b8 build_trust_chains + 340
+	7   CoreFoundation                      0x0000000188d600c4 -[__NSDictionaryM __apply:context:] + 132
+	8   Security                            0x000000018c6d1c68 SecPKCS12Import_ios + 1008
+	9   Security                            0x000000018c883a8c SecPKCS12Import + 60
+	10  security                            0x0000000100ef9284 security + 70276
+	11  security                            0x0000000100ef8e98 security + 69272
+	12  security                            0x0000000100efd648 security + 87624
+	13  security                            0x0000000100efd190 security + 86416
+	14  dyld                                0x000000018891c4e4 start + 6992
+)
+libc++abi: terminating due to uncaught exception of type NSException</samp></pre>
+			<p>通过 <code>openssl</code> 查看 RSA 私钥参数：</p>
+			<pre
+				data-lang="Shell"
+			><kbd><b>openssl</b> rsa -in gold-client.key -text -noout | head
+</kbd><samp>Private-Key: (<mark>511 bit</mark>, 2 primes)
+modulus:
+    <mark>70</mark>:09:c4:f5:89:89:4d:c8:a3:f2:c0:1f:e4:7d:f0:
+    fc:7a:c8:82:cc:66:09:c5:29:d3:5d:08:d4:e9:e8:
+    ff:5f:19:c0:fb:dc:aa:8f:30:0c:3e:da:85:77:4f:
+    78:c0:cf:3d:56:c9:b3:f5:83:96:48:ee:90:9f:ac:
+    0e:02:ce:39
+publicExponent: 65537 (0x10001)
+privateExponent:
+    12:5d:97:9a:c4:53:ec:9b:42:3c:cd:bf:ac:9d:f4:</samp></pre>
+			<p>
+				可以看到此私钥的 RSA 模数始于
+				<code>0x70</code
+				>（<code>0b<mark>0</mark>1110000</code>），最高位为
+				<code>0</code>，在被忽略后便导致密钥长度变为了 511
+				位，而非正常的 512 位。但此不算导致崩溃的直接因素。
+			</p>
+			<h2>哈希公钥的消失</h2>
+			<p>既然合在一起导入不行，那试试分开导入呢？</p>
+			<pre
+				data-lang="Shell"
+			><kbd><b>security</b> import gold-client.key -f openssl -t priv -k ~/Library/Keychains/login.keychain-db
+</kbd><samp>1 key imported.
+</samp><kbd><b>security</b> import gold-client.crt -f x509 -t cert -k ~/Library/Keychains/login.keychain-db
+</kbd><samp>1 certificate imported.</samp></pre>
+			<p>太好了，保存上了！那让我们在钥匙串访问中看看吧！</p>
+			<p>不出所料，没有实际配对上，依旧只有 Server 的 Test 的。</p>
+			<p>先重新检查一下证书/密钥对是否匹配：</p>
+			<pre
+				data-lang="Shell"
+			><kbd><b>openssl</b> pkey -in gold-client.key -pubout -outform DER | shasum -a 256
+</kbd><samp>329ce1a73add2a9055e5002a0289dc85d589f5227d200e8f9ffd70f13e7cdb76  -
+</samp><kbd><b>openssl</b> x509 -in gold-client.crt -pubkey -noout | openssl pkey -pubin -outform DER | shasum -a 256
+</kbd><samp>329ce1a73add2a9055e5002a0289dc85d589f5227d200e8f9ffd70f13e7cdb76  -</samp></pre>
+			<p>
+				结果自然是匹配的，至少对 OpenSSL
+				来说，这真是一对<del>苦命鸳鸯</del>。
+			</p>
+			<pre
+				data-lang="Shell"
+			><kbd><b>security</b> find-key -t private ~/Library/Keychains/login.keychain-db
+</kbd><samp>keychain: "~/Library/Keychains/login.keychain-db"
+version: 512
+class: 0x00000010
+attributes:
+   0x00000000 &lt;uint32&gt;=0x00000010
+   0x00000001 &lt;blob&gt;="Imported Private Key"
+   0x00000002 &lt;blob&gt;=&lt;NULL&gt;
+   0x00000003 &lt;uint32&gt;=0x00000001
+   0x00000004 &lt;uint32&gt;=0x00000000
+   0x00000005 &lt;uint32&gt;=0x00000000
+   <mark>0x00000006 &lt;blob&gt;=0x39981D3A0C51A9F336EA8CF9278A6FB983E1F90B</mark>  "9\230\035:\014Q\251\3636\352\214\371'\212o\271\203\341\371\013"
+   0x00000007 &lt;blob&gt;=&lt;NULL&gt;
+   0x00000008 &lt;blob&gt;=0x7B38373139316361322D306663392D313164342D383439612D3030303530326235323132327D00  "{87191ca2-0fc9-11d4-849a-000502b52122}\000"
+   0x00000009 &lt;uint32&gt;=0x0000002A  "\000\000\000\*"
+   <mark>0x0000000A &lt;uint32&gt;=0x00000200</mark>
+   <mark>0x0000000B &lt;uint32&gt;=0x00000200</mark>
+   0x0000000C &lt;blob&gt;=0x0000000000000000
+   0x0000000D &lt;blob&gt;=0x0000000000000000
+   0x0000000E &lt;uint32&gt;=0x00000001
+   0x0000000F &lt;uint32&gt;=0x00000001
+   0x00000010 &lt;uint32&gt;=0x00000001
+   0x00000011 &lt;uint32&gt;=0x00000000
+   0x00000012 &lt;uint32&gt;=0x00000001
+   0x00000013 &lt;uint32&gt;=0x00000001
+   0x00000014 &lt;uint32&gt;=0x00000001
+   0x00000015 &lt;uint32&gt;=0x00000001
+   0x00000016 &lt;uint32&gt;=0x00000001
+   0x00000017 &lt;uint32&gt;=0x00000001
+   0x00000018 &lt;uint32&gt;=0x00000001
+   0x00000019 &lt;uint32&gt;=0x00000001
+   0x0000001A &lt;uint32&gt;=0x00000001</samp></pre>
+			<p>
+				注意到 <code>0x0000000A</code>、<code>0x0000000B</code>
+				分别对应着
+				<a
+					href="https://github.com/apple-oss-distributions/Security/blob/main/OSX/libsecurity_keychain/lib/SecImportExportCrypto.cpp"
+					target="_blank"
+					hreflang="en"
+					lang="en"
+					>Security/OSX/libsecurity_keychain/lib/SecImportExportCrypto.cpp
+					at main · apple-oss-distributions/Security</a
+				>
+				中的 <code>LogicalKeySizeInBits</code> 和
+				<code>effectiveKeySizeInBits</code
+				>（怎么一个大写一个小写……），其值 <code>0x00000200</code> 即 512
+				位，与之前的 OpenSSL 中的 511 位不一致。
+			</p>
+			<p>
+				而
+				<code>0x00000006</code>
+				作为私钥中的公钥哈希，在此记录供之后使用。
+			</p>
+			<pre
+				data-lang="Shell"
+			><kbd><b>security</b> find-certificate -c "E-Certify RSA 512 Gold Client" ~/Library/Keychains/login.keychain-db
+</kbd><samp>keychain: "~/Library/Keychains/login.keychain-db"
+version: 512
+class: 0x80001000
+attributes:
+  "alis"&lt;blob&gt;="E-Certify RSA 512 Gold Client"
+  "cenc"&lt;uint32&gt;=0x00000003
+  "ctyp"&lt;uint32&gt;=0x00000001
+  <mark>"hpky"&lt;blob&gt;=0x173678FE9B98A8EA9E5E6E4E31D5E7FC31FE721C</mark> "\0276x\376\233\230\250\352\236^nN1\325\347\3741\376r\034"
+  "issu"&lt;blob&gt;=0x3063310B300906035504061302434131123010060355040A1309452D4345525449465931183016060355040B130F52534120474F4C4420434C49454E54312630240603550403131D452D43455254494659205253412035313220474F4C4420434C49454E54 "0c1\0130\011\006\003U\004\006\023\002CA1\0220\020\006\003U\004\012\023\011E-CERTIFY1\0300\026\006\003U\004\013\023\017RSA GOLD CLIENT1&0$\006\003U\004\003\023\035E-CERTIFY RSA 512 GOLD CLIENT"
+  "labl"&lt;blob&gt;="E-Certify RSA 512 Gold Client"
+  "skid"&lt;blob&gt;=&lt;NULL&gt;
+  "snbr"&lt;blob&gt;=0x02
+  "subj"&lt;blob&gt;=0x3063310B300906035504061302434131123010060355040A1309452D4345525449465931183016060355040B130F52534120474F4C4420434C49454E54312630240603550403131D452D43455254494659205253412035313220474F4C4420434C49454E54 "0c1\0130\011\006\003U\004\006\023\002CA1\0220\020\006\003U\004\012\023\011E-CERTIFY1\0300\026\006\003U\004\013\023\017RSA GOLD CLIENT1&0$\006\003U\004\003\023\035E-CERTIFY RSA 512 GOLD CLIENT"</samp></pre>
+			<p>通过检查证书，可以发现其中的公钥哈希与之前的哈希并不一致。</p>
+			<p>
+				而在<a
+					href="https://github.com/apple-oss-distributions/Security/blob/main/OSX/libsecurity_keychain/lib/Identity.cpp#L57"
+					target="_blank"
+					hreflang="en"
+					>苹果的实现</a
+				>中，其要求
+				<code
+					>CssmData publicKeyHash =
+					certificate->publicKeyHash();</code
+				>
+				这俩哈希相等。这也正是为什么先前证书私钥分开导入都导入成功但却没有被正确识别的原因。
+			</p>
+			<h2>Code Geass 反叛的 <code>007</code></h2>
+			<p>
+				那让我们来看看这个 X.509 证书的
+				<abbr title="Abstract Syntax Notation One">ASN.1</abbr>
+				结构（<abbr title="Distinguished Encoding Rules">DER</abbr>
+				编码）：
+			</p>
+			<pre
+				data-lang="Shell"
+			><kbd><b>openssl</b> asn1parse -in gold-client.crt -i -dump | grep "BIT STRING" -B 2 -A 5
+</kbd><samp>  269:d=4  hl=2 l=   9 prim:     OBJECT            :rsaEncryption
+  280:d=4  hl=2 l=   0 prim:     NULL              
+  282:d=3  hl=2 l=  75 prim:    BIT STRING        
+      0000 - 00 30 48 02 41 <mark>00</mark> <mark>70</mark> 09-c4 f5 89 89 4d c8 a3 f2   .0H.A.p.....M...
+      0010 - c0 1f e4 7d f0 fc 7a c8-82 cc 66 09 c5 29 d3 5d   ...}..z...f..).]
+      0020 - 08 d4 e9 e8 ff 5f 19 c0-fb dc aa 8f 30 0c 3e da   ....._......0.&gt;.
+      0030 - 85 77 4f 78 c0 cf 3d 56-c9 b3 f5 83 96 48 ee 90   .wOx..=V.....H..
+      0040 - 9f ac 0e 02 ce 39 02 03-01 00 01                  .....9.....
+--
+  382:d=2  hl=2 l=   9 prim:   OBJECT            :md5WithRSAEncryption
+  393:d=2  hl=2 l=   0 prim:   NULL              
+  395:d=1  hl=2 l=  65 prim:  BIT STRING        
+      0000 - 00 1d 92 d7 4c e4 0c d6-fb 4a 3d e9 e1 c2 1f 00   ....L....J=.....
+      0010 - f7 51 fc f1 3e f8 ca c4-f1 23 88 8f d0 4e 7f a7   .Q..&gt;....#...N..
+      0020 - 8c 7b 7f 04 42 5b f7 26-5a b4 e3 51 72 48 25 55   .{..B[.&Z..QrH%U
+      0030 - cf 6f f0 ff 03 cb c1 d9-19 00 f4 f8 f9 f4 bb 18   .o..............
+      0040 - 56                                                V
+</samp></pre>
+			<p>
+				其上的 <code>OBJECT</code> 值提示我们，这两个
+				<code>BIT STRING</code> 分别保存的是公钥和签名。
+			</p>
+			<p>
+				这里的 <code>70</code> 正是前文提到模数开头的
+				<code>0x70</code
+				>（<code>0b<mark>0</mark>1110000</code>），其最高位已经是
+				<code>0</code>，前面就不再需要 <code>0x00</code> 了。
+			</p>
+			<p>
+				根据当时就已经生效的 X.690 §8.3.2（实际规则其实更早），这个
+				<code>00</code> 是“shall
+				not”（不得）出现的，也因此可以认定这个证书自始至终就不合规。
+			</p>
+			<p>这也正是导致钥匙串崩溃的源头。</p>
+			<h2>命运石之门</h2>
+			<p>终于找到了源头，那就该开始修复了。</p>
+			<p>
+				但直接删除 <code>00</code> 自然是不可行的，这会导致此证书的整个
+				DER 失效。
+			</p>
+			<pre
+				data-lang="Shell"
+			><kbd><b>openssl</b> x509 -in gold-client.crt -noout -subject -issuer
+</kbd><samp>subject=C=CA, O=E-Certify, OU=RSA Gold Client, CN=E-Certify RSA 512 Gold Client
+issuer=C=CA, O=E-Certify, OU=RSA Gold Client, CN=E-Certify RSA 512 Gold Client
+</samp><kbd><b>openssl</b> verify -no_check_time -CAfile gold-client.crt gold-client.crt
+</kbd><samp>gold-client.crt: OK</samp></pre>
+			<p>
+				通过以上两条命令，我们可以确定这个证书是自签发的，这为之后的修复奠定了基础。
+			</p>
+			<p>
+				并非巧合的是，我们也有其对应的私钥，因此我们可以通过重新生成证书来修复这个问题，并保持最小化改动。
+			</p>
+			<pre
+				data-lang="Shell"
+			><kbd><b>openssl</b> x509 -in gold-client.crt -signkey gold-client.key -preserve_dates -md5 -clrext -extfile <(printf '%s\n' 'basicConstraints=critical,CA:TRUE' 'subjectKeyIdentifier=none' 'authorityKeyIdentifier=none') -out gold-client-fixed.crt </kbd></pre>
+			<p>删除之前导入的不合规的证书，并重新导入修复后的，大功告成！</p>
+			<p>我们终于获得了一个与原始几乎一致，且能够成功配对的合规证书。</p>
+			<blockquote>让子弹飞</blockquote>
+		</section>
+		<footer>
+			<a href=".">鬼影的基地</a>
+		</footer>
+		<link
+			rel="stylesheet"
+			media="print"
+			href="https://testingcf.jsdelivr.net/gh/gui-ying233/Nest@main/src/css/print.min.css"
+		/>
+	</body>
+</html>

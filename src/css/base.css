@@ -263,7 +263,8 @@ pre[data-lang]::before {
 pre > * {
 	display: flow;
 }
-pre > * + * {
+pre > kbd + samp,
+pre > samp + kbd {
 	margin-block-start: 0.25em;
 	padding-block-start: 0.25em;
 	border-block-start: solid var(--background-color--3);

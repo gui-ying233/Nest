@@ -397,16 +397,11 @@ attributes:
 			<p>通过检查证书，可以发现其中的公钥哈希与之前的哈希并不一致。</p>
 			<p>
 				而在<a
-					href="https://github.com/apple-oss-distributions/Security/blob/main/OSX/libsecurity_keychain/lib/Identity.cpp#L57"
+					href="https://github.com/apple-oss-distributions/Security/blob/main/OSX/libsecurity_keychain/lib/Identity.cpp"
 					target="_blank"
 					hreflang="en"
 					>苹果的实现</a
-				>中，其要求
-				<code
-					>CssmData publicKeyHash =
-					certificate->publicKeyHash();</code
-				>
-				这俩哈希相等。这也正是为什么先前证书私钥分开导入都导入成功但却没有被正确识别的原因。
+				>中，其要求这俩哈希相等。这也正是为什么先前证书私钥分开导入都导入成功但却没有被正确识别的原因。
 			</p>
 			<h2>Code Geass 反叛的 <code>007</code></h2>
 			<p>
@@ -448,8 +443,8 @@ attributes:
 			</p>
 			<p>
 				根据当时就已经生效的 X.690 §8.3.2（实际规则其实更早），这个
-				<code>00</code> 是“shall
-				not”（不得）出现的，也因此可以认定这个证书自始至终就不合规。
+				<code>00</code> 是不得（shall
+				not）出现的，也因此可以认定这个证书自始至终就不合规。
 			</p>
 			<p>这也正是导致钥匙串崩溃的源头。</p>
 			<h2>命运石之门</h2>
